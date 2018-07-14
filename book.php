@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -84,20 +87,26 @@
                             <!-- <i class="fas fa-suitcase mr-2"></i> -->Room</a>
                     </li>
                 </ul>
-                <ul class="navbar-nav ml-auto">
-                    <li class="nav-item">
-                        <a href="register.html" class="nav-link link">
-                            <span class="navLinks">
+                <?php
+if (isset($_SESSION['email'])) {
+    echo "<ul class='navbar-nav ml-auto'><li class='nav-item'><a href='signOut.php'  class='nav-link link'><span class='navLinks'><i class='fas fa-sign-in-alt mr-2'></i>Sign Out</span></a></li></ul>";
+} else {
+    echo "<ul class='navbar-nav ml-auto'>
+                    <li class='nav-item'>
+                        <a href='register.html' class='nav-link link'>
+                            <span class='navLinks'>
                                 Sing Up</span>
                         </a>
                     </li>
-                    <li class="nav-item">
-                        <a href="login.html" class="nav-link link">
-                            <span class="navLinks">
+                    <li class='nav-item'>
+                        <a href='login.html' class='nav-link link'>
+                            <span class='navLinks'>
                                 Sign In</span>
                         </a>
                     </li>
-                </ul>
+                </ul>";
+}
+?>
             </div>
         </nav>
     </article>

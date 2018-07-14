@@ -1,3 +1,6 @@
+﻿<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -56,8 +59,102 @@
         </div>
     </div>
 
+    <section style="z-index:555; position:fixed; top:15%; left:35%;">
+        <div style="width:100% !important;  height:100% !important;">
+            <div class="" tabindex="2" role="dialog">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header bg-secondary">
+                            <h5 class="modal-title">
+                                <a href="index.html">
+                                    <img src="images/home.ico" width="100" height="100" style="margin-bottom:20px;" />
+                                </a>
+                            </h5>
+                            <h3 class="mt-5 ml-4">CHOOSE YOUR LANGUAGE</h3>
 
-    <!-- <article style="z-index: 999;" id="top">
+                        </div>
+                        <div class="modal-body bg-dark" style="margin-top:-16px">
+                            <button id="button1" type="button" class="btn btn-dark btn-block text-left prvi" onclick="button1Click();">
+                                <img src="images/english.png" class="mr-2" width="50" height="50" />
+                                <span style="font-size:25px;">English</span>
+                            </button>
+                            <button id="button2" type="button" class="btn btn-dark  btn-block text-left prvi" style="margin:0px !important;" onclick="button2Click();">
+                                <img src="images/arabia.png" class="mr-2" width="50" height="50" />
+                                <span style="font-size:25px;">Arabic</span>
+                            </button>
+                            <button id="button3" type="button" class="btn btn-dark btn-block text-left prvi" style="margin:0px !important; " onclick="button3Click();">
+                                <img src="images/turkish.png" class="mr-2" width="50" height="50" />
+                                <span style="font-size:25px;">Turkish</span>
+                            </button>
+                            <button id="button4" type="button" class="btn btn-dark btn-block text-left prvi" style="margin:0px !important;" onclick="button4Click();">
+                                <img src="images/bosna.png" class="mr-2" width="50" height="50" />
+                                <span style="font-size:25px;">Bosnian</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <article>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top" style="opacity:0.8">
+            <a class="navbar-brand" href="index.html">
+                <img src="images/home.ico" alt="logo" width="55" height="45">
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="index.html">Home
+                            <span class="sr-only">(current)</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="room.html">Rooms</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="skyBar.html">Sky Bar</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="restaurant.html">Restaurant</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="events.html">CONFERENCE CENTER (EVENT)</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="feedback.html">Feedback</a>
+                    </li>
+                </ul>
+                <?php
+if (isset($_SESSION['email'])) {
+    echo "<ul class='navbar-nav ml-auto'><li class='nav-item'><a href='signOut.php'  class='nav-link link'><span class='navLinks'><i class='fas fa-sign-in-alt mr-2'></i>Sign Out</span></a></li></ul>";
+} else {
+    echo "<ul class='navbar-nav ml-auto'>
+                    <li class='nav-item'>
+                        <a href='register.html' class='nav-link link'>
+                            <span class='navLinks'>
+                                Sing Up</span>
+                        </a>
+                    </li>
+                    <li class='nav-item'>
+                        <a href='login.html' class='nav-link link'>
+                            <span class='navLinks'>
+                                Sign In</span>
+                        </a>
+                    </li>
+                </ul>";
+}
+?>
+            </div>
+        </nav>
+
+    </article>
+
+    <!-- <article style="z-index: 999;">
         <nav>
             <div class="row">
                 <div id="navbar">
@@ -98,146 +195,82 @@
     </article> -->
 
     <article>
-        <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top" style="opacity:0.8">
-            <a class="navbar-brand" href="index.html">
-                <img src="images/home.ico" alt="logo" width="55" height="45">
-            </a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
-                aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav">
-                    <li class="nav-item active">
-                        <a class="nav-link" href="index.html">Home
-                            <span class="sr-only">(current)</span>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="room.html">Rooms</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="skyBar.html">Sky Bar</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="restaurant.html">Restaurant</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="swimmingPool.html">Swimming Pool</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="spa.html">SPA</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="gym.html">GYM</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="events.html">CONFERENCE CENTER (EVENT)</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="feedback.html">Feedback</a>
-                    </li>
-                </ul>
-                <ul class="navbar-nav ml-auto">
-                    <li class="nav-item">
-                        <a href="register.html" class="nav-link link">
-                            <span class="navLinks">
-                                Sing Up</span>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="login.html" class="nav-link link">
-                            <span class="navLinks">
-                                Sign In</span>
-                        </a>
-                    </li>
-                </ul>
+        <div class="row">
+            <div class="col-12 mt-5" id="top">
+                <video autoplay muted loop id="myVideo" class="mt-5">
+                    <source src="videos/bgVideo.mp4" type="video/mp4">
+                </video>
             </div>
-        </nav>
 
-
-
-        <div id="jumbotron2" class="jumbotron jumbotron-fluid text-white d-flex justify-content-center align-items-center">
-            <div class="container text-center">
-                <h1 class="display-1 text-dark text-uppercase">COMBRERO HOTEL</h1>
-                <p class="display-4 d-none d-sm-block text-primary">TAKE LOOK AT OUR HOTEL</p>
-                <p class="text-warning h5 mb-3">Visit us on:</p>
-                <a href="https://www.instagram.com/" target="_blank" class="btn btn-lg btn-dark mb-1">
-                    <i class="fab fa-instagram mr-2" aria-hidden="true"></i>Instagram</a>
-                <a href="https://www.facebook.com" target="_blank" class="btn btn-lg btn-dark mb-1">
-                    <i class="fab fa-facebook mr-2" aria-hidden="true"></i>Facebook</a>
-            </div>
         </div>
+    </article>
+
+    <article>
         <div class="row no-gutters">
-            <div class="col-6 bg-white">
-                <!-- <ul class="nav nav-pills mb-3 mt-4 ml-4" id="pills-tab" role="tablist">
-                    <li class="nav-item">
-                        <a class="nav-link" id="pills-home-tab" data-toggle="pill" href="index.html" role="tab" aria-controls="pills-home" aria-selected="true"
-                            style="color: gold; ">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" id="pills-profile-tab" data-toggle="pill" href="hotel.html" role="tab" aria-controls="pills-profile"
-                            aria-selected="false">Hotel</a>
-                    </li>
-                </ul> -->
-                <h2 class="display-4 ml-4">
-                    AREAS FOR YOUR USE
-                </h2>
-                <p class="ml-4">
-                    Our hotel is not just a place to sleep; it is a place where you can come alive at any time, especially in the open air.
-                </p>
-            </div>
-            <div class="col-6 ">
-                <img src="images/skyBar.jpg " alt="EXTERIOR" class="img-fluid" style="height: 580px;" />
-            </div>
             <div class="col-6">
                 <div class="row">
-                    <div class="col-12 ">
-                        <a href="events.html ">
-                            <img src="images/events.jpg " class="img-fluid index" style="height:250px;width: 1000px;" />
-                        </a>
-                    </div>
-                    <div class="col-12 ">
-                        <a href="events.html ">
-                            <img src="images/events.jpg " class="img-fluid index" style="height:250px;width: 1000px;" />
+                    <div class="col-12">
+                        <a href="room.html">
+                            <img src="images/room.jpg" class="img-fluid index" />
                         </a>
                     </div>
                 </div>
+                <div class="row no-gutters">
+                    <div class="col-6">
+                        <img src="images/food.jpg" class="img-fluid" style="width: 1520px !important; " />
+                    </div>
+                    <div class=" col-6 text-center mt-5 ">
+                        <label>
+                            Lorem ipsum dolor sit amet,no sea takimata sanctus est Lorem ipsum dolor sit amet. consetetur sadipscing elitr, Stet clita
+                            kasd gubergren,
+                        </label>
+                    </div>
+                </div>
             </div>
-
             <div class="col-6 ">
+                <a href="skyBar.html ">
+                    <img src="images/skyBar.jpg " class="img-fluid index" style="height: 580px;" />
+                </a>
+            </div>
+            <div class="col-10 ">
                 <a href="events.html ">
-                    <img src="images/events.jpg " class="img-fluid index" style="height:500px;" />
+                    <img src="images/events.jpg " class="img-fluid index" style="width: 1520px !important;height: 250px; " />
+                </a>
+            </div>
+            <div class="col-2 text-center mt-5 ">
+                <label>
+                    Lorem ipsum dolor sit amet,no sea takimata sanctus est Lorem ipsum dolor sit amet. consetetur sadipscing elitr, Stet clita
+                    kasd gubergren,
+                </label>
+            </div>
+            <div class="col-6 ">
+                <img src="images/namjestaj.jpg " class="img-fluid " />
+            </div>
+            <div class="col-6 ">
+                <a href="swimmingPool.html">
+                    <img src="images/pool.jpg " class="img-fluid index " />
                 </a>
             </div>
             <div class="col-6 ">
-                <img src="images/namjestaj.jpg " class="img-fluid index" />
-            </div>
-            <div class="col-6 ">
-                <a href="coffee.html ">
+                <a href="restaurant.html">
                     <img src="images/kafa.jpg " class="img-fluid index " />
                 </a>
-            </div>
-            <div class="col-6 ">
-                <p>Lorem ipsum dolor sit amet,sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat,
-                    At vero eos et accusam et justo duo dolores et ea rebum. Lorem ipsum dolor sit amet, no sea takimata
-                    sanctus est Lorem ipsum dolor sit amet. Stet clita kasd gubergren, no sea takimata sanctus est Lorem
-                    ipsum dolor sit amet. no sea takimata sanctus est Lorem ipsum dolor sit amet. no sea takimata sanctus
-                    est Lorem ipsum dolor sit amet. sed diam voluptua.
-                </p>
             </div>
             <div class="col-6 ">
                 <a href="spa.html ">
                     <img src="images/spa.jpg " class="img-fluid index" style="height: 445px;" />
                 </a>
             </div>
-            <div class="col-6 ">
-                <img src="images/namjestaj.jpg " class="img-fluid index" />
-            </div>
-            <div class="col-6 ">
-                <a href="coffee.html ">
-                    <img src="images/kafa.jpg " class="img-fluid index " />
+            <div class="col-10 ">
+                <a href="events.html ">
+                    <img src="images/events.jpg " class="img-fluid index" style="width: 1520px !important;height: 250px; " />
                 </a>
+            </div>
+            <div class="col-2 text-center mt-5 ">
+                <label>
+                    Lorem ipsum dolor sit amet,no sea takimata sanctus est Lorem ipsum dolor sit amet. consetetur sadipscing elitr, Stet clita
+                    kasd gubergren,
+                </label>
             </div>
             <div class="col-12 bg-secondary ">
                 <div class="offset-1 ">
@@ -262,33 +295,6 @@
 
                     </div>
                 </div>
-            </div>
-            <div class="col-10 offset-1 text-center">
-                <h2 class="display-3 mb-5">Services</h2>
-            </div>
-            <div class="col-2 text-center offset-2 ">
-                <img src="https://png.icons8.com/metro/50/000000/dog.png">
-            </div>
-            <div class="col-2 text-center">
-                <img src="https://png.icons8.com/ios/50/000000/indoor-parking-filled.png">
-            </div>
-            <div class="col-2 text-center">
-                <img src="https://png.icons8.com/ios/50/000000/future.png">
-            </div>
-            <div class="col-2 text-center ">
-                <img src="https://png.icons8.com/ios/50/000000/washing-machine.png">
-            </div>
-            <div class="col-2 text-center offset-2 ">
-                <label>Dog allowed</label>
-            </div>
-            <div class="col-2 text-center">
-                <label class="ml-2"> Private parking / Free garage</label>
-            </div>
-            <div class="col-2 text-center">
-                <label>24hr Reception</label>
-            </div>
-            <div class="col-2 text-center">
-                <label>Laundry service</label>
             </div>
             <div class="col-7 mt-3 ">
                 <div class="row ">
@@ -354,7 +360,6 @@
             </div>
         </div>
     </article>
-
     <footer class="w3-gray mt-3 ">
         <div class="row ml-3 ">
             <div class="col-3 ">
@@ -535,11 +540,43 @@
         $(window).on({
             load: function () {
                 $('.loader').hide();
-                $('article').show();
-                $('footer').show();
+                $('article').hide();
                 document.getElementById('body').style.backgroundColor = "silver ";
+                $('section').show();
+
             }
         })
+
+        function button1Click() {
+            $('article').show();
+            $('.loader').hide();
+            $('section').hide();
+            $('footer').show();
+
+
+        }
+
+        function button2Click() {
+            $('article').show();
+            $('.loader').hide();
+            $('section').hide();
+            $('footer').show();
+
+        }
+
+        function button3Click() {
+            $('article').show();
+            $('.loader').hide();
+            $('section').hide();
+            $('footer').show();
+        }
+
+        function button4Click() {
+            $('article').show();
+            $('.loader').hide();
+            $('section').hide();
+            $('footer').show();
+        }
 
         /*window.onscroll = function () {
             scrollFunction()
@@ -580,12 +617,12 @@
     <script src="loaders.css.js "></script>
 
 
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js " integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN "
-        crossorigin="anonymous "></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js " integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q "
-        crossorigin="anonymous "></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js " integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl "
-        crossorigin="anonymous "></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
 
 </body>
 

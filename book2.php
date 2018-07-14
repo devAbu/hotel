@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -26,10 +29,6 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/smooth-scroll/12.1.5/js/smooth-scroll.min.js" integrity="sha256-MMt0/21G3z0Zg4ET1kI3HC9npItDowkitRDVr0FhCxA="
         crossorigin="anonymous"></script>
     <link rel="stylesheet" href="loaders.min.css" />
-
-    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 
     <script type="text/javascript">
         $(function () {
@@ -77,27 +76,37 @@
                     </li>
                     <li class="nav-item">
                         <a href="hotel.html" class="nav-link link">
-                            <!-- <i class="fas fa-users mr-2"></i> -->Hotel</a>
+                            <!-- <i class="fas fa-users mr-2"> --></i>Hotel</a>
                     </li>
                     <li class="nav-item">
                         <a href="events.html" class="nav-link link">
-                            <!-- <i class="fas fa-suitcase mr-2"></i> -->Events</a>
+                            <!-- <i class="fas fa-suitcase mr-2"> --></i>Events</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="events.html" class="nav-link link">
+                            <!-- <i class="fas fa-suitcase mr-2"> --></i>Room</a>
                     </li>
                 </ul>
-                <ul class="navbar-nav ml-auto">
-                    <li class="nav-item">
-                        <a href="register.html" class="nav-link link">
-                            <span class="navLinks">
+                <?php
+if (isset($_SESSION['email'])) {
+    echo "<ul class='navbar-nav ml-auto'><li class='nav-item'><a href='signOut.php'  class='nav-link link'><span class='navLinks'><i class='fas fa-sign-in-alt mr-2'></i>Sign Out</span></a></li></ul>";
+} else {
+    echo "<ul class='navbar-nav ml-auto'>
+                    <li class='nav-item'>
+                        <a href='register.html' class='nav-link link'>
+                            <span class='navLinks'>
                                 Sing Up</span>
                         </a>
                     </li>
-                    <li class="nav-item">
-                        <a href="login.html" class="nav-link link">
-                            <span class="navLinks">
+                    <li class='nav-item'>
+                        <a href='login.html' class='nav-link link'>
+                            <span class='navLinks'>
                                 Sign In</span>
                         </a>
                     </li>
-                </ul>
+                </ul>";
+}
+?>
             </div>
         </nav>
     </article>
@@ -110,16 +119,69 @@
                     <div class="card-body text-center">
                         <img class="card-img-top" src="images/home.ico" style="width:90px !important; margin-top:150px !important; margin-left:100px !important;"
                             height="80" alt="Card image cap">
-                        <h3 class="card-title text-uppercase text-primary" style="margin-left:0px !important; width: 400px !important;">Write your opinion</h3>
+                        <h3 class="card-title text-uppercase text-primary" style="margin-left:0px !important; width: 400px !important;">Reservation</h3>
                     </div>
-                    <div class="alert" id="mess"></div>
-                    <div class="card-body text-center col-1 ">
-                        <textarea cols="50" rows="10" placeholder="Please write your opinion..." style="margin-left:-30px; resize:none" id="text" name="text"></textarea>
-                    </div>
+                    <ul class="list-group list-group-flush" style="margin-top:-20px;">
+                        <li class="list-group-item bg-info" style="border:none; margin-top:-20px; background:none !important;">
+                            <div class="row">
+                                <div class="col-4">
+                                    <img src="images/room.jpg" alt="room" width="100" height="100">
+                                </div>
+                                <div class="col-8">
+                                    <label class="text-danger">Lorem ipsum dolor sit amet, consetetur sadipscing elitr,</label>
+                                    <select>
+                                        <option>Select room</option>
+                                        <option>Room1</option>
+                                        <option>Room2</option>
+                                        <option>Room3</option>
+                                        <option>Room4</option>
+                                        <option>Room5</option>
+                                        <option>Room6</option>
+                                        <option>Room7</option>
+                                        <option>Room8</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="list-group-item bg-info" style="border:none; margin-top:-20px; background:none !important;">
+                            <input type="date" style="width:400px; height: 50px; background: none !important; border: none; border-bottom: 1px solid black;"
+                                required="">
+                        </li>
+                        <!--<li class="list-group-item bg-info" style="border:none; margin-top:-20px; background:none !important;">
+                                <input type="password" placeholder="*****" class="form-control" style="max-width:400px;" required="">
+                            </li>-->
+                    </ul>
+                    <table>
+                        <tr>
+                            <td>
+                                <div style="margin-left:18px;">
+                                    <input type="date" style="width:400px !important; height: 50px; background: none !important; border: none; border-bottom: 1px solid black;"
+                                        required>
+                                </div>
+                            </td>
+
+                        </tr>
+                        <tr>
+                            <td>
+                                <div style="margin-left:18px;">
+                                    <input type="number" placeholder="Adults number..." style="width:400px !important; height: 50px; background: none !important; border: none; border-bottom: 1px solid black;"
+                                        required>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div style="margin-left:18px;">
+                                    <input type="number" placeholder="Child number..." style="width:400px !important; height: 50px; background: none !important; border: none; border-bottom: 1px solid black;"
+                                        required>
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
 
                     <div class="card-body text-center col-2 offset-5">
-                        <button class="btn btn-primary text-white" name="feedButton" id="feedButton">Submit
-                           <i class="fas fa-comment ml-2"></i>
+                        <button class="btn btn-primary text-white">Book
+                            <i class="fas fa-sign-in-alt ml-2"></i>
                         </button>
                     </div>
                 </div>
@@ -141,40 +203,6 @@
                 document.getElementById('body').style.backgroundColor = "silver ";
                 $('section').show();
 
-            }
-        });
-    </script>
-
-    <script>
-        $('#mess').fadeOut();
-        $('#feedButton').click(function(){
-            $('#mess').removeClass('alert-danger').removeClass('alert-success');
-            var text = $('#text').val();
-            if(text == "") {
-                $("#mess").addClass('alert-danger');
-                $("#mess").html("Please write your opinion!!!");
-                $("#mess").fadeIn(500).delay(1000).fadeOut(500);
-            }else {
-                $.ajax({
-                    url: "./feedbackData?task=feedback&text="+text,
-                    success: function (data) {
-                        if(data == 'success') {
-                            $("#mess").addClass('alert-success');
-							$("#mess").html('Happy to hear your opinion.');
-							$("#mess").slideDown(500).delay(1000).slideUp(500);
-                            $('#text').val("");
-                        }else {
-                            $("#mess").addClass('alert-danger');
-							$("#mess").html('There is some problem. Please try later');
-							$("#mess").slideDown(500).delay(1000).slideUp(500);
-                        }
-                    },
-                    error: function (data, err) {
-                        $("#mess").addClass('alert-danger');
-                        $("#mess").html('Some problem occured. Please try again later.');
-                        $("#mess").slideDown(500).delay(1000).slideUp(500);
-                    }
-                });
             }
         });
     </script>

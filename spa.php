@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -66,7 +69,7 @@
                         <a href="https://www.instagram.com/bosniant/" target="_blank" class="btn btn-lg btn-primary mb-1">
                             <i class="fab fa-instagram mr-2" aria-hidden="true"></i>Instagram</a>
                         <a href="https://www.facebook.com" target="_blank" class="btn btn-lg btn-primary mb-1">
-                            <i class="fab fa-facebook mr-2" aria-hidden="true"></i>Facebook</a> 
+                            <i class="fab fa-facebook mr-2" aria-hidden="true"></i>Facebook</a>
                     </div>
         </div>
     </section>-->
@@ -156,20 +159,26 @@
                         <a class="nav-link" href="feedback.html">Feedback</a>
                     </li>
                 </ul>
-                <ul class="navbar-nav ml-auto">
-                    <li class="nav-item">
-                        <a href="register.html" class="nav-link link">
-                            <span class="navLinks">
+                               <?php
+if (isset($_SESSION['email'])) {
+    echo "<ul class='navbar-nav ml-auto'><li class='nav-item'><a href='signOut.php'  class='nav-link link'><span class='navLinks'><i class='fas fa-sign-in-alt mr-2'></i>Sign Out</span></a></li></ul>";
+} else {
+    echo "<ul class='navbar-nav ml-auto'>
+                    <li class='nav-item'>
+                        <a href='register.html' class='nav-link link'>
+                            <span class='navLinks'>
                                 Sing Up</span>
                         </a>
                     </li>
-                    <li class="nav-item">
-                        <a href="login.html" class="nav-link link">
-                            <span class="navLinks">
+                    <li class='nav-item'>
+                        <a href='login.html' class='nav-link link'>
+                            <span class='navLinks'>
                                 Sign In</span>
                         </a>
                     </li>
-                </ul>
+                </ul>";
+}
+?>
             </div>
         </nav>
 

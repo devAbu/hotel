@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -17,16 +20,15 @@
     <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/smooth-scroll/12.1.5/js/smooth-scroll.min.js" integrity="sha256-MMt0/21G3z0Zg4ET1kI3HC9npItDowkitRDVr0FhCxA="
         crossorigin="anonymous"></script>
     <link rel="stylesheet" href="loaders.min.css" />
-
-     <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 
     <script type="text/javascript">
         $(function () {
@@ -56,6 +58,65 @@
         </div>
     </div>
 
+    <!--<section>
+        <div id="jumbotron" class="jumbotron jumbotron-fluid text-white d-flex justify-content-center align-items-center">
+            <div class="container text-center">
+                         <h1 class="display-1 text-primary text-uppercase">BTT</h1>
+                        <p class="display-4 d-none d-sm-block">Bosnian Tourist Travel</p>
+                        <p class="lead">Visit Bosnia & Herzegovina with us!</p>
+                        <p class="lead">The best offers and price!</p>
+                        <p class="text-primary h5 mb-3">Visit us on:</p>
+                        <a href="https://www.instagram.com/bosniant/" target="_blank" class="btn btn-lg btn-primary mb-1">
+                            <i class="fab fa-instagram mr-2" aria-hidden="true"></i>Instagram</a>
+                        <a href="https://www.facebook.com" target="_blank" class="btn btn-lg btn-primary mb-1">
+                            <i class="fab fa-facebook mr-2" aria-hidden="true"></i>Facebook</a> 
+                    </div>
+        </div>
+    </section>-->
+
+    <!-- <article>
+        <div class="row">
+
+            <div class="row">
+                <div id="navbar">
+                    <div class="col-5">
+                        <button class="w3-button w3-teal w3-xlarge w3-left" id="menu" onclick="openLeftMenu()">
+                            <i class="fas fa-bars"></i>
+                        </button>
+                    </div>
+                    <div class="col-6">
+                        <div class="img-fluid w3-left">
+                            <a href="index.html">
+                                <img src="images/home.ico" width="50" height="50" style="position:fixed; margin-left:50px;" />
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-1">
+                        <button class="w3-button w3-teal w3-xlarge w3-right" id="menu2" onclick="openRightMenu()" style="margin-left:30px;">
+                            <i class="far fa-bell fa-3x"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="w3-sidebar w3-bar-block w3-card w3-animate-left" style="display:none" id="leftMenu">
+                <button onclick="closeLeftMenu()" class="w3-bar-item w3-button w3-large">Close &times;</button>
+                <a href="#" class="w3-bar-item w3-button">Link 1</a>
+                <a href="#" class="w3-bar-item w3-button">Link 2</a>
+                <a href="#" class="w3-bar-item w3-button">Link 3</a>
+            </div>
+
+            <div class="w3-sidebar w3-bar-block w3-card w3-animate-right" style="display:none;" id="rightMenu">
+                <button onclick="closeRightMenu()" class="w3-bar-item w3-button w3-large text-right">Close &times;</button>
+                <a href="#" class="w3-bar-item w3-button text-right">Link 1</a>
+                <a href="#" class="w3-bar-item w3-button text-right">Link 2</a>
+                <a href="#" class="w3-bar-item w3-button text-right">Link 3</a>
+            </div>
+        </div>
+    </article> -->
+
+
+
     <article>
 
         <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top" style="opacity:0.8">
@@ -74,35 +135,75 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">CONFERENCES & MEETINGS</a>
+                        <a class="nav-link" href="room.html">Rooms</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">PRIVATE CEREMONIES & PARTIES</a>
+                        <a class="nav-link" href="skyBar.html">Sky Bar</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="restaurant.html">Restaurant</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="swimmingPool.html">Swimming Pool</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="spa.html">SPA</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="gym.html">GYM</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="events.html">CONFERENCE CENTER (EVENT)</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="feedback.html">Feedback</a>
                     </li>
                 </ul>
-                <ul class="navbar-nav ml-auto">
-                    <li class="nav-item">
-                        <a href="register.html" class="nav-link link">
-                            <span class="navLinks">
+                                <?php
+if (isset($_SESSION['email'])) {
+    echo "<ul class='navbar-nav ml-auto'><li class='nav-item'><a href='signOut.php'  class='nav-link link'><span class='navLinks'><i class='fas fa-sign-in-alt mr-2'></i>Sign Out</span></a></li></ul>";
+} else {
+    echo "<ul class='navbar-nav ml-auto'>
+                    <li class='nav-item'>
+                        <a href='register.html' class='nav-link link'>
+                            <span class='navLinks'>
                                 Sing Up</span>
                         </a>
                     </li>
-                    <li class="nav-item">
-                        <a href="login.html" class="nav-link link">
-                            <span class="navLinks">
+                    <li class='nav-item'>
+                        <a href='login.html' class='nav-link link'>
+                            <span class='navLinks'>
                                 Sign In</span>
                         </a>
                     </li>
-                </ul>
+                </ul>";
+}
+?>
             </div>
         </nav>
 
-        <div id="jumbotron" class="jumbotron jumbotron-fluid text-white d-flex justify-content-center align-items-center">
+        <!--  <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist" style="position: fixed;">
+            <li class="nav-item">
+                <a class="nav-link" id="pills-home-tab" data-toggle="pill" href="index.html" role="tab" aria-controls="pills-home" aria-selected="true"
+                    style="color: gold; ">Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" id="pills-profile-tab" data-toggle="pill" href="hotel.html" role="tab" aria-controls="pills-profile"
+                    aria-selected="false" style="color: gold;">Hotel</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" id="pills-contact-tab" data-toggle="pill" href="restaurant.html" role="tab" aria-controls="pills-contact"
+                    aria-selected="false">Restaurant</a>
+            </li>
+
+        </ul> -->
+
+        <div id="jumbotronRestaurant" class="jumbotron jumbotron-fluid text-white d-flex justify-content-center align-items-center">
             <div class="container text-center">
                 <h1 class="display-1 text-dark text-uppercase">COMBRERO HOTEL</h1>
-                <p class="display-4 d-none d-sm-block text-primary">TAKE LOOK AT EVENTS IN OUR HOTEL</p>
-                <p class="lead text-primary">More than 10 events per month!!!</p>
-                <p class="text-warning h5 mb-3">Visit us on:</p>
+                <p class="display-4 d-none d-sm-block text-primary">TAKE LOOK AT RESTAURANT IN OUR HOTEL</p>
+                <p class="lead text-primary">More than 45 meals!!!</p>
+                <p class="text-warning h5 mb-3">Also, You can check our restaurant on:</p>
                 <a href="https://www.instagram.com/" target="_blank" class="btn btn-lg btn-dark mb-1">
                     <i class="fab fa-instagram mr-2" aria-hidden="true"></i>Instagram</a>
                 <a href="https://www.facebook.com" target="_blank" class="btn btn-lg btn-dark mb-1">
@@ -114,24 +215,181 @@
 
         <div class="row no-gutters">
             <div class="col-12">
-                <h1 class="display-1">EVENTS</h1>
+                <h1 class="display-1">Restaurant</h1>
             </div>
             <div class="col-6">
-                <div class="row">
-                    <div class="col-6">
-                        <p>
-                            Lorem ipsum dolor sit amet,sed diam voluptua. sed diam voluptua. Lorem ipsum dolor sit amet,sed diam voluptua. sed diam voluptua.
-                            Lorem ipsum dolor sit amet,sed diam voluptua. sed diam voluptua.
-                        </p>
+                <p>
+                    Lorem ipsum dolor sit amet,sed diam voluptua. sed diam voluptua. Lorem ipsum dolor sit amet,sed diam voluptua. sed diam voluptua.
+                    Lorem ipsum dolor sit amet,sed diam voluptua. sed diam voluptua.
+                </p>
+            </div>
+            <div class="col-6">
+                <p>
+                    Lorem ipsum dolor sit amet,sed diam voluptua. sed diam voluptua. Lorem ipsum dolor sit amet,sed diam voluptua. sed diam voluptua.
+                    Lorem ipsum dolor sit amet,sed diam voluptua. sed diam voluptua.
+                </p>
+                <a href="https://www.instagram.com" class="text-warning" style="text-decoration: none">Follow us on INSTAGRAM</a>
+            </div>
+            <div class="col-4">
+                <p>
+                    Lorem ipsum dolor sit amet,sed diam voluptua. sed diam voluptua. Lorem ipsum dolor sit amet,sed diam voluptua. sed diam voluptua.
+                    Lorem ipsum dolor sit amet,sed diam voluptua. sed diam voluptua.
+                </p>
+            </div>
+            <div class="col-8">
+                <img src="images/room.jpg" class="img-fluid" />
+            </div>
+
+            <div class="col-12">
+                <section>
+                    <div id="carousel" class="carousel slide" data-ride="carousel">
+
+                        <div class="carousel-inner" role="listbox">
+                            <div class="carousel-item active">
+                                <img src="images/skyBar.jpg" alt="slide1" class="d-block img-fluid">
+
+                            </div>
+                            <div class="carousel-item">
+                                <img src="images/room.jpg" alt="slide2" class="d-block img-fluid">
+
+                            </div>
+                            <div class="carousel-item">
+                                <img src="images/spa.jpg" alt="slide3" class="d-block img-fluid">
+
+                            </div>
+                            <div class="carousel-item">
+                                <img src="images/pool.jpg" alt="slide4" class="d-block img-fluid">
+
+                            </div>
+                        </div>
+                        <a href="#carousel" class="carousel-control-prev" role="button" data-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Preview</span>
+                        </a>
+                        <a href="#carousel" class="carousel-control-next" role="button" data-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Next</span>
+                        </a>
+                    </div>
+                </section>
+            </div>
+
+            <div class="col-6 bg-white">
+                <h2 class="ml-3" style="margin-top: 5%;">You might also like:</h2>
+            </div>
+            <div class="col-6 bg-secondary ">
+                <div class="row ">
+                    <div class="col-8 ">
+                        <a href="skyBar.html " class="rec">
+                            <h2 class="ml-3 ">Apertivo at the Sky Bar:</h2>
+                        </a>
+                    </div>
+                    <div class="col-4 ">
+                        <a href="skyBar.html " class="rec">
+                            <i class="fas fa-angle-up fa-rotate-90 fa-3x mt-1 " style="color:goldenrod; "></i>
+                        </a>
+                    </div>
+                    <div class="col-6 ">
+                        <a href="spa.html" class="rec">
+                            <h2 class="ml-3 ">SPA</h2>
+                        </a>
+                    </div>
+                    <div class="col-6 ">
+                        <a href="spa.html" class="rec">
+                            <i class="fas fa-angle-up fa-rotate-90 fa-3x mt-1 " style="color:goldenrod; "></i>
+                        </a>
                     </div>
                 </div>
-                <div class="col-6">
-                    <img src="images/events.jpg" class="index">
+            </div>
+
+
+
+
+            <!--  <div class="col-6 ">
+                <div class="row ">
+                    <div class="col-12 ">
+                        <a href="room.html ">
+                            <img src="images/room.jpg " class="img-fluid index " />
+                        </a>
+                    </div>
+                </div>
+                <div class="row no-gutters ">
+                    <div class="col-6 ">
+                        <img src="images/food.jpg " class="img-fluid " style="width: 1520px !important; " />
+                    </div>
+                    <div class=" col-6 text-center mt-5 ">
+                        <label>
+                            Lorem ipsum dolor sit amet,no sea takimata sanctus est Lorem ipsum dolor sit amet. consetetur sadipscing elitr, Stet clita
+                            kasd gubergren,
+                        </label>
+                    </div>
                 </div>
             </div>
-            <div class="col-6">
-                <img src="images/namjestaj.jpg" class="index">
+            <div class="col-6 ">
+                <a href="skyBar.html ">
+                    <img src="images/skyBar.jpg " class="img-fluid index " style="height: 580px; " />
+                </a>
             </div>
+            <div class="col-10 ">
+                <a href="events.html ">
+                    <img src="images/events.jpg " class="img-fluid index " style="width: 1520px !important;height: 250px; " />
+                </a>
+            </div>
+            <div class="col-2 text-center mt-5 ">
+                <label>
+                    Lorem ipsum dolor sit amet,no sea takimata sanctus est Lorem ipsum dolor sit amet. consetetur sadipscing elitr, Stet clita
+                    kasd gubergren,
+                </label>
+            </div>
+            <div class="col-6 ">
+                <img src="images/namjestaj.jpg " class="img-fluid " />
+            </div>
+            <div class="col-6 ">
+                <a href="pool.html ">
+                    <img src="images/pool.jpg " class="img-fluid index " />
+                </a>
+            </div>
+            <div class="col-6 ">
+                <a href="coffee.html ">
+                    <img src="images/kafa.jpg " class="img-fluid index " />
+                </a>
+            </div>
+            <div class="col-6 ">
+                <a href="spa.html ">
+                    <img src="images/spa.jpg " class="img-fluid index " style="height: 445px; " />
+                </a>
+            </div>
+            <div class="col-10 ">
+                <a href="events.html ">
+                    <img src="images/events.jpg " class="img-fluid index " style="width: 1520px !important;height: 250px; " />
+                </a>
+            </div>
+            <div class="col-2 text-center mt-5 ">
+                <label>
+                    Lorem ipsum dolor sit amet,no sea takimata sanctus est Lorem ipsum dolor sit amet. consetetur sadipscing elitr, Stet clita
+                    kasd gubergren,
+                </label>
+            </div>
+            <div class="col-12 bg-secondary ">
+                <div class="offset-1 ">
+                    <div class="row ">
+                        <div class="col-3 ">
+                            <a href="http://localhost/btt%20-%20diplomski/BTT " target="_blank ">
+                                <img src="images/btt.png " class="img-fluid my-1 mx-2 " width="75 " height="75 " />
+                            </a>
+                        </div>
+                        <div class="col-4 mt-3 ">
+                            <span style="font-size:30px; ">Bosnian Tourist Travel</span>
+                        </div>
+                        <div class="col-3 text-right mt-3 ">
+                            <span style="font-size:20px; ">Partner
+                                <i class="fab fa-connectdevelop "></i>
+                            </span>
+                        </div>
+
+                    </div>
+                </div>
+            </div> -->
             <div class="col-7 mt-3 ">
                 <div class="row ">
                     <div class="col-12 ">
@@ -314,9 +572,8 @@
                 </div>
                 <div class="col-12 mt-4 ">
                     <input type="email " class="w3-input w3-gray " placeholder="you@example.com " style="color:gold !important;
-                            border-bottom-color: gold !important; " name="emailSub" id="emailSub">
-                    <button class="btn btn-secondary" id="subButton" name="subButton"><small style="color: white; ">Subscribe to the newsletter</small></button>
-                    <div class="alert" id="mess"></div>
+                            border-bottom-color: gold !important; ">
+                    <small style="color: white; ">Subscribe to the newsletter</small>
                 </div>
             </div>
             <div class="col-3 ">
@@ -408,52 +665,16 @@
         }
     </script>
 
-    <script>
-            $('#mess').fadeOut();
-                    $('#subButton').click(function () {
-                        $('#mess').removeClass('alert-danger').removeClass('alert-success')
-                        var emailSub = $('#emailSub').val();
-            
-                        function validateEmail($emailSub) {
-                            var emailReg = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/;
-                            return emailReg.test($emailSub);
-                        }
-            
-                        if (emailSub == "") {
-                            $("#mess").addClass('alert-danger');
-                            $("#mess").html("Email field is required!!!");
-                            $("#mess").fadeIn(500).delay(1000).fadeOut(500);
-                        } else if (!validateEmail(emailSub)) {
-                            $("#mess").addClass('alert-danger');
-                            $("#mess").html('Please enter validated email address.');
-                            $("#mess").fadeIn(500).delay(1000).fadeOut(500);
-                        } else {
-                $.ajax({
-                    url: "./subscribeData.php?task=subscribe&emailSub="+emailSub,
-                    success: function (data){
-                        if(data.indexOf('success') > -1){
-                            $("#mess").addClass('alert-success');
-							$("#mess").html('Thanks for your subscribtion');
-							$("#mess").fadeIn(500).delay(1000).fadeOut(500);
-                            $('#emailSub').val("");
-                        } else {
-                            $("#mess").addClass('alert-danger');
-							$("#mess").html('You are already subscribe our newsletter');
-							$("#mess").fadeIn(500).delay(1000).fadeOut(500);
-                        }
-                    },
-                    error: function (data, err){
-                        $("#mess").addClass('alert-danger');
-                        $("#mess").html('Some problem occured. Please try again later.');
-                        $("#mess").fadeIn(500).delay(1000).fadeOut(500);
-                    }
-                })
-            }
-        });
-    </script>
-
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js "></script>
     <script src="loaders.css.js "></script>
+
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js " integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN "
+        crossorigin="anonymous "></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js " integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q "
+        crossorigin="anonymous "></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js " integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl "
+        crossorigin="anonymous "></script>
 
 </body>
 

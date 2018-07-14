@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -87,7 +90,7 @@
     </article>
 
     <section class="bg">
-        
+
             <!-- class="bg-primary" style="opacity:0.7;" -->
             <div class="offset-lg-4 offest-xl-4 offset-md-2 offset-sm-3 ">
                 <div class="card" style="width: 22rem; margin-top:-30px;background:none !important; border:none;">
@@ -134,20 +137,20 @@
                             </li>
                         </ul>
                     </div>
-                    
+
                     <div class="card-body text-center" style="margin-left:100px !important; ">
                         <button class="btn btn-primary text-white" id="regButton" name="regButton">Sign up for free
                             <i class="fas fa-user-plus ml-2"></i>
                         </button>
                     </div>
                 </div>
-               
+
             </div>
-           
+
             <div class="text-center text-primary" style="margin-left:-25px !important;">
                 <p style="font-size:20px; ">&copy; 2018 COMBE</p>
             </div>
-        
+
     </section>
 
     <script>

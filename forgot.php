@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -27,7 +30,7 @@
         crossorigin="anonymous"></script>
     <link rel="stylesheet" href="loaders.min.css" />
 
-    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+     <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 
@@ -96,14 +99,19 @@
                     <div class="card-body text-center">
                         <img class="card-img-top" src="images/home.ico" style="width:90px !important; margin-top:150px !important; margin-left:100px !important;"
                             height="80" alt="Card image cap">
-                        <h3 class="card-title text-uppercase text-primary" style="margin-left:0px !important; width: 400px !important;">LOGIN</h3>
+                        <h3 class="card-title text-uppercase text-primary" style="margin-left:0px !important; width: 400px !important;">CHANGE PASSWORD</h3>
                     </div>
-                    <ul class="list-group list-group-flush" style="margin-top:-20px; width:440px">
-                        <div class="alert" id="mess"></div>
+                    <ul class="list-group list-group-flush" style="margin-top:-20px;">
+                        <li class="list-group-item bg-info"  style="background:none !important; border:none">
+                            <div class="alert" id="mess"></div>
+                        </li>
                         <li class="list-group-item bg-info" style="border:none; margin-top:-20px; background:none !important;">
-                            <input type="email" placeholder="you@example.com" class="form-control " style=" height: 50px; background: none !important; border: none; border-bottom: 1px solid black;" name="email" id="email"
+                            <input type="email" placeholder="you@example.com" class="form-control " style="width:400px; height: 50px; background: none !important; border: none; border-bottom: 1px solid black;" name="email" id="email"
                                 required="">
                         </li>
+                        <!--<li class="list-group-item bg-info" style="border:none; margin-top:-20px; background:none !important;">
+                                <input type="password" placeholder="*****" class="form-control" style="max-width:400px;" required="">
+                            </li>-->
                     </ul>
                     <table>
                         <tr>
@@ -120,21 +128,9 @@
                             </td>
                         </tr>
                     </table>
-                    <div class="row no-gutters">
-                        <div class="col-8">
-                            <a href="register.html" class="badge ml-3 text-danger" style="text-decoration:none;">
-                                <span style="font-size:13px;">No account?</span>
-                            </a>
-                        </div>
-                        <div class="col-4">
-                            <a href="forgot.html" class="badge ml-5 text-danger" style="text-decoration:none;">
-                                <span style="font-size:13px;">Forgot password?</span>
-                            </a>
-                        </div>
-                    </div>
                     <div class="card-body text-center col-2 offset-5">
-                        <button class="btn btn-primary text-white" name="logButton" id="logButton">Login
-                            <i class="fas fa-sign-in-alt ml-2"></i>
+                        <button class="btn btn-primary text-white" name="changeButton" id="changeButton">Changed Password
+                            <i class="fas fa-key ml-2"></i>
                         </button>
                     </div>
                 </div>
@@ -160,7 +156,7 @@
         });
     </script>
 
-    <script>
+     <script>
         $('#showPass').click(function () {
                 var pass_type = $('#pass').attr('type');
                 if (pass_type == "text") {
@@ -171,13 +167,13 @@
             });
     </script>
 
-    <script>
+     <script>
         $('#mess').fadeOut()
-        $('#logButton').click(function (){
+        $('#changeButton').click(function (){
 
-            function validateEmail($emailSign) {
+            function validateEmail($email) {
                 var emailReg = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/;
-                return emailReg.test($emailSign);
+                return emailReg.test($email);
             }
 
             $('#mess').removeClass('alert-success').removeClass('alert-danger').removeClass('alert-warning')
@@ -195,30 +191,21 @@
                 $("#mess").fadeIn(1000).delay(1000).fadeOut(500);
             } else if(pass == ""){
                 $("#mess").addClass('alert-danger');
-                $("#mess").html("Please set a password!");
+                $("#mess").html("Please set a new password!");
                 $("#mess").fadeIn(1000).delay(1000).fadeOut(500);
             } else {
                 $.ajax({
-                    url: "./loginData.php?task=login&email="+email+"&pass="+pass,
+                    url: "./changeData.php?task=change&email="+email+"&pass="+pass,
                     success: function (data){
                         if(data.indexOf('success') > -1){
                             $("#mess").addClass('alert-success');
-							$("#mess").html('Correct info.');
+							$("#mess").html('Password changed successfully. Now you can login with your new password');
 							$("#mess").fadeIn(500).delay(2000).fadeOut(500);
-                            
                             $('#email').val("");
                             $('#pass').val("");
-                            var delay = 2000;
-                            setTimeout(function(){
-                                window.location = "index.html"; }, delay);
-                        } else if(data.indexOf('pass') > -1){
+                        } else{
                             $("#mess").addClass('alert-danger');
-							$("#mess").html('Password is incorrect');
-							$("#mess").fadeIn(500).delay(1000).fadeOut(500);
-                            
-                        } else {
-                            $("#mess").addClass('alert-danger');
-							$("#mess").html('Email is incorrect');
+							$("#mess").html('The email is incorrect.');
 							$("#mess").fadeIn(500).delay(1000).fadeOut(500);
                         }
                     },
@@ -234,6 +221,7 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js "></script>
     <script src="loaders.css.js "></script>
+
 
 
 </body>

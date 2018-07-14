@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -66,12 +69,12 @@
                         <a href="https://www.instagram.com/bosniant/" target="_blank" class="btn btn-lg btn-primary mb-1">
                             <i class="fab fa-instagram mr-2" aria-hidden="true"></i>Instagram</a>
                         <a href="https://www.facebook.com" target="_blank" class="btn btn-lg btn-primary mb-1">
-                            <i class="fab fa-facebook mr-2" aria-hidden="true"></i>Facebook</a> 
+                            <i class="fab fa-facebook mr-2" aria-hidden="true"></i>Facebook</a>
                     </div>
         </div>
     </section>-->
 
-    <!-- <article>
+    <!--  <article>
         <div class="row">
 
             <div class="row">
@@ -115,7 +118,6 @@
 
 
     <article>
-
         <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top" style="opacity:0.8">
             <a class="navbar-brand" href="index.html">
                 <img src="images/home.ico" alt="logo" width="55" height="45">
@@ -141,13 +143,13 @@
                         <a class="nav-link " href="restaurant.html">Restaurant</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link " href="swimmingPool.html">Swimming Pool</a>
+                        <a class="nav-link active" href="swimmingPool.html">Swimming Pool</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link " href="spa.html">SPA</a>
+                        <a class="nav-link" href="spa.html">SPA</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" href="gym.html">GYM</a>
+                        <a class="nav-link" href="gym.html">GYM</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="events.html">CONFERENCE CENTER (EVENT)</a>
@@ -156,20 +158,26 @@
                         <a class="nav-link" href="feedback.html">Feedback</a>
                     </li>
                 </ul>
-                <ul class="navbar-nav ml-auto">
-                    <li class="nav-item">
-                        <a href="register.html" class="nav-link link">
-                            <span class="navLinks">
+                <?php
+if (isset($_SESSION['email'])) {
+    echo "<ul class='navbar-nav ml-auto'><li class='nav-item'><a href='signOut.php'  class='nav-link link'><span class='navLinks'><i class='fas fa-sign-in-alt mr-2'></i>Sign Out</span></a></li></ul>";
+} else {
+    echo "<ul class='navbar-nav ml-auto'>
+                    <li class='nav-item'>
+                        <a href='register.html' class='nav-link link'>
+                            <span class='navLinks'>
                                 Sing Up</span>
                         </a>
                     </li>
-                    <li class="nav-item">
-                        <a href="login.html" class="nav-link link">
-                            <span class="navLinks">
+                    <li class='nav-item'>
+                        <a href='login.html' class='nav-link link'>
+                            <span class='navLinks'>
                                 Sign In</span>
                         </a>
                     </li>
-                </ul>
+                </ul>";
+}
+?>
             </div>
         </nav>
 
@@ -183,15 +191,21 @@
                     aria-selected="false" style="color: gold;">Hotel</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" id="pills-contact-tab" data-toggle="pill" href="gym.html" role="tab" aria-controls="pills-contact" aria-selected="false">Gym</a>
+                <a class="nav-link" id="pills-contact-tab" data-toggle="pill" href="swimmingPool.html" role="tab" aria-controls="pills-contact"
+                    aria-selected="false">Swimming Pool</a>
             </li>
 
         </ul> -->
 
-        <div id="jumbotronGym" class="jumbotron jumbotron-fluid text-white d-flex justify-content-center align-items-center">
+        <div id="jumbotronSwimmingPool" class="jumbotron jumbotron-fluid text-white d-flex justify-content-center align-items-center">
             <div class="container text-center">
                 <h1 class="display-1 text-dark text-uppercase">COMBRERO HOTEL</h1>
-                <p class="display-4 d-none d-sm-block text-primary">TAKE LOOK AT BEST GYM</p>
+                <p class="display-4 d-none d-sm-block text-primary">TAKE LOOK AT SWIMMING POOL IN OUR HOTEL</p>
+                <p class="text-warning h5 mb-3">For more images follow us on:</p>
+                <a href="https://www.instagram.com/" target="_blank" class="btn btn-lg btn-dark mb-1">
+                    <i class="fab fa-instagram mr-2" aria-hidden="true"></i>Instagram</a>
+                <a href="https://www.facebook.com" target="_blank" class="btn btn-lg btn-dark mb-1">
+                    <i class="fab fa-facebook mr-2" aria-hidden="true"></i>Facebook</a>
             </div>
         </div>
 
@@ -199,7 +213,7 @@
 
         <div class="row no-gutters">
             <div class="col-12">
-                <h1 class="display-1">GYM</h1>
+                <h1 class="display-1">SWIMMING POOL</h1>
             </div>
             <div class="col-6">
                 <p>
@@ -212,74 +226,74 @@
                     Lorem ipsum dolor sit amet,sed diam voluptua. sed diam voluptua. Lorem ipsum dolor sit amet,sed diam voluptua. sed diam voluptua.
                     Lorem ipsum dolor sit amet,sed diam voluptua. sed diam voluptua.
                 </p>
-                <a href="https://www.facebook.com" class="text-warning" style="text-decoration: none">Follow us on FACEBOOK</a>
+                <a href="https://www.instagram.com" class="text-warning" style="text-decoration:none">Follow us on INSTAGRAM</a>
             </div>
-            <div class=" col-4 ">
+            <div class="col-4">
                 <p>
                     Lorem ipsum dolor sit amet,sed diam voluptua. sed diam voluptua. Lorem ipsum dolor sit amet,sed diam voluptua. sed diam voluptua.
                     Lorem ipsum dolor sit amet,sed diam voluptua. sed diam voluptua.
                 </p>
             </div>
-            <div class="col-8 ">
-                <img src="images/room.jpg " class="img-fluid " />
+            <div class="col-8">
+                <img src="images/room.jpg" class="img-fluid" />
             </div>
 
-            <div class="col-12 ">
+            <div class="col-12">
                 <section>
-                    <div id="carousel " class="carousel slide " data-ride="carousel ">
+                    <div id="carousel" class="carousel slide" data-ride="carousel">
 
-                        <div class="carousel-inner " role="listbox ">
-                            <div class="carousel-item active ">
-                                <img src="images/skyBar.jpg " alt="slide1 " class="d-block img-fluid ">
-
-                            </div>
-                            <div class="carousel-item ">
-                                <img src="images/room.jpg " alt="slide2 " class="d-block img-fluid ">
+                        <div class="carousel-inner" role="listbox">
+                            <div class="carousel-item active">
+                                <img src="images/skyBar.jpg" alt="slide1" class="d-block img-fluid">
 
                             </div>
-                            <div class="carousel-item ">
-                                <img src="images/spa.jpg " alt="slide3 " class="d-block img-fluid ">
+                            <div class="carousel-item">
+                                <img src="images/room.jpg" alt="slide2" class="d-block img-fluid">
 
                             </div>
-                            <div class="carousel-item ">
-                                <img src="images/pool.jpg " alt="slide4 " class="d-block img-fluid ">
+                            <div class="carousel-item">
+                                <img src="images/spa.jpg" alt="slide3" class="d-block img-fluid">
+
+                            </div>
+                            <div class="carousel-item">
+                                <img src="images/pool.jpg" alt="slide4" class="d-block img-fluid">
 
                             </div>
                         </div>
-                        <a href="#carousel " class="carousel-control-prev " role="button " data-slide="prev ">
-                            <span class="carousel-control-prev-icon " aria-hidden="true "></span>
-                            <span class="sr-only ">Preview</span>
+                        <a href="#carousel" class="carousel-control-prev" role="button" data-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Preview</span>
                         </a>
-                        <a href="#carousel " class="carousel-control-next " role="button " data-slide="next ">
-                            <span class="carousel-control-next-icon " aria-hidden="true "></span>
-                            <span class="sr-only ">Next</span>
+                        <a href="#carousel" class="carousel-control-next" role="button" data-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Next</span>
                         </a>
                     </div>
                 </section>
             </div>
 
-            <div class="col-6 bg-white ">
-                <h2 class="ml-3 " style="margin-top: 5%; ">You might also like:</h2>
+            <div class="col-6 bg-white">
+                <h2 class="ml-3" style="margin-top: 5%;">You might also like:</h2>
             </div>
             <div class="col-6 bg-secondary ">
                 <div class="row ">
                     <div class="col-8 ">
-                        <a href="swimmingPool.html " class="rec">
-                            <h2 class="ml-3 ">SWIMMING POOL</h2>
+                        <a href="spa.html" class="rec">
+                            <h2 class="ml-3 ">SPA</h2>
                         </a>
                     </div>
                     <div class="col-4 ">
-                        <a href="swimmingPool.html " class="rec">
+                        <a href="spa.html" class="rec">
                             <i class="fas fa-angle-up fa-rotate-90 fa-3x mt-1 " style="color:goldenrod; "></i>
                         </a>
                     </div>
                     <div class="col-6 ">
-                        <a href="spa.html " class="rec">
-                            <h2 class="ml-3 ">RELAXING AT THE SPA</h2>
+                        <a href="gym.html" class="rec">
+                            <h2 class="ml-3 ">GYM</h2>
                         </a>
                     </div>
                     <div class="col-6 ">
-                        <a href="spa.html " class="rec">
+                        <a href="gym.html" class="rec">
                             <i class="fas fa-angle-up fa-rotate-90 fa-3x mt-1 " style="color:goldenrod; "></i>
                         </a>
                     </div>
@@ -378,9 +392,9 @@
                 <div class="row ">
                     <div class="col-12 ">
                         <h2 class="ml-5 " style="font-size:40px;color:gold; ">ABOUT US</h2>
-                        <div id="carouselExampleControls " class="carousel slide " data-ride="carousel ">
-                            <div class="carousel-inner ">
-                                <div class="carousel-item active ml-5 ">
+                        <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+                            <div class="carousel-inner">
+                                <div class="carousel-item active ml-5">
                                     <div class="col-8 ">
                                         <label>
                                             Lorem ipsum dolor sit amet,sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, no sea takimata
@@ -408,12 +422,12 @@
                         </div>
                     </div>
                     <div class="col-3 offset-1 ">
-                        <a class="carousel-control-prev " href="#carouselExampleControls " role="button " data-slide="prev ">
+                        <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
                             <i class="fas fa-angle-down fa-rotate-90 fa-3x " style="color:goldenrod; "></i>
                         </a>
                     </div>
                     <div class="col-3 offset-1 text-right ">
-                        <a class="carousel-control-next " href="#carouselExampleControls " role="button " data-slide="next ">
+                        <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
                             <i class="fas fa-angle-up fa-rotate-90 fa-3x " style="color:goldenrod; "></i>
                         </a>
                     </div>
@@ -438,7 +452,6 @@
             </div>
         </div>
     </article>
-
     <footer class="w3-gray mt-3 ">
         <div class="row ml-3 ">
             <div class="col-3 ">
@@ -450,15 +463,12 @@
                         Address:
                         <br />
                         <span>
-                            <a id="map11 " data-toggle="modal " class="text-warning " data-target="#map1 " style="text-decoration:none;cursor:
-                    pointer; ">
+                            <a id="map11" data-toggle="modal" class="text-warning" data-target="#map1" style="text-decoration:none;cursor: pointer; ">
                                 <i class="fas fa-map-marker mr-2 mt-2 "></i>Grada Bakua 11</a>
-                            <div class="modal fade " id="map1 " tabindex="-1 " role="dialog " aria-labelledby="modalTitle
-                    " aria-hidden="true ">
+                            <div class="modal fade " id="map1" tabindex="-1 " role="dialog " aria-labelledby="modalTitle " aria-hidden="true ">
                                 <div class="modal-dialog modal-lg " role="document ">
                                     <div class="modal-content ">
-                                        <button type="button " class="close " data-dismiss="modal " aria-label="Close
-                    " style="float:right; ">
+                                        <button type="button " class="close " data-dismiss="modal " aria-label="Close " style="float:right; ">
                                             <span aria-hidden="true " style="float:right;margin-right:15px;margin-top:5px; ">
                                                 <i class="fas fa-times "></i>
                                             </span>
@@ -475,15 +485,12 @@
                         </span>
                         <br />
                         <span>
-                            <a id="map22 " data-toggle="modal " class="text-warning " data-target="#map2 " style="text-decoration:none;cursor:
-                    pointer; ">
+                            <a id="map22" data-toggle="modal" class="text-warning" data-target="#map2" style="text-decoration:none;cursor: pointer; ">
                                 <i class="fas fa-map-marker mr-2 mt-2 "></i>Dobrinja 3, Sarajevo</a>
-                            <div class="modal fade " id="map2 " tabindex="-1 " role="dialog " aria-labelledby="modalTitle
-                    " aria-hidden="true ">
+                            <div class="modal fade " id="map2" tabindex="-1 " role="dialog " aria-labelledby="modalTitle " aria-hidden="true ">
                                 <div class="modal-dialog modal-lg " role="document ">
                                     <div class="modal-content ">
-                                        <button type="button " class="close " data-dismiss="modal " aria-label="Close
-                    " style="float:right; ">
+                                        <button type="button " class="close " data-dismiss="modal " aria-label="Close " style="float:right; ">
                                             <span aria-hidden="true " style="float:right;margin-right:15px;margin-top:5px; ">
                                                 <i class="fas fa-times "></i>
                                             </span>
@@ -500,15 +507,12 @@
                         </span>
                         <br />
                         <span>
-                            <a href="# " id="map33 " data-toggle="modal " class="text-warning " data-target="#map3
-                    " style="text-decoration:none; ">
+                            <a href="# " id="map33" data-toggle="modal" class="text-warning" data-target="#map3" style="text-decoration:none; ">
                                 <i class="fas fa-map-marker mr-2 mt-2 "></i>Bosnia & Herzegovina</a>
-                            <div class="modal fade " id="map3 " tabindex="-1 " role="dialog " aria-labelledby="modalTitle
-                    " aria-hidden="true ">
+                            <div class="modal fade " id="map3" tabindex="-1 " role="dialog " aria-labelledby="modalTitle " aria-hidden="true ">
                                 <div class="modal-dialog modal-lg " role="document ">
                                     <div class="modal-content ">
-                                        <button type="button " class="close " data-dismiss="modal " aria-label="Close
-                    " style="float:right; ">
+                                        <button type="button " class="close " data-dismiss="modal " aria-label="Close " style="float:right; ">
                                             <span aria-hidden="true " style="float:right;margin-right:15px;margin-top:5px; ">
                                                 <i class="fas fa-times "></i>
                                             </span>
@@ -565,7 +569,7 @@
                 </div>
                 <div class="col-12 mt-4 ">
                     <input type="email " class="w3-input w3-gray " placeholder="you@example.com " style="color:gold !important;
-                    border-bottom-color: gold !important; ">
+                            border-bottom-color: gold !important; ">
                     <small style="color: white; ">Subscribe to the newsletter</small>
                 </div>
             </div>
@@ -577,21 +581,21 @@
                     <div class="row ">
                         <div class="col-2 ">
                             <label>
-                                <a href="https://www.facebook.com ">
+                                <a href="https://www.facebook.com">
                                     <i class="fab fa-facebook-f fa-3x " style="color:goldenrod; "></i>
                                 </a>
                             </label>
                         </div>
                         <div class="col-2 mr-3 ">
                             <label>
-                                <a href="https://www.instagram.com ">
+                                <a href="https://www.instagram.com">
                                     <i class="fab fa-instagram fa-3x " style="color:goldenrod; "></i>
                                 </a>
                             </label>
                         </div>
                         <div class="col-2 ">
                             <label>
-                                <a href="https://www.youtube.com ">
+                                <a href="https://www.youtube.com">
                                     <i class="fab fa-youtube fa-3x " style="color:goldenrod; "></i>
                                 </a>
                             </label>
@@ -609,11 +613,13 @@
                     </div>
                 </div>
             </div>
-            <div class="col-3 bg-warning ">
-                <a href="bookNew.html ">
+            <div class="col-3 bg-warning">
+                <a href="bookNew.html" id="book">
                     <div class=" col-12 mt-5 text-center ">
                         <i class="fa fa-5x fa-bell mt-4 "></i>
-                        <p class="h1 mt-5 ">BOOK NOW ></p>
+                        <p class="h1 mt-5 ">BOOK NOW
+                            <i class="fas fa-angle-right ml-2"></i>
+                        </p>
                     </div>
                 </a>
             </div>

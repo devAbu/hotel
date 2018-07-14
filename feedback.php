@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -27,7 +30,7 @@
         crossorigin="anonymous"></script>
     <link rel="stylesheet" href="loaders.min.css" />
 
-     <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 
@@ -77,13 +80,33 @@
                     </li>
                     <li class="nav-item">
                         <a href="hotel.html" class="nav-link link">
-                            <!-- <i class="fas fa-users mr-2"> --></i>Hotel</a>
+                            <!-- <i class="fas fa-users mr-2"></i> -->Hotel</a>
                     </li>
                     <li class="nav-item">
                         <a href="events.html" class="nav-link link">
-                            <!-- <i class="fas fa-suitcase mr-2"> --></i>Events</a>
+                            <!-- <i class="fas fa-suitcase mr-2"></i> -->Events</a>
                     </li>
                 </ul>
+                               <?php
+if (isset($_SESSION['email'])) {
+    echo "<ul class='navbar-nav ml-auto'><li class='nav-item'><a href='signOut.php'  class='nav-link link'><span class='navLinks'><i class='fas fa-sign-in-alt mr-2'></i>Sign Out</span></a></li></ul>";
+} else {
+    echo "<ul class='navbar-nav ml-auto'>
+                    <li class='nav-item'>
+                        <a href='register.html' class='nav-link link'>
+                            <span class='navLinks'>
+                                Sing Up</span>
+                        </a>
+                    </li>
+                    <li class='nav-item'>
+                        <a href='login.html' class='nav-link link'>
+                            <span class='navLinks'>
+                                Sign In</span>
+                        </a>
+                    </li>
+                </ul>";
+}
+?>
             </div>
         </nav>
     </article>
@@ -96,38 +119,16 @@
                     <div class="card-body text-center">
                         <img class="card-img-top" src="images/home.ico" style="width:90px !important; margin-top:150px !important; margin-left:100px !important;"
                             height="80" alt="Card image cap">
-                        <h3 class="card-title text-uppercase text-primary" style="margin-left:0px !important; width: 400px !important;">CHANGE PASSWORD</h3>
+                        <h3 class="card-title text-uppercase text-primary" style="margin-left:0px !important; width: 400px !important;">Write your opinion</h3>
                     </div>
-                    <ul class="list-group list-group-flush" style="margin-top:-20px;">
-                        <li class="list-group-item bg-info"  style="background:none !important; border:none">
-                            <div class="alert" id="mess"></div>
-                        </li>
-                        <li class="list-group-item bg-info" style="border:none; margin-top:-20px; background:none !important;">
-                            <input type="email" placeholder="you@example.com" class="form-control " style="width:400px; height: 50px; background: none !important; border: none; border-bottom: 1px solid black;" name="email" id="email"
-                                required="">
-                        </li>
-                        <!--<li class="list-group-item bg-info" style="border:none; margin-top:-20px; background:none !important;">
-                                <input type="password" placeholder="*****" class="form-control" style="max-width:400px;" required="">
-                            </li>-->
-                    </ul>
-                    <table>
-                        <tr>
-                            <td>
-                                <div style="margin-left:18px;">
-                                    <input type="password" placeholder="*****" class="form-control" style="width:400px !important; height: 50px; background: none !important; border: none; border-bottom: 1px solid black;"
-                                        required id="pass" name="pass">
-                                </div>
-                            </td>
-                            <td>
-                                <button type="button" class="btn btn-primary" style="margin-left:-44px !important; height: 50px; width:45px; border: none; " name="showPass" id="showPass">
-                                    <i class="fas fa-eye"></i>
-                                </button>
-                            </td>
-                        </tr>
-                    </table>
+                    <div class="alert" id="mess"></div>
+                    <div class="card-body text-center col-1 ">
+                        <textarea cols="50" rows="10" placeholder="Please write your opinion..." style="margin-left:-30px; resize:none" id="text" name="text"></textarea>
+                    </div>
+
                     <div class="card-body text-center col-2 offset-5">
-                        <button class="btn btn-primary text-white" name="changeButton" id="changeButton">Changed Password
-                            <i class="fas fa-key ml-2"></i>
+                        <button class="btn btn-primary text-white" name="feedButton" id="feedButton">Submit
+                           <i class="fas fa-comment ml-2"></i>
                         </button>
                     </div>
                 </div>
@@ -153,72 +154,42 @@
         });
     </script>
 
-     <script>
-        $('#showPass').click(function () {
-                var pass_type = $('#pass').attr('type');
-                if (pass_type == "text") {
-                    $('#pass').attr('type', 'password');
-                } else if (pass_type == "password") {
-                    $('#pass').attr('type', 'text');
-                }
-            });
-    </script>
-
-     <script>
-        $('#mess').fadeOut()
-        $('#changeButton').click(function (){
-
-            function validateEmail($email) {
-                var emailReg = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/;
-                return emailReg.test($email);
-            }
-
-            $('#mess').removeClass('alert-success').removeClass('alert-danger').removeClass('alert-warning')
-
-            var email = $('#email').val()
-            var pass = $('#pass').val()
-
-            if(email == ""){
+    <script>
+        $('#mess').fadeOut();
+        $('#feedButton').click(function(){
+            $('#mess').removeClass('alert-danger').removeClass('alert-success');
+            var text = $('#text').val();
+            if(text == "") {
                 $("#mess").addClass('alert-danger');
-                $("#mess").html("Please enter your email address!");
-                $("#mess").fadeIn(1000).delay(1000).fadeOut(500);
-            } else if(!validateEmail(email)){
-                $("#mess").addClass('alert-warning');
-                $("#mess").html("Please enter your email address correctly!");
-                $("#mess").fadeIn(1000).delay(1000).fadeOut(500);
-            } else if(pass == ""){
-                $("#mess").addClass('alert-danger');
-                $("#mess").html("Please set a new password!");
-                $("#mess").fadeIn(1000).delay(1000).fadeOut(500);
-            } else {
+                $("#mess").html("Please write your opinion!!!");
+                $("#mess").fadeIn(500).delay(1000).fadeOut(500);
+            }else {
                 $.ajax({
-                    url: "./changeData.php?task=change&email="+email+"&pass="+pass,
-                    success: function (data){
-                        if(data.indexOf('success') > -1){
+                    url: "./feedbackData?task=feedback&text="+text,
+                    success: function (data) {
+                        if(data == 'success') {
                             $("#mess").addClass('alert-success');
-							$("#mess").html('Password changed successfully. Now you can login with your new password');
-							$("#mess").fadeIn(500).delay(2000).fadeOut(500);
-                            $('#email').val("");
-                            $('#pass').val("");
-                        } else{
+							$("#mess").html('Happy to hear your opinion.');
+							$("#mess").slideDown(500).delay(1000).slideUp(500);
+                            $('#text').val("");
+                        }else {
                             $("#mess").addClass('alert-danger');
-							$("#mess").html('The email is incorrect.');
-							$("#mess").fadeIn(500).delay(1000).fadeOut(500);
+							$("#mess").html('There is some problem. Please try later');
+							$("#mess").slideDown(500).delay(1000).slideUp(500);
                         }
                     },
-                    error: function (data, err){
+                    error: function (data, err) {
                         $("#mess").addClass('alert-danger');
                         $("#mess").html('Some problem occured. Please try again later.');
-                        $("#mess").fadeIn(500).delay(1000).fadeOut(500);
+                        $("#mess").slideDown(500).delay(1000).slideUp(500);
                     }
-                })
+                });
             }
-        })
+        });
     </script>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js "></script>
     <script src="loaders.css.js "></script>
-
 
 
 </body>

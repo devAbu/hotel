@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -26,6 +29,10 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/smooth-scroll/12.1.5/js/smooth-scroll.min.js" integrity="sha256-MMt0/21G3z0Zg4ET1kI3HC9npItDowkitRDVr0FhCxA="
         crossorigin="anonymous"></script>
     <link rel="stylesheet" href="loaders.min.css" />
+
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 
     <script type="text/javascript">
         $(function () {
@@ -79,24 +86,6 @@
                         <a href="events.html" class="nav-link link">
                             <!-- <i class="fas fa-suitcase mr-2"> --></i>Events</a>
                     </li>
-                    <li class="nav-item">
-                        <a href="events.html" class="nav-link link">
-                            <!-- <i class="fas fa-suitcase mr-2"> --></i>Room</a>
-                    </li>
-                </ul>
-                <ul class="navbar-nav ml-auto">
-                    <li class="nav-item">
-                        <a href="register.html" class="nav-link link">
-                            <span class="navLinks">
-                                Sing Up</span>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="login.html" class="nav-link link">
-                            <span class="navLinks">
-                                Sign In</span>
-                        </a>
-                    </li>
                 </ul>
             </div>
         </nav>
@@ -110,68 +99,44 @@
                     <div class="card-body text-center">
                         <img class="card-img-top" src="images/home.ico" style="width:90px !important; margin-top:150px !important; margin-left:100px !important;"
                             height="80" alt="Card image cap">
-                        <h3 class="card-title text-uppercase text-primary" style="margin-left:0px !important; width: 400px !important;">Reservation</h3>
+                        <h3 class="card-title text-uppercase text-primary" style="margin-left:0px !important; width: 400px !important;">LOGIN</h3>
                     </div>
-                    <ul class="list-group list-group-flush" style="margin-top:-20px;">
+                    <ul class="list-group list-group-flush" style="margin-top:-20px; width:440px">
+                        <div class="alert" id="mess"></div>
                         <li class="list-group-item bg-info" style="border:none; margin-top:-20px; background:none !important;">
-                            <div class="row">
-                                <div class="col-4">
-                                    <img src="images/room.jpg" alt="room" width="100" height="100">
-                                </div>
-                                <div class="col-8">
-                                    <label class="text-danger">Lorem ipsum dolor sit amet, consetetur sadipscing elitr,</label>
-                                    <select>
-                                        <option>Select room</option>
-                                        <option>Room1</option>
-                                        <option>Room2</option>
-                                        <option>Room3</option>
-                                        <option>Room4</option>
-                                        <option>Room5</option>
-                                        <option>Room6</option>
-                                        <option>Room7</option>
-                                        <option>Room8</option>
-                                    </select>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="list-group-item bg-info" style="border:none; margin-top:-20px; background:none !important;">
-                            <input type="date" style="width:400px; height: 50px; background: none !important; border: none; border-bottom: 1px solid black;"
+                            <input type="email" placeholder="you@example.com" class="form-control " style=" height: 50px; background: none !important; border: none; border-bottom: 1px solid black;" name="email" id="email"
                                 required="">
                         </li>
-                        <!--<li class="list-group-item bg-info" style="border:none; margin-top:-20px; background:none !important;">
-                                <input type="password" placeholder="*****" class="form-control" style="max-width:400px;" required="">
-                            </li>-->
                     </ul>
                     <table>
                         <tr>
                             <td>
                                 <div style="margin-left:18px;">
-                                    <input type="date" style="width:400px !important; height: 50px; background: none !important; border: none; border-bottom: 1px solid black;"
-                                        required>
+                                    <input type="password" placeholder="*****" class="form-control" style="width:400px !important; height: 50px; background: none !important; border: none; border-bottom: 1px solid black;"
+                                        required id="pass" name="pass">
                                 </div>
                             </td>
-
-                        </tr>
-                        <tr>
                             <td>
-                                <div style="margin-left:18px;">
-                                    <input type="number" placeholder="Adults number..." style="width:400px !important; height: 50px; background: none !important; border: none; border-bottom: 1px solid black;"
-                                        required>
-                                </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <div style="margin-left:18px;">
-                                    <input type="number" placeholder="Child number..." style="width:400px !important; height: 50px; background: none !important; border: none; border-bottom: 1px solid black;"
-                                        required>
-                                </div>
+                                <button type="button" class="btn btn-primary" style="margin-left:-44px !important; height: 50px; width:45px; border: none; " name="showPass" id="showPass">
+                                    <i class="fas fa-eye"></i>
+                                </button>
                             </td>
                         </tr>
                     </table>
-
+                    <div class="row no-gutters">
+                        <div class="col-8">
+                            <a href="register.html" class="badge ml-3 text-danger" style="text-decoration:none;">
+                                <span style="font-size:13px;">No account?</span>
+                            </a>
+                        </div>
+                        <div class="col-4">
+                            <a href="forgot.html" class="badge ml-5 text-danger" style="text-decoration:none;">
+                                <span style="font-size:13px;">Forgot password?</span>
+                            </a>
+                        </div>
+                    </div>
                     <div class="card-body text-center col-2 offset-5">
-                        <button class="btn btn-primary text-white">Book
+                        <button class="btn btn-primary text-white" name="logButton" id="logButton">Login
                             <i class="fas fa-sign-in-alt ml-2"></i>
                         </button>
                     </div>
@@ -196,6 +161,78 @@
 
             }
         });
+    </script>
+
+    <script>
+        $('#showPass').click(function () {
+                var pass_type = $('#pass').attr('type');
+                if (pass_type == "text") {
+                    $('#pass').attr('type', 'password');
+                } else if (pass_type == "password") {
+                    $('#pass').attr('type', 'text');
+                }
+            });
+    </script>
+
+    <script>
+        $('#mess').fadeOut()
+        $('#logButton').click(function (){
+
+            function validateEmail($emailSign) {
+                var emailReg = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/;
+                return emailReg.test($emailSign);
+            }
+
+            $('#mess').removeClass('alert-success').removeClass('alert-danger').removeClass('alert-warning')
+
+            var email = $('#email').val()
+            var pass = $('#pass').val()
+
+            if(email == ""){
+                $("#mess").addClass('alert-danger');
+                $("#mess").html("Please enter your email address!");
+                $("#mess").fadeIn(1000).delay(1000).fadeOut(500);
+            } else if(!validateEmail(email)){
+                $("#mess").addClass('alert-warning');
+                $("#mess").html("Please enter your email address correctly!");
+                $("#mess").fadeIn(1000).delay(1000).fadeOut(500);
+            } else if(pass == ""){
+                $("#mess").addClass('alert-danger');
+                $("#mess").html("Please set a password!");
+                $("#mess").fadeIn(1000).delay(1000).fadeOut(500);
+            } else {
+                $.ajax({
+                    url: "./loginData.php?task=login&email="+email+"&pass="+pass,
+                    success: function (data){
+                        if(data.indexOf('success') > -1){
+                            $("#mess").addClass('alert-success');
+							$("#mess").html('Correct info.');
+							$("#mess").fadeIn(500).delay(2000).fadeOut(500);
+                            
+                            $('#email').val("");
+                            $('#pass').val("");
+                            var delay = 2000;
+                            setTimeout(function(){
+                                window.location = "index.html"; }, delay);
+                        } else if(data.indexOf('pass') > -1){
+                            $("#mess").addClass('alert-danger');
+							$("#mess").html('Password is incorrect');
+							$("#mess").fadeIn(500).delay(1000).fadeOut(500);
+                            
+                        } else {
+                            $("#mess").addClass('alert-danger');
+							$("#mess").html('Email is incorrect');
+							$("#mess").fadeIn(500).delay(1000).fadeOut(500);
+                        }
+                    },
+                    error: function (data, err){
+                        $("#mess").addClass('alert-danger');
+                        $("#mess").html('Some problem occured. Please try again later.');
+                        $("#mess").fadeIn(500).delay(1000).fadeOut(500);
+                    }
+                })
+            }
+        })
     </script>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js "></script>

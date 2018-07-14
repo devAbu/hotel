@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 session_start();
 ?>
 <!DOCTYPE html>
@@ -30,7 +30,6 @@ session_start();
         crossorigin="anonymous"></script>
     <link rel="stylesheet" href="loaders.min.css" />
 
-
     <script type="text/javascript">
         $(function () {
             var scroll = new SmoothScroll('a[href*="#top"');
@@ -52,111 +51,32 @@ session_start();
     </style>
 </head>
 
-<body id="body" data-spy="scroll">
+<body id="body" data-spy="scroll" data-target="#navScrollspy">
 
     <div class="loader">
         <div class="loader-inner ball-scale-ripple-multiple">
         </div>
     </div>
 
-    <section style="z-index:555; position:fixed; top:15%; left:35%;">
-        <div style="width:100% !important;  height:100% !important;">
-            <div class="" tabindex="2" role="dialog">
-                <div class="modal-dialog" role="document">
-                    <div class="modal-content">
-                        <div class="modal-header bg-secondary">
-                            <h5 class="modal-title">
-                                <a href="index.html">
-                                    <img src="images/home.ico" width="100" height="100" style="margin-bottom:20px;" />
-                                </a>
-                            </h5>
-                            <h3 class="mt-5 ml-4">CHOOSE YOUR LANGUAGE</h3>
-
-                        </div>
-                        <div class="modal-body bg-dark" style="margin-top:-16px">
-                            <button id="button1" type="button" class="btn btn-dark btn-block text-left prvi" onclick="button1Click();">
-                                <img src="images/english.png" class="mr-2" width="50" height="50" />
-                                <span style="font-size:25px;">English</span>
-                            </button>
-                            <button id="button2" type="button" class="btn btn-dark  btn-block text-left prvi" style="margin:0px !important;" onclick="button2Click();">
-                                <img src="images/arabia.png" class="mr-2" width="50" height="50" />
-                                <span style="font-size:25px;">Arabic</span>
-                            </button>
-                            <button id="button3" type="button" class="btn btn-dark btn-block text-left prvi" style="margin:0px !important; " onclick="button3Click();">
-                                <img src="images/turkish.png" class="mr-2" width="50" height="50" />
-                                <span style="font-size:25px;">Turkish</span>
-                            </button>
-                            <button id="button4" type="button" class="btn btn-dark btn-block text-left prvi" style="margin:0px !important;" onclick="button4Click();">
-                                <img src="images/bosna.png" class="mr-2" width="50" height="50" />
-                                <span style="font-size:25px;">Bosnian</span>
-                            </button>
-                        </div>
+    <!--<section>
+        <div id="jumbotron" class="jumbotron jumbotron-fluid text-white d-flex justify-content-center align-items-center">
+            <div class="container text-center">
+                         <h1 class="display-1 text-primary text-uppercase">BTT</h1>
+                        <p class="display-4 d-none d-sm-block">Bosnian Tourist Travel</p>
+                        <p class="lead">Visit Bosnia & Herzegovina with us!</p>
+                        <p class="lead">The best offers and price!</p>
+                        <p class="text-primary h5 mb-3">Visit us on:</p>
+                        <a href="https://www.instagram.com/bosniant/" target="_blank" class="btn btn-lg btn-primary mb-1">
+                            <i class="fab fa-instagram mr-2" aria-hidden="true"></i>Instagram</a>
+                        <a href="https://www.facebook.com" target="_blank" class="btn btn-lg btn-primary mb-1">
+                            <i class="fab fa-facebook mr-2" aria-hidden="true"></i>Facebook</a>
                     </div>
-                </div>
-            </div>
         </div>
-    </section>
+    </section>-->
 
-    <article>
-        <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top" style="opacity:0.8">
-            <a class="navbar-brand" href="index.html">
-                <img src="images/home.ico" alt="logo" width="55" height="45">
-            </a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
-                aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav">
-                    <li class="nav-item active">
-                        <a class="nav-link" href="index.html">Home
-                            <span class="sr-only">(current)</span>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="room.html">Rooms</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="skyBar.html">Sky Bar</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="restaurant.html">Restaurant</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="events.html">CONFERENCE CENTER (EVENT)</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="feedback.html">Feedback</a>
-                    </li>
-                </ul>
-                <?php
-if (isset($_SESSION['email'])) {
-    echo "<ul class='navbar-nav ml-auto'><li class='nav-item'><a href='signOut.php'  class='nav-link link'><span class='navLinks'><i class='fas fa-sign-in-alt mr-2'></i>Sign Out</span></a></li></ul>";
-} else {
-    echo "<ul class='navbar-nav ml-auto'>
-                    <li class='nav-item'>
-                        <a href='register.html' class='nav-link link'>
-                            <span class='navLinks'>
-                                Sing Up</span>
-                        </a>
-                    </li>
-                    <li class='nav-item'>
-                        <a href='login.html' class='nav-link link'>
-                            <span class='navLinks'>
-                                Sign In</span>
-                        </a>
-                    </li>
-                </ul>";
-}
-?>
-                
-            </div>
-        </nav>
+    <!-- <article>
+        <div class="row">
 
-    </article>
-
-    <!-- <article style="z-index: 999;">
-        <nav>
             <div class="row">
                 <div id="navbar">
                     <div class="col-5">
@@ -192,33 +112,203 @@ if (isset($_SESSION['email'])) {
                 <a href="#" class="w3-bar-item w3-button text-right">Link 2</a>
                 <a href="#" class="w3-bar-item w3-button text-right">Link 3</a>
             </div>
-        </nav>
+        </div>
     </article> -->
 
+
+
     <article>
-        <div class="row">
-            <div class="col-12 mt-5" id="top">
-                <video autoplay muted loop id="myVideo" class="mt-5">
-                    <source src="videos/bgVideo.mp4" type="video/mp4">
-                </video>
+
+        <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top" style="opacity:0.8">
+            <a class="navbar-brand" href="index.html">
+                <img src="images/home.ico" alt="logo" width="55" height="45">
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="index.html">Home
+                            <span class="sr-only">(current)</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="room.html">Rooms</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="skyBar.html">Sky Bar</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link " href="restaurant.html">Restaurant</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link " href="swimmingPool.html">Swimming Pool</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link " href="spa.html">SPA</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="gym.html">GYM</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="events.html">CONFERENCE CENTER (EVENT)</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="feedback.html">Feedback</a>
+                    </li>
+                </ul>
+                               <?php
+if (isset($_SESSION['email'])) {
+    echo "<ul class='navbar-nav ml-auto'><li class='nav-item'><a href='signOut.php'  class='nav-link link'><span class='navLinks'><i class='fas fa-sign-in-alt mr-2'></i>Sign Out</span></a></li></ul>";
+} else {
+    echo "<ul class='navbar-nav ml-auto'>
+                    <li class='nav-item'>
+                        <a href='register.html' class='nav-link link'>
+                            <span class='navLinks'>
+                                Sing Up</span>
+                        </a>
+                    </li>
+                    <li class='nav-item'>
+                        <a href='login.html' class='nav-link link'>
+                            <span class='navLinks'>
+                                Sign In</span>
+                        </a>
+                    </li>
+                </ul>";
+}
+?>
+            </div>
+        </nav>
+
+        <!-- <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist" style="position: fixed;">
+            <li class="nav-item">
+                <a class="nav-link" id="pills-home-tab" data-toggle="pill" href="index.html" role="tab" aria-controls="pills-home" aria-selected="true"
+                    style="color: gold; ">Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" id="pills-profile-tab" data-toggle="pill" href="hotel.html" role="tab" aria-controls="pills-profile"
+                    aria-selected="false" style="color: gold;">Hotel</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" id="pills-contact-tab" data-toggle="pill" href="gym.html" role="tab" aria-controls="pills-contact" aria-selected="false">Gym</a>
+            </li>
+
+        </ul> -->
+
+        <div id="jumbotronGym" class="jumbotron jumbotron-fluid text-white d-flex justify-content-center align-items-center">
+            <div class="container text-center">
+                <h1 class="display-1 text-dark text-uppercase">COMBRERO HOTEL</h1>
+                <p class="display-4 d-none d-sm-block text-primary">TAKE LOOK AT BEST GYM</p>
+            </div>
+        </div>
+
+
+
+        <div class="row no-gutters">
+            <div class="col-12">
+                <h1 class="display-1">GYM</h1>
+            </div>
+            <div class="col-6">
+                <p>
+                    Lorem ipsum dolor sit amet,sed diam voluptua. sed diam voluptua. Lorem ipsum dolor sit amet,sed diam voluptua. sed diam voluptua.
+                    Lorem ipsum dolor sit amet,sed diam voluptua. sed diam voluptua.
+                </p>
+            </div>
+            <div class="col-6">
+                <p>
+                    Lorem ipsum dolor sit amet,sed diam voluptua. sed diam voluptua. Lorem ipsum dolor sit amet,sed diam voluptua. sed diam voluptua.
+                    Lorem ipsum dolor sit amet,sed diam voluptua. sed diam voluptua.
+                </p>
+                <a href="https://www.facebook.com" class="text-warning" style="text-decoration: none">Follow us on FACEBOOK</a>
+            </div>
+            <div class=" col-4 ">
+                <p>
+                    Lorem ipsum dolor sit amet,sed diam voluptua. sed diam voluptua. Lorem ipsum dolor sit amet,sed diam voluptua. sed diam voluptua.
+                    Lorem ipsum dolor sit amet,sed diam voluptua. sed diam voluptua.
+                </p>
+            </div>
+            <div class="col-8 ">
+                <img src="images/room.jpg " class="img-fluid " />
             </div>
 
-        </div>
-    </article>
+            <div class="col-12 ">
+                <section>
+                    <div id="carousel " class="carousel slide " data-ride="carousel ">
 
-    <article>
-        <div class="row no-gutters">
-            <div class="col-6">
-                <div class="row">
-                    <div class="col-12">
-                        <a href="room.html">
-                            <img src="images/room.jpg" class="img-fluid index" />
+                        <div class="carousel-inner " role="listbox ">
+                            <div class="carousel-item active ">
+                                <img src="images/skyBar.jpg " alt="slide1 " class="d-block img-fluid ">
+
+                            </div>
+                            <div class="carousel-item ">
+                                <img src="images/room.jpg " alt="slide2 " class="d-block img-fluid ">
+
+                            </div>
+                            <div class="carousel-item ">
+                                <img src="images/spa.jpg " alt="slide3 " class="d-block img-fluid ">
+
+                            </div>
+                            <div class="carousel-item ">
+                                <img src="images/pool.jpg " alt="slide4 " class="d-block img-fluid ">
+
+                            </div>
+                        </div>
+                        <a href="#carousel " class="carousel-control-prev " role="button " data-slide="prev ">
+                            <span class="carousel-control-prev-icon " aria-hidden="true "></span>
+                            <span class="sr-only ">Preview</span>
+                        </a>
+                        <a href="#carousel " class="carousel-control-next " role="button " data-slide="next ">
+                            <span class="carousel-control-next-icon " aria-hidden="true "></span>
+                            <span class="sr-only ">Next</span>
+                        </a>
+                    </div>
+                </section>
+            </div>
+
+            <div class="col-6 bg-white ">
+                <h2 class="ml-3 " style="margin-top: 5%; ">You might also like:</h2>
+            </div>
+            <div class="col-6 bg-secondary ">
+                <div class="row ">
+                    <div class="col-8 ">
+                        <a href="swimmingPool.html " class="rec">
+                            <h2 class="ml-3 ">SWIMMING POOL</h2>
+                        </a>
+                    </div>
+                    <div class="col-4 ">
+                        <a href="swimmingPool.html " class="rec">
+                            <i class="fas fa-angle-up fa-rotate-90 fa-3x mt-1 " style="color:goldenrod; "></i>
+                        </a>
+                    </div>
+                    <div class="col-6 ">
+                        <a href="spa.html " class="rec">
+                            <h2 class="ml-3 ">RELAXING AT THE SPA</h2>
+                        </a>
+                    </div>
+                    <div class="col-6 ">
+                        <a href="spa.html " class="rec">
+                            <i class="fas fa-angle-up fa-rotate-90 fa-3x mt-1 " style="color:goldenrod; "></i>
                         </a>
                     </div>
                 </div>
-                <div class="row no-gutters">
-                    <div class="col-6">
-                        <img src="images/food.jpg" class="img-fluid" style="width: 1520px !important; " />
+            </div>
+
+
+
+
+            <!--  <div class="col-6 ">
+                <div class="row ">
+                    <div class="col-12 ">
+                        <a href="room.html ">
+                            <img src="images/room.jpg " class="img-fluid index " />
+                        </a>
+                    </div>
+                </div>
+                <div class="row no-gutters ">
+                    <div class="col-6 ">
+                        <img src="images/food.jpg " class="img-fluid " style="width: 1520px !important; " />
                     </div>
                     <div class=" col-6 text-center mt-5 ">
                         <label>
@@ -230,12 +320,12 @@ if (isset($_SESSION['email'])) {
             </div>
             <div class="col-6 ">
                 <a href="skyBar.html ">
-                    <img src="images/skyBar.jpg " class="img-fluid index" style="height: 580px;" />
+                    <img src="images/skyBar.jpg " class="img-fluid index " style="height: 580px; " />
                 </a>
             </div>
             <div class="col-10 ">
                 <a href="events.html ">
-                    <img src="images/events.jpg " class="img-fluid index" style="width: 1520px !important;height: 250px; " />
+                    <img src="images/events.jpg " class="img-fluid index " style="width: 1520px !important;height: 250px; " />
                 </a>
             </div>
             <div class="col-2 text-center mt-5 ">
@@ -248,23 +338,23 @@ if (isset($_SESSION['email'])) {
                 <img src="images/namjestaj.jpg " class="img-fluid " />
             </div>
             <div class="col-6 ">
-                <a href="swimmingPool.html">
+                <a href="pool.html ">
                     <img src="images/pool.jpg " class="img-fluid index " />
                 </a>
             </div>
             <div class="col-6 ">
-                <a href="restaurant.html">
+                <a href="coffee.html ">
                     <img src="images/kafa.jpg " class="img-fluid index " />
                 </a>
             </div>
             <div class="col-6 ">
                 <a href="spa.html ">
-                    <img src="images/spa.jpg " class="img-fluid index" style="height: 445px;" />
+                    <img src="images/spa.jpg " class="img-fluid index " style="height: 445px; " />
                 </a>
             </div>
             <div class="col-10 ">
                 <a href="events.html ">
-                    <img src="images/events.jpg " class="img-fluid index" style="width: 1520px !important;height: 250px; " />
+                    <img src="images/events.jpg " class="img-fluid index " style="width: 1520px !important;height: 250px; " />
                 </a>
             </div>
             <div class="col-2 text-center mt-5 ">
@@ -277,33 +367,29 @@ if (isset($_SESSION['email'])) {
                 <div class="offset-1 ">
                     <div class="row ">
                         <div class="col-3 ">
-                            <a href="http://localhost/github/btt-diplomski " target="_blank " class="rec">
+                            <a href="http://localhost/btt%20-%20diplomski/BTT " target="_blank ">
                                 <img src="images/btt.png " class="img-fluid my-1 mx-2 " width="75 " height="75 " />
                             </a>
                         </div>
                         <div class="col-4 mt-3 ">
-                            <a href="http://localhost/github/btt-diplomski " target="_blank " class="rec">
-                                <span style="font-size:30px; ">Bosnian Tourist Travel</span>
-                            </a>
+                            <span style="font-size:30px; ">Bosnian Tourist Travel</span>
                         </div>
                         <div class="col-3 text-right mt-3 ">
-                            <a href="http://localhost/github/btt-diplomski " target="_blank " class="rec">
-                                <span style="font-size:20px; ">Partner
-                                    <i class="fab fa-connectdevelop "></i>
-                                </span>
-                            </a>
+                            <span style="font-size:20px; ">Partner
+                                <i class="fab fa-connectdevelop "></i>
+                            </span>
                         </div>
 
                     </div>
                 </div>
-            </div>
+            </div> -->
             <div class="col-7 mt-3 ">
                 <div class="row ">
                     <div class="col-12 ">
                         <h2 class="ml-5 " style="font-size:40px;color:gold; ">ABOUT US</h2>
-                        <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
-                            <div class="carousel-inner">
-                                <div class="carousel-item active ml-5">
+                        <div id="carouselExampleControls " class="carousel slide " data-ride="carousel ">
+                            <div class="carousel-inner ">
+                                <div class="carousel-item active ml-5 ">
                                     <div class="col-8 ">
                                         <label>
                                             Lorem ipsum dolor sit amet,sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, no sea takimata
@@ -331,12 +417,12 @@ if (isset($_SESSION['email'])) {
                         </div>
                     </div>
                     <div class="col-3 offset-1 ">
-                        <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+                        <a class="carousel-control-prev " href="#carouselExampleControls " role="button " data-slide="prev ">
                             <i class="fas fa-angle-down fa-rotate-90 fa-3x " style="color:goldenrod; "></i>
                         </a>
                     </div>
                     <div class="col-3 offset-1 text-right ">
-                        <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+                        <a class="carousel-control-next " href="#carouselExampleControls " role="button " data-slide="next ">
                             <i class="fas fa-angle-up fa-rotate-90 fa-3x " style="color:goldenrod; "></i>
                         </a>
                     </div>
@@ -361,6 +447,7 @@ if (isset($_SESSION['email'])) {
             </div>
         </div>
     </article>
+
     <footer class="w3-gray mt-3 ">
         <div class="row ml-3 ">
             <div class="col-3 ">
@@ -372,12 +459,15 @@ if (isset($_SESSION['email'])) {
                         Address:
                         <br />
                         <span>
-                            <a id="map11" data-toggle="modal" class="text-warning" data-target="#map1" style="text-decoration:none;cursor: pointer; ">
+                            <a id="map11 " data-toggle="modal " class="text-warning " data-target="#map1 " style="text-decoration:none;cursor:
+                    pointer; ">
                                 <i class="fas fa-map-marker mr-2 mt-2 "></i>Grada Bakua 11</a>
-                            <div class="modal fade " id="map1" tabindex="-1 " role="dialog " aria-labelledby="modalTitle " aria-hidden="true ">
+                            <div class="modal fade " id="map1 " tabindex="-1 " role="dialog " aria-labelledby="modalTitle
+                    " aria-hidden="true ">
                                 <div class="modal-dialog modal-lg " role="document ">
                                     <div class="modal-content ">
-                                        <button type="button " class="close " data-dismiss="modal " aria-label="Close " style="float:right; ">
+                                        <button type="button " class="close " data-dismiss="modal " aria-label="Close
+                    " style="float:right; ">
                                             <span aria-hidden="true " style="float:right;margin-right:15px;margin-top:5px; ">
                                                 <i class="fas fa-times "></i>
                                             </span>
@@ -394,12 +484,15 @@ if (isset($_SESSION['email'])) {
                         </span>
                         <br />
                         <span>
-                            <a id="map22" data-toggle="modal" class="text-warning" data-target="#map2" style="text-decoration:none;cursor: pointer; ">
+                            <a id="map22 " data-toggle="modal " class="text-warning " data-target="#map2 " style="text-decoration:none;cursor:
+                    pointer; ">
                                 <i class="fas fa-map-marker mr-2 mt-2 "></i>Dobrinja 3, Sarajevo</a>
-                            <div class="modal fade " id="map2" tabindex="-1 " role="dialog " aria-labelledby="modalTitle " aria-hidden="true ">
+                            <div class="modal fade " id="map2 " tabindex="-1 " role="dialog " aria-labelledby="modalTitle
+                    " aria-hidden="true ">
                                 <div class="modal-dialog modal-lg " role="document ">
                                     <div class="modal-content ">
-                                        <button type="button " class="close " data-dismiss="modal " aria-label="Close " style="float:right; ">
+                                        <button type="button " class="close " data-dismiss="modal " aria-label="Close
+                    " style="float:right; ">
                                             <span aria-hidden="true " style="float:right;margin-right:15px;margin-top:5px; ">
                                                 <i class="fas fa-times "></i>
                                             </span>
@@ -416,12 +509,15 @@ if (isset($_SESSION['email'])) {
                         </span>
                         <br />
                         <span>
-                            <a href="# " id="map33" data-toggle="modal" class="text-warning" data-target="#map3" style="text-decoration:none; ">
+                            <a href="# " id="map33 " data-toggle="modal " class="text-warning " data-target="#map3
+                    " style="text-decoration:none; ">
                                 <i class="fas fa-map-marker mr-2 mt-2 "></i>Bosnia & Herzegovina</a>
-                            <div class="modal fade " id="map3" tabindex="-1 " role="dialog " aria-labelledby="modalTitle " aria-hidden="true ">
+                            <div class="modal fade " id="map3 " tabindex="-1 " role="dialog " aria-labelledby="modalTitle
+                    " aria-hidden="true ">
                                 <div class="modal-dialog modal-lg " role="document ">
                                     <div class="modal-content ">
-                                        <button type="button " class="close " data-dismiss="modal " aria-label="Close " style="float:right; ">
+                                        <button type="button " class="close " data-dismiss="modal " aria-label="Close
+                    " style="float:right; ">
                                             <span aria-hidden="true " style="float:right;margin-right:15px;margin-top:5px; ">
                                                 <i class="fas fa-times "></i>
                                             </span>
@@ -478,7 +574,7 @@ if (isset($_SESSION['email'])) {
                 </div>
                 <div class="col-12 mt-4 ">
                     <input type="email " class="w3-input w3-gray " placeholder="you@example.com " style="color:gold !important;
-                            border-bottom-color: gold !important; ">
+                    border-bottom-color: gold !important; ">
                     <small style="color: white; ">Subscribe to the newsletter</small>
                 </div>
             </div>
@@ -490,21 +586,21 @@ if (isset($_SESSION['email'])) {
                     <div class="row ">
                         <div class="col-2 ">
                             <label>
-                                <a href="https://www.facebook.com">
+                                <a href="https://www.facebook.com ">
                                     <i class="fab fa-facebook-f fa-3x " style="color:goldenrod; "></i>
                                 </a>
                             </label>
                         </div>
                         <div class="col-2 mr-3 ">
                             <label>
-                                <a href="https://www.instagram.com">
+                                <a href="https://www.instagram.com ">
                                     <i class="fab fa-instagram fa-3x " style="color:goldenrod; "></i>
                                 </a>
                             </label>
                         </div>
                         <div class="col-2 ">
                             <label>
-                                <a href="https://www.youtube.com">
+                                <a href="https://www.youtube.com ">
                                     <i class="fab fa-youtube fa-3x " style="color:goldenrod; "></i>
                                 </a>
                             </label>
@@ -522,74 +618,29 @@ if (isset($_SESSION['email'])) {
                     </div>
                 </div>
             </div>
-            <div class="col-3 bg-warning">
-                <a href="bookNew.html" id="book">
+            <div class="col-3 bg-warning ">
+                <a href="bookNew.html ">
                     <div class=" col-12 mt-5 text-center ">
                         <i class="fa fa-5x fa-bell mt-4 "></i>
-                        <p class="h1 mt-5 ">BOOK NOW
-                            <i class="fas fa-angle-right ml-2"></i>
-                        </p>
+                        <p class="h1 mt-5 ">BOOK NOW ></p>
                     </div>
                 </a>
             </div>
         </div>
     </footer>
     <script>
-        $('section').hide();
         $('article').hide();
         $('footer').hide();
+        $('section').hide();
         $(window).on({
             load: function () {
                 $('.loader').hide();
-                $('article').hide();
-                document.getElementById('body').style.backgroundColor = "silver ";
+                $('article').show();
                 $('section').show();
-
+                $('footer').show();
+                document.getElementById('body').style.backgroundColor = "silver ";
             }
         })
-
-        function button1Click() {
-            $('article').show();
-            $('.loader').hide();
-            $('section').hide();
-            $('footer').show();
-
-
-        }
-
-        function button2Click() {
-            $('article').show();
-            $('.loader').hide();
-            $('section').hide();
-            $('footer').show();
-
-        }
-
-        function button3Click() {
-            $('article').show();
-            $('.loader').hide();
-            $('section').hide();
-            $('footer').show();
-        }
-
-        function button4Click() {
-            $('article').show();
-            $('.loader').hide();
-            $('section').hide();
-            $('footer').show();
-        }
-
-        /*window.onscroll = function () {
-            scrollFunction()
-        };*/
-
-        /*function scrollFunction() {
-            if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
-                document.getElementById("navbar ").style.top = "0 ";
-            } else {
-                document.getElementById("navbar ").style.top = "-50px ";
-            }
-        }*/
     </script>
 
     <script>
@@ -618,12 +669,12 @@ if (isset($_SESSION['email'])) {
     <script src="loaders.css.js "></script>
 
 
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-        crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-        crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
-        crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js " integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN "
+        crossorigin="anonymous "></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js " integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q "
+        crossorigin="anonymous "></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js " integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl "
+        crossorigin="anonymous "></script>
 
 </body>
 
