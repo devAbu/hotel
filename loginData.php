@@ -22,6 +22,8 @@ if ($_REQUEST['task'] == "login") {
                     $response = @mysqli_query($connection, $query);
                     if ($response) {
                         echo ('success');
+                        session_start();
+                        $_SESSION["email"] = $row["email"];
                     } else {
                         echo mysqli_error($connection);
                     }
