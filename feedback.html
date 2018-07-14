@@ -27,6 +27,10 @@
         crossorigin="anonymous"></script>
     <link rel="stylesheet" href="loaders.min.css" />
 
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
     <script type="text/javascript">
         $(function () {
             var scroll = new SmoothScroll('a[href*="#top"');
@@ -108,13 +112,14 @@
                             height="80" alt="Card image cap">
                         <h3 class="card-title text-uppercase text-primary" style="margin-left:0px !important; width: 400px !important;">Write your opinion</h3>
                     </div>
+                    <div class="alert" id="mess"></div>
                     <div class="card-body text-center col-1 ">
-                        <textarea cols="50" rows="10" placeholder="Please write your opinion..." style="margin-left:-30px; resize:none"></textarea>
+                        <textarea cols="50" rows="10" placeholder="Please write your opinion..." style="margin-left:-30px; resize:none" id="text" name="text"></textarea>
                     </div>
 
                     <div class="card-body text-center col-2 offset-5">
-                        <button class="btn btn-primary text-white">Submit
-                            <i class="fas fa-sign-in-alt ml-2"></i>
+                        <button class="btn btn-primary text-white" name="feedButton" id="feedButton">Submit
+                           <i class="fas fa-comment ml-2"></i>
                         </button>
                     </div>
                 </div>
@@ -140,6 +145,39 @@
         });
     </script>
 
+    <script>
+        $('#mess').fadeOut();
+        $('#feedButton').click(function(){
+            $('#mess').removeClass('alert-danger').removeClass('alert-success');
+            var text = $('#text').val();
+            if(text == "") {
+                $("#mess").addClass('alert-danger');
+                $("#mess").html("Please write your opinion!!!");
+                $("#mess").fadeIn(500).delay(1000).fadeOut(500);
+            }else {
+                $.ajax({
+                    url: "./feedbackData?task=feedback&text="+text,
+                    success: function (data) {
+                        if(data == 'success') {
+                            $("#mess").addClass('alert-success');
+							$("#mess").html('Happy to hear your opinion.');
+							$("#mess").slideDown(500).delay(1000).slideUp(500);
+                            $('#text').val("");
+                        }else {
+                            $("#mess").addClass('alert-danger');
+							$("#mess").html('There is some problem. Please try later');
+							$("#mess").slideDown(500).delay(1000).slideUp(500);
+                        }
+                    },
+                    error: function (data, err) {
+                        $("#mess").addClass('alert-danger');
+                        $("#mess").html('Some problem occured. Please try again later.');
+                        $("#mess").slideDown(500).delay(1000).slideUp(500);
+                    }
+                });
+            }
+        });
+    </script>
 
 
 </body>
