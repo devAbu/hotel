@@ -210,6 +210,7 @@ if (isset($_SESSION['email'])) {
             <div class="col-6">
                 <div class="row">
                     <div class="col-12">
+
                         <a href="room.html">
                             <img src="images/room.jpg" class="img-fluid index" />
                         </a>
