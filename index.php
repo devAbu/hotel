@@ -5,7 +5,7 @@ session_start();
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
+   <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link href="style.css" type="text/css" rel="stylesheet">
@@ -20,15 +20,16 @@ session_start();
     <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-        crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-        crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
-        crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/smooth-scroll/12.1.5/js/smooth-scroll.min.js" integrity="sha256-MMt0/21G3z0Zg4ET1kI3HC9npItDowkitRDVr0FhCxA="
         crossorigin="anonymous"></script>
     <link rel="stylesheet" href="loaders.min.css" />
+
+     <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 
 
     <script type="text/javascript">
@@ -478,8 +479,9 @@ if (isset($_SESSION['email'])) {
                 </div>
                 <div class="col-12 mt-4 ">
                     <input type="email " class="w3-input w3-gray " placeholder="you@example.com " style="color:gold !important;
-                            border-bottom-color: gold !important; ">
-                    <small style="color: white; ">Subscribe to the newsletter</small>
+                            border-bottom-color: gold !important; " name="emailSub" id="emailSub" onkeyup="check()">
+                    <button class="btn btn-secondary" id="subButton" name="subButton"><small style="color: white; ">Subscribe to the newsletter</small></button>
+                    <div class="alert" id="mess"></div>
                 </div>
             </div>
             <div class="col-3 ">
@@ -544,12 +546,14 @@ if (isset($_SESSION['email'])) {
                 $('article').hide();
                 document.getElementById('body').style.backgroundColor = "silver ";
                 $('section').show();
+                $('#subButton').prop('disabled', true);
+                $('#subButton').css('cursor', 'not-allowed');
 
             }
         })
 
         function button1Click() {
-            $('article').show();
+            $('article').fadeIn();
             $('.loader').hide();
             $('section').hide();
             $('footer').show();
@@ -579,51 +583,71 @@ if (isset($_SESSION['email'])) {
             $('footer').show();
         }
 
-        /*window.onscroll = function () {
-            scrollFunction()
-        };*/
+    </script>
 
-        /*function scrollFunction() {
-            if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
-                document.getElementById("navbar ").style.top = "0 ";
-            } else {
-                document.getElementById("navbar ").style.top = "-50px ";
+<script>
+        function check(){
+            var emailSub = $('#emailSub').val();
+            
+            if(emailSub == "" ){
+                $('#subButton').prop('disabled', true);
+                $('#subButton').css('cursor', 'not-allowed');
+            } else if(emailSub != "" ){
+                $('#subButton').prop('disabled', false);
+                $('#subButton').css('cursor', '');
             }
-        }*/
+        }
     </script>
 
     <script>
-        function openLeftMenu() {
-            document.getElementById("leftMenu ").style.display = "block ";
-            document.getElementById('leftMenu').style.width = "100% ";
-        }
+            $('#mess').fadeOut();
+                    $('#subButton').click(function () {
+                        $('#mess').removeClass('alert-danger').removeClass('alert-success')
+                        var emailSub = $('#emailSub').val();
 
-        function closeLeftMenu() {
-            document.getElementById("leftMenu ").style.display = "none ";
-            document.getElementById('leftMenu').style.width = "0% ";
-        }
+                        function validateEmail($emailSub) {
+                            var emailReg = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/;
+                            return emailReg.test($emailSub);
+                        }
 
-        function openRightMenu() {
-            document.getElementById("rightMenu ").style.display = "block ";
-            document.getElementById('rightMenu').style.width = "100% ";
-        }
-
-        function closeRightMenu() {
-            document.getElementById("rightMenu ").style.display = "none ";
-            document.getElementById('rightMenu').style.width = "0% ";
-        }
+                        if (emailSub == "") {
+                            $("#mess").addClass('alert-danger');
+                            $("#mess").html("Email field is required!!!");
+                            $("#mess").fadeIn(500).delay(1000).fadeOut(500);
+                        } else if (!validateEmail(emailSub)) {
+                            $("#mess").addClass('alert-danger');
+                            $("#mess").html('Please enter validated email address.');
+                            $("#mess").fadeIn(500).delay(1000).fadeOut(500);
+                        } else {
+                $.ajax({
+                    url: "./subscribeData.php?task=subscribe&emailSub="+emailSub,
+                    success: function (data){
+                        if(data.indexOf('success') > -1){
+                            $("#mess").addClass('alert-success');
+							$("#mess").html('Thanks for your subscribtion');
+							$("#mess").fadeIn(500).delay(1000).fadeOut(500);
+                            $('#emailSub').val("");
+                            $('#subButton').prop('disabled', true);
+                $('#subButton').css('cursor', 'not-allowed');
+                        } else {
+                            $("#mess").addClass('alert-danger');
+							$("#mess").html('You are already subscribe our newsletter');
+							$("#mess").fadeIn(500).delay(1000).fadeOut(500);
+                        }
+                    },
+                    error: function (data, err){
+                        $("#mess").addClass('alert-danger');
+                        $("#mess").html('Some problem occured. Please try again later.');
+                        $("#mess").fadeIn(500).delay(1000).fadeOut(500);
+                    }
+                })
+            }
+        });
     </script>
+
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js "></script>
     <script src="loaders.css.js "></script>
-
-
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-        crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-        crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
-        crossorigin="anonymous"></script>
 
 </body>
 
