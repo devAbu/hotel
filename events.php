@@ -62,7 +62,7 @@ session_start();
     <article>
 
         <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top" style="opacity:0.8">
-            <a class="navbar-brand" href="index.html">
+            <a class="navbar-brand" href="index">
                 <img src="images/home.ico" alt="logo" width="55" height="45">
             </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
@@ -72,7 +72,7 @@ session_start();
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav">
                     <li class="nav-item active">
-                        <a class="nav-link" href="index.html">Home
+                        <a class="nav-link" href="index">Home
                             <span class="sr-only">(current)</span>
                         </a>
                     </li>
@@ -89,13 +89,13 @@ if (isset($_SESSION['email'])) {
 } else {
     echo "<ul class='navbar-nav ml-auto'>
                     <li class='nav-item'>
-                        <a href='register.html' class='nav-link link'>
+                        <a href='register' class='nav-link link'>
                             <span class='navLinks'>
                                 Sing Up</span>
                         </a>
                     </li>
                     <li class='nav-item'>
-                        <a href='login.html' class='nav-link link'>
+                        <a href='login' class='nav-link link'>
                             <span class='navLinks'>
                                 Sign In</span>
                         </a>
@@ -369,7 +369,7 @@ if (isset($_SESSION['email'])) {
                 </div>
             </div>
             <div class="col-3 bg-warning">
-                <a href="bookNew.html" id="book">
+                <a href="bookNew" id="book">
                     <div class=" col-12 mt-5 text-center ">
                         <i class="fa fa-5x fa-bell mt-4 "></i>
                         <p class="h1 mt-5 ">BOOK NOW

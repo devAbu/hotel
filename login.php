@@ -64,7 +64,7 @@ session_start();
 
     <article>
         <nav class="navbar bg-primary navbar-dark navbar-expand-md fixed-top" style="opacity:0.7; font-size:18px;">
-            <a href="index.html" class="navbar-brand">
+            <a href="index" class="navbar-brand">
                 <img src="images/home.ico" alt="logo" class="img-fluid mr-3" width="45" height="45" />
                 <span class="h4">COMBRERO HOTEL</span>
             </a>
@@ -75,15 +75,15 @@ session_start();
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav" id="navScrollspy">
                     <li class="nav-item">
-                        <a href="index.html" class="nav-link link active">
+                        <a href="index" class="nav-link link active">
                             <!-- <i class="fas fa-home mr-2"></i> -->Home</a>
                     </li>
                     <li class="nav-item">
-                        <a href="hotel.html" class="nav-link link">
+                        <a href="hotel" class="nav-link link">
                             <!-- <i class="fas fa-users mr-2"> --></i>Hotel</a>
                     </li>
                     <li class="nav-item">
-                        <a href="events.html" class="nav-link link">
+                        <a href="events" class="nav-link link">
                             <!-- <i class="fas fa-suitcase mr-2"> --></i>Events</a>
                     </li>
                 </ul>
@@ -125,12 +125,12 @@ session_start();
                     </table>
                     <div class="row no-gutters">
                         <div class="col-8">
-                            <a href="register.html" class="badge ml-3 text-danger" style="text-decoration:none;">
+                            <a href="register" class="badge ml-3 text-danger" style="text-decoration:none;">
                                 <span style="font-size:13px;">No account?</span>
                             </a>
                         </div>
                         <div class="col-4">
-                            <a href="forgot.html" class="badge ml-5 text-danger" style="text-decoration:none;">
+                            <a href="forgot" class="badge ml-5 text-danger" style="text-decoration:none;">
                                 <span style="font-size:13px;">Forgot password?</span>
                             </a>
                         </div>
@@ -227,9 +227,11 @@ session_start();
                             
                             $('#email').val("");
                             $('#pass').val("");
+                            $('#logButton').prop('disabled', true);
+                $('#logButton').css('cursor', 'not-allowed');
                             var delay = 2000;
                             setTimeout(function(){
-                                window.location = "index.html"; }, delay);
+                                window.location = "index"; }, delay);
                         } else if(data.indexOf('pass') > -1){
                             $("#mess").addClass('alert-danger');
 							$("#mess").html('Password is incorrect');

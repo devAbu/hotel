@@ -89,7 +89,7 @@ session_start();
                     </div>
                     <div class="col-6">
                         <div class="img-fluid w3-left">
-                            <a href="index.html">
+                            <a href="index">
                                 <img src="images/home.ico" width="50" height="50" style="position:fixed; margin-left:50px;" />
                             </a>
                         </div>
@@ -123,7 +123,7 @@ session_start();
     <article>
 
         <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top" style="opacity:0.8">
-            <a class="navbar-brand" href="index.html">
+            <a class="navbar-brand" href="index">
                 <img src="images/home.ico" alt="logo" width="55" height="45">
             </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
@@ -133,33 +133,33 @@ session_start();
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav">
                     <li class="nav-item active">
-                        <a class="nav-link" href="index.html">Home
+                        <a class="nav-link" href="index">Home
                             <span class="sr-only">(current)</span>
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="room.html">Rooms</a>
+                        <a class="nav-link" href="room">Rooms</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="skyBar.html">Sky Bar</a>
+                        <a class="nav-link" href="skyBar">Sky Bar</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link " href="restaurant.html">Restaurant</a>
+                        <a class="nav-link " href="restaurant">Restaurant</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link " href="swimmingPool.html">Swimming Pool</a>
+                        <a class="nav-link " href="swimmingPool">Swimming Pool</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link " href="spa.html">SPA</a>
+                        <a class="nav-link " href="spa">SPA</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" href="gym.html">GYM</a>
+                        <a class="nav-link active" href="gym">GYM</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="events.html">CONFERENCE CENTER (EVENT)</a>
+                        <a class="nav-link" href="events">CONFERENCE CENTER (EVENT)</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="feedback.html">Feedback</a>
+                        <a class="nav-link" href="feedback">Feedback</a>
                     </li>
                 </ul>
                                <?php
@@ -168,13 +168,13 @@ if (isset($_SESSION['email'])) {
 } else {
     echo "<ul class='navbar-nav ml-auto'>
                     <li class='nav-item'>
-                        <a href='register.html' class='nav-link link'>
+                        <a href='register' class='nav-link link'>
                             <span class='navLinks'>
                                 Sing Up</span>
                         </a>
                     </li>
                     <li class='nav-item'>
-                        <a href='login.html' class='nav-link link'>
+                        <a href='login' class='nav-link link'>
                             <span class='navLinks'>
                                 Sign In</span>
                         </a>
@@ -187,15 +187,15 @@ if (isset($_SESSION['email'])) {
 
         <!-- <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist" style="position: fixed;">
             <li class="nav-item">
-                <a class="nav-link" id="pills-home-tab" data-toggle="pill" href="index.html" role="tab" aria-controls="pills-home" aria-selected="true"
+                <a class="nav-link" id="pills-home-tab" data-toggle="pill" href="index" role="tab" aria-controls="pills-home" aria-selected="true"
                     style="color: gold; ">Home</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" id="pills-profile-tab" data-toggle="pill" href="hotel.html" role="tab" aria-controls="pills-profile"
+                <a class="nav-link" id="pills-profile-tab" data-toggle="pill" href="hotel" role="tab" aria-controls="pills-profile"
                     aria-selected="false" style="color: gold;">Hotel</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" id="pills-contact-tab" data-toggle="pill" href="gym.html" role="tab" aria-controls="pills-contact" aria-selected="false">Gym</a>
+                <a class="nav-link" id="pills-contact-tab" data-toggle="pill" href="gym" role="tab" aria-controls="pills-contact" aria-selected="false">Gym</a>
             </li>
 
         </ul> -->
@@ -276,22 +276,22 @@ if (isset($_SESSION['email'])) {
             <div class="col-6 bg-secondary ">
                 <div class="row ">
                     <div class="col-8 ">
-                        <a href="swimmingPool.html " class="rec">
+                        <a href="swimmingPool " class="rec">
                             <h2 class="ml-3 ">SWIMMING POOL</h2>
                         </a>
                     </div>
                     <div class="col-4 ">
-                        <a href="swimmingPool.html " class="rec">
+                        <a href="swimmingPool " class="rec">
                             <i class="fas fa-angle-up fa-rotate-90 fa-3x mt-1 " style="color:goldenrod; "></i>
                         </a>
                     </div>
                     <div class="col-6 ">
-                        <a href="spa.html " class="rec">
+                        <a href="spa " class="rec">
                             <h2 class="ml-3 ">RELAXING AT THE SPA</h2>
                         </a>
                     </div>
                     <div class="col-6 ">
-                        <a href="spa.html " class="rec">
+                        <a href="spa " class="rec">
                             <i class="fas fa-angle-up fa-rotate-90 fa-3x mt-1 " style="color:goldenrod; "></i>
                         </a>
                     </div>
@@ -304,7 +304,7 @@ if (isset($_SESSION['email'])) {
             <!--  <div class="col-6 ">
                 <div class="row ">
                     <div class="col-12 ">
-                        <a href="room.html ">
+                        <a href="room ">
                             <img src="images/room.jpg " class="img-fluid index " />
                         </a>
                     </div>
@@ -322,12 +322,12 @@ if (isset($_SESSION['email'])) {
                 </div>
             </div>
             <div class="col-6 ">
-                <a href="skyBar.html ">
+                <a href="skyBar ">
                     <img src="images/skyBar.jpg " class="img-fluid index " style="height: 580px; " />
                 </a>
             </div>
             <div class="col-10 ">
-                <a href="events.html ">
+                <a href="events ">
                     <img src="images/events.jpg " class="img-fluid index " style="width: 1520px !important;height: 250px; " />
                 </a>
             </div>
@@ -341,22 +341,22 @@ if (isset($_SESSION['email'])) {
                 <img src="images/namjestaj.jpg " class="img-fluid " />
             </div>
             <div class="col-6 ">
-                <a href="pool.html ">
+                <a href="pool ">
                     <img src="images/pool.jpg " class="img-fluid index " />
                 </a>
             </div>
             <div class="col-6 ">
-                <a href="coffee.html ">
+                <a href="coffee ">
                     <img src="images/kafa.jpg " class="img-fluid index " />
                 </a>
             </div>
             <div class="col-6 ">
-                <a href="spa.html ">
+                <a href="spa ">
                     <img src="images/spa.jpg " class="img-fluid index " style="height: 445px; " />
                 </a>
             </div>
             <div class="col-10 ">
-                <a href="events.html ">
+                <a href="events ">
                     <img src="images/events.jpg " class="img-fluid index " style="width: 1520px !important;height: 250px; " />
                 </a>
             </div>
@@ -623,7 +623,7 @@ if (isset($_SESSION['email'])) {
                 </div>
             </div>
             <div class="col-3 bg-warning ">
-                <a href="bookNew.html ">
+                <a href="bookNew ">
                     <div class=" col-12 mt-5 text-center ">
                         <i class="fa fa-5x fa-bell mt-4 "></i>
                         <p class="h1 mt-5 ">BOOK NOW <i class="fas fa-angle-right ml-2"></i></p>
@@ -652,7 +652,7 @@ if (isset($_SESSION['email'])) {
      <script>
         function check(){
             var emailSub = $('#emailSub').val();
-            
+
             if(emailSub == "" ){
                 $('#subButton').prop('disabled', true);
                 $('#subButton').css('cursor', 'not-allowed');

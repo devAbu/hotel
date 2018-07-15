@@ -60,7 +60,7 @@ session_start();
 
     <article>
         <nav class="navbar bg-primary navbar-dark navbar-expand-md fixed-top" style="opacity:0.7; font-size:18px;">
-            <a href="index.html" class="navbar-brand">
+            <a href="index" class="navbar-brand">
                 <img src="images/home.ico" alt="logo" class="img-fluid mr-3" width="45" height="45" />
                 <span class="h4">COMBRERO HOTEL</span>
             </a>
@@ -71,19 +71,19 @@ session_start();
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav" id="navScrollspy">
                     <li class="nav-item">
-                        <a href="index.html" class="nav-link link active">
+                        <a href="index" class="nav-link link active">
                             <!-- <i class="fas fa-home mr-2"></i> -->Home</a>
                     </li>
                     <li class="nav-item">
-                        <a href="hotel.html" class="nav-link link">
+                        <a href="hotel" class="nav-link link">
                             <!-- <i class="fas fa-users mr-2"> --></i>Hotel</a>
                     </li>
                     <li class="nav-item">
-                        <a href="events.html" class="nav-link link">
+                        <a href="events" class="nav-link link">
                             <!-- <i class="fas fa-suitcase mr-2"> --></i>Events</a>
                     </li>
                     <li class="nav-item">
-                        <a href="events.html" class="nav-link link">
+                        <a href="events" class="nav-link link">
                             <!-- <i class="fas fa-suitcase mr-2"> --></i>Room</a>
                     </li>
                 </ul>
@@ -93,13 +93,13 @@ if (isset($_SESSION['email'])) {
 } else {
     echo "<ul class='navbar-nav ml-auto'>
                     <li class='nav-item'>
-                        <a href='register.html' class='nav-link link'>
+                        <a href='register' class='nav-link link'>
                             <span class='navLinks'>
                                 Sing Up</span>
                         </a>
                     </li>
                     <li class='nav-item'>
-                        <a href='login.html' class='nav-link link'>
+                        <a href='login' class='nav-link link'>
                             <span class='navLinks'>
                                 Sign In</span>
                         </a>

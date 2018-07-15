@@ -62,7 +62,7 @@ session_start();
 
     <article>
         <nav class="navbar bg-primary navbar-dark navbar-expand-md fixed-top" style="opacity:0.7; font-size:18px;">
-            <a href="index.html" class="navbar-brand">
+            <a href="index" class="navbar-brand">
                 <img src="images/home.ico" alt="logo" class="img-fluid mr-3" width="45" height="45" />
                 <span class="h4">COMBRERO HOTEL</span>
             </a>
@@ -73,15 +73,15 @@ session_start();
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav" id="navScrollspy">
                     <li class="nav-item">
-                        <a href="index.html" class="nav-link link active">
+                        <a href="index" class="nav-link link active">
                             <!-- <i class="fas fa-home mr-2"></i> -->Home</a>
                     </li>
                     <li class="nav-item">
-                        <a href="hotel.html" class="nav-link link">
+                        <a href="hotel" class="nav-link link">
                             <!-- <i class="fas fa-users mr-2"> --></i>Hotel</a>
                     </li>
                     <li class="nav-item">
-                        <a href="events.html" class="nav-link link">
+                        <a href="events" class="nav-link link">
                             <!-- <i class="fas fa-suitcase mr-2"> --></i>Events</a>
                     </li>
                 </ul>
@@ -131,7 +131,7 @@ session_start();
                     <div style="margin-top:-10px;">
                         <ul class="list-group list-group-flush">
                             <li class="list-group-item bg-info" style="background:none !important;">
-                                <a href="login.html" class="badge text-danger" style="text-decoration:none;">
+                                <a href="login" class="badge text-danger" style="text-decoration:none;">
                                     <span style="font-size:13px;">Already has account?</span>
                                 </a>
                             </li>
@@ -245,6 +245,8 @@ session_start();
                             $('#surname').val("");
                             $('#email').val("");
                             $('#pass').val("");
+                            $('#regButton').prop('disabled', true);
+                $('#regButton').css('cursor', 'not-allowed');
                         } else{
                             $("#mess").addClass('alert-danger');
 							$("#mess").html('The email is already exists. Please try with other one or Sign in with that one.');
