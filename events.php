@@ -323,7 +323,7 @@ if (isset($_SESSION['email'])) {
                 </div>
                 <div class="col-12 mt-4 ">
                     <input type="email " class="w3-input w3-gray " placeholder="you@example.com " style="color:gold !important;
-                            border-bottom-color: gold !important; " name="emailSub" id="emailSub">
+                            border-bottom-color: gold !important; " name="emailSub" id="emailSub" onkeyup="check()">
                     <button class="btn btn-secondary" id="subButton" name="subButton"><small style="color: white; ">Subscribe to the newsletter</small></button>
                     <div class="alert" id="mess"></div>
                 </div>
@@ -391,29 +391,24 @@ if (isset($_SESSION['email'])) {
                 $('section').show();
                 $('footer').show();
                 document.getElementById('body').style.backgroundColor = "silver ";
+                $('#subButton').prop('disabled', true);
+                $('#subButton').css('cursor', 'not-allowed');
+                
             }
         })
     </script>
 
     <script>
-        function openLeftMenu() {
-            document.getElementById("leftMenu ").style.display = "block ";
-            document.getElementById('leftMenu').style.width = "100% ";
-        }
-
-        function closeLeftMenu() {
-            document.getElementById("leftMenu ").style.display = "none ";
-            document.getElementById('leftMenu').style.width = "0% ";
-        }
-
-        function openRightMenu() {
-            document.getElementById("rightMenu ").style.display = "block ";
-            document.getElementById('rightMenu').style.width = "100% ";
-        }
-
-        function closeRightMenu() {
-            document.getElementById("rightMenu ").style.display = "none ";
-            document.getElementById('rightMenu').style.width = "0% ";
+        function check(){
+            var emailSub = $('#emailSub').val();
+            
+            if(emailSub == "" ){
+                $('#subButton').prop('disabled', true);
+                $('#subButton').css('cursor', 'not-allowed');
+            } else if(emailSub != "" ){
+                $('#subButton').prop('disabled', false);
+                $('#subButton').css('cursor', '');
+            }
         }
     </script>
 

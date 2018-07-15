@@ -1,7 +1,9 @@
 <?php
 session_start();
+if(isset($_SESSION['email'])){
 $session = $_SESSION['email'];
 echo "<input type='text' value='$session' hidden id='session' name='session'>";
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -127,7 +129,7 @@ if (isset($_SESSION['email'])) {
                     </div>
                     <div class="alert" id="mess"></div>
                     <div class="card-body text-center col-1 ">
-                        <textarea cols="50" rows="10" placeholder="Please write your opinion..." style="margin-left:-30px; resize:none" id="text" name="text"></textarea>
+                        <textarea cols="50" rows="10" placeholder="Please write your opinion..." style="margin-left:-30px; resize:none" id="text" name="text" onkeyup="check()"></textarea>
                     </div>
 
                     <div class="card-body text-center col-2 offset-5">
@@ -153,9 +155,23 @@ if (isset($_SESSION['email'])) {
                 $('article').show();
                 document.getElementById('body').style.backgroundColor = "silver ";
                 $('section').show();
-
+                $('#feedButton').prop('disabled', true);
+                $('#feedButton').css('cursor', 'not-allowed');
             }
         });
+    </script>
+
+    <script>
+        function check(){
+            var text = $('#text').val();
+            if(text != ""){
+                $('#feedButton').prop('disabled', false);
+                $('#feedButton').css('cursor', '');
+            } else {
+                $('#feedButton').prop('disabled', true);
+                $('#feedButton').css('cursor', 'not-allowed');
+            }
+        }
     </script>
 
     <script>
