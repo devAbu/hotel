@@ -1,5 +1,7 @@
 <?php
 session_start();
+$session = $_SESSION['email'];
+echo "<input type='text' value='$session' hidden id='session' name='session'>";
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -63,6 +65,7 @@ session_start();
     </div>
 
     <article>
+
         <nav class="navbar bg-primary navbar-dark navbar-expand-md fixed-top" style="opacity:0.7; font-size:18px;">
             <a href="index.html" class="navbar-brand">
                 <img src="images/home.ico" alt="logo" class="img-fluid mr-3" width="45" height="45" />
@@ -89,7 +92,8 @@ session_start();
                 </ul>
                                <?php
 if (isset($_SESSION['email'])) {
-    echo "<ul class='navbar-nav ml-auto'><li class='nav-item'><a href='signOut.php'  class='nav-link link'><span class='navLinks'><i class='fas fa-sign-in-alt mr-2'></i>Sign Out</span></a></li></ul>";
+    echo "<ul class='navbar-nav ml-auto'><li class='nav-item'><a href='signOut.php'  class='nav-link link'><span class='navLinks'><i class='fas fa-sign-in-alt mr-2'></i>Sign Out</span></a></li></ul>
+    ";
 } else {
     echo "<ul class='navbar-nav ml-auto'>
                     <li class='nav-item'>
@@ -159,13 +163,14 @@ if (isset($_SESSION['email'])) {
         $('#feedButton').click(function(){
             $('#mess').removeClass('alert-danger').removeClass('alert-success');
             var text = $('#text').val();
+            var session = $('#session').val();
             if(text == "") {
                 $("#mess").addClass('alert-danger');
                 $("#mess").html("Please write your opinion!!!");
                 $("#mess").fadeIn(500).delay(1000).fadeOut(500);
             }else {
                 $.ajax({
-                    url: "./feedbackData?task=feedback&text="+text,
+                    url: "./feedbackData?task=feedback&text="+text+"&session="+session,
                     success: function (data) {
                         if(data == 'success') {
                             $("#mess").addClass('alert-success');

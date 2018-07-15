@@ -3,10 +3,10 @@
 require 'connection.php';
 
 $text = $_REQUEST['text'];
-$name = 'combe';
+$session = $_REQUEST['session'];
 
 if ($_REQUEST['task'] == "feedback") {
-    $query = "INSERT INTO feedback (`name`, `content`) VALUES ('$name','$text')";
+    $query = "INSERT INTO feedback (`name`, `content`) VALUES ('$session','$text')";
 
     $response = @mysqli_query($connection, $query);
     if ($response) {
