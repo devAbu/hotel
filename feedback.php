@@ -193,6 +193,8 @@ if (isset($_SESSION['email'])) {
 							$("#mess").html('Happy to hear your opinion.');
 							$("#mess").slideDown(500).delay(1000).slideUp(500);
                             $('#text').val("");
+                            $('#feedButton').prop('disabled', true);
+                $('#feedButton').css('cursor', 'not-allowed');
                         }else {
                             $("#mess").addClass('alert-danger');
 							$("#mess").html('There is some problem. Please try later');

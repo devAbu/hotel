@@ -658,6 +658,8 @@ if (isset($_SESSION['email'])) {
 							$("#mess").html('Thanks for your subscribtion');
 							$("#mess").fadeIn(500).delay(1000).fadeOut(500);
                             $('#emailSub').val("");
+                            $('#subButton').prop('disabled', true);
+                $('#subButton').css('cursor', 'not-allowed');
                         } else {
                             $("#mess").addClass('alert-danger');
 							$("#mess").html('You are already subscribe our newsletter');
