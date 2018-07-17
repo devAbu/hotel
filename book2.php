@@ -111,6 +111,11 @@ if (isset($_SESSION['email'])) {
         </nav>
     </article>
 
+    <?php
+require 'connection.php';
+
+$roomValue = $_REQUEST['room'];
+?>
     <section class="bg">
         <div>
             <!-- class="bg-primary" style="opacity:0.7;" -->
@@ -126,11 +131,14 @@ if (isset($_SESSION['email'])) {
                             <div class="row">
                                 <div class="col-4">
                                     <img src="images/room.jpg" alt="room" width="100" height="100">
+                                    <small class="text-warning"><?php echo $roomValue; ?></small>
+                                    <?php echo "<input type='text' name='room' id='room' value='$roomValue' hidden> "; ?>
                                 </div>
-                                <div class="col-8">
+                                <!-- <div class="col-8">
                                     <label class="text-danger">Lorem ipsum dolor sit amet, consetetur sadipscing elitr,</label>
                                     <select>
                                         <option>Select room</option>
+                                        <option><?php //echo $roomValue; ?></option>
                                         <option>Room1</option>
                                         <option>Room2</option>
                                         <option>Room3</option>
@@ -140,12 +148,12 @@ if (isset($_SESSION['email'])) {
                                         <option>Room7</option>
                                         <option>Room8</option>
                                     </select>
-                                </div>
+                                </div> -->
                             </div>
                         </li>
                         <li class="list-group-item bg-info" style="border:none; margin-top:-20px; background:none !important;">
                             <input type="date" style="width:400px; height: 50px; background: none !important; border: none; border-bottom: 1px solid black;"
-                                required="">
+                                required="" name="checkIn" id="checkIn" onchange="check()">
                         </li>
                         <!--<li class="list-group-item bg-info" style="border:none; margin-top:-20px; background:none !important;">
                                 <input type="password" placeholder="*****" class="form-control" style="max-width:400px;" required="">
@@ -156,7 +164,7 @@ if (isset($_SESSION['email'])) {
                             <td>
                                 <div style="margin-left:18px;">
                                     <input type="date" style="width:400px !important; height: 50px; background: none !important; border: none; border-bottom: 1px solid black;"
-                                        required>
+                                        required name="checkOut" id="checkOut" onchange="check()">
                                 </div>
                             </td>
 
@@ -165,7 +173,7 @@ if (isset($_SESSION['email'])) {
                             <td>
                                 <div style="margin-left:18px;">
                                     <input type="number" placeholder="Adults number..." style="width:400px !important; height: 50px; background: none !important; border: none; border-bottom: 1px solid black;"
-                                        required>
+                                        required name="adultsNum" id="adultsNum" onkeyup="check()">
                                 </div>
                             </td>
                         </tr>
@@ -173,14 +181,14 @@ if (isset($_SESSION['email'])) {
                             <td>
                                 <div style="margin-left:18px;">
                                     <input type="number" placeholder="Child number..." style="width:400px !important; height: 50px; background: none !important; border: none; border-bottom: 1px solid black;"
-                                        required>
+                                        required name="childNum" id="childNum" onkeyup="check()">
                                 </div>
                             </td>
                         </tr>
                     </table>
 
                     <div class="card-body text-center col-2 offset-5">
-                        <button class="btn btn-primary text-white">Book
+                        <button class="btn btn-primary text-white" id="bookButton">Book
                             <i class="fas fa-sign-in-alt ml-2"></i>
                         </button>
                     </div>
@@ -203,9 +211,56 @@ if (isset($_SESSION['email'])) {
                 document.getElementById('body').style.backgroundColor = "silver ";
                 $('section').show();
 
+                $('#bookButton').prop('disabled', true);
+                $('#bookButton').css('cursor', 'not-allowed');
             }
         });
     </script>
+
+        <!-- <script>
+            function check(){
+                var checkIn = $('#checkIn').val();
+                var checkOut = $('#checkOut').val();
+
+                if(checkIn >= checkOut){
+                    $('#bookButton').prop('disabled', true);
+                $('#bookButton').css('cursor', 'not-allowed');
+                console.log('juhu')
+                } else if(checkIn < checkOut){
+                    $('#bookButton').prop('disabled', false);
+                $('#bookButton').css('cursor', '');
+                console.log('abu')
+                }
+                }
+        </script>
+        <script>
+        function check(){
+
+            var adult = $('#adultsNum').val();
+
+                if (adult == "" || adult == 0){
+                    $('#bookButton').prop('disabled', true);
+                    $('#bookButton').css('cursor', 'not-allowed');
+                }else if(adult != "" || adult != 0){
+                    $('#bookButton').prop('disabled', false);
+                $('#bookButton').css('cursor', '');
+                }
+            }
+        </script>
+        <script>
+        function check(){
+
+            var child = $('#childNum').val();
+
+                if(child == "" || child == 0){
+                    $('#bookButton').prop('disabled', true);
+                    $('#bookButton').css('cursor', 'not-allowed');
+                }else{
+                    $('#bookButton').prop('disabled', false);
+                $('#bookButton').css('cursor', '');
+                }
+            }
+        </script> -->
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js "></script>
     <script src="loaders.css.js "></script>

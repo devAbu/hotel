@@ -138,7 +138,7 @@ if (isset($_SESSION['email'])) {
             </div>
         </div>
     </section>
-
+    <form action="book2.php" method="post">
     <div class="modal fade " id="map1" tabindex="-1 " role="dialog " aria-labelledby="modalTitle " aria-hidden="true ">
         <div class="modal-dialog modal-lg " role="document ">
             <div class="modal-content">
@@ -154,56 +154,56 @@ if (isset($_SESSION['email'])) {
                     <div class="col-12">
                         <div class="row">
                             <div class="col-3">
-                                <input type="radio" value="room1Top" id="room11" name="room" hidden>
+                                <input type="radio" value="room1Top" id="room11" name="room" hidden onclick="check()">
                                 <label for="room11">
                                     <img src="images/room.jpg" class="img-fluid" alt="room1" width="300" height="300">
                                     <small style="margin-right:80px;">juhu</small>
                                 </label>
                             </div>
                             <div class="col-3">
-                                <input type="radio" value="room2Top" id="room12" name="room" hidden>
+                                <input type="radio" value="room2Top" id="room12" name="room" hidden onclick="check()">
                                 <label for="room12">
                                     <img src="images/room.jpg" class="img-fluid" alt="room1" width="300" height="300">
                                     <small style="margin-right:80px;">juhu</small>
                                 </label>
                             </div>
                             <div class="col-3">
-                                <input type="radio" value="room3Top" id="room13" name="room" hidden>
+                                <input type="radio" value="room3Top" id="room13" name="room" hidden onclick="check()">
                                 <label for="room13">
                                     <img src="images/room.jpg" class="img-fluid" alt="room1" width="300" height="300">
                                     <small style="margin-right:80px;">juhu</small>
                                 </label>
                             </div>
                             <div class="col-3">
-                                <input type="radio" value="room4Top" id="room14" name="room" hidden>
+                                <input type="radio" value="room4Top" id="room14" name="room" hidden onclick="check()">
                                 <label for="room14">
                                     <img src="images/room.jpg" class="img-fluid" alt="room1" width="300" height="300">
                                     <small style="margin-right:80px;">juhu</small>
                                 </label>
                             </div>
                             <div class="col-3">
-                                <input type="radio" value="room5Top" id="room15" name="room" hidden>
+                                <input type="radio" value="room5Top" id="room15" name="room" hidden onclick="check()">
                                 <label for="room15">
                                     <img src="images/room.jpg" class="img-fluid" alt="room1" width="300" height="300">
                                     <small style="margin-right:80px;">juhu</small>
                                 </label>
                             </div>
                             <div class="col-3">
-                                <input type="radio" value="room6Top" id="room16" name="room" hidden>
+                                <input type="radio" value="room6Top" id="room16" name="room" hidden onclick="check()">
                                 <label for="room16">
                                     <img src="images/room.jpg" class="img-fluid" alt="room1" width="300" height="300">
                                     <small style="margin-right:80px;">juhu</small>
                                 </label>
                             </div>
                             <div class="col-3">
-                                <input type="radio" value="room7Top" id="room17" name="room" hidden>
+                                <input type="radio" value="room7Top" id="room17" name="room" hidden onclick="check()">
                                 <label for="room17">
                                     <img src="images/room.jpg" class="img-fluid" alt="room1" width="300" height="300">
                                     <small style="margin-right:80px;">juhu</small>
                                 </label>
                             </div>
                             <div class="col-3">
-                                <input type="radio" value="room8Top" id="room18" name="room" hidden>
+                                <input type="radio" value="room8Top" id="room18" name="room" hidden onclick="check()">
                                 <label for="room18">
                                     <img src="images/room.jpg" class="img-fluid" alt="room1" width="300" height="300" id="8">
                                     <small style="margin-right:80px;">juhu</small>
@@ -213,14 +213,16 @@ if (isset($_SESSION['email'])) {
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-lg btn-success">Select
+                    <button type="submit" class="btn btn-lg btn-success" id="topButton">Select
                         <i class="fas fa-plus-circle ml-2"></i>
                     </button>
                 </div>
             </div>
         </div>
     </div>
+    </form>
 
+<form action="book2.php" method="post">
     <div class="modal fade " id="map2" tabindex="-1 " role="dialog " aria-labelledby="modalTitle " aria-hidden="true ">
         <div class="modal-dialog modal-lg " role="document ">
             <div class="modal-content">
@@ -236,56 +238,56 @@ if (isset($_SESSION['email'])) {
                     <div class="col-12">
                         <div class="row">
                             <div class="col-3">
-                                <input type="radio" value="room1Middle" id="room21" name="room" hidden>
+                                <input type="radio" value="room1Middle" id="room21" name="room" hidden onclick="check2()">
                                 <label for="room21">
                                     <img src="images/kafa.jpg" class="img-fluid" alt="room1" width="300" height="300">
                                     <small style="margin-right:80px;">juhu</small>
                                 </label>
                             </div>
                             <div class="col-3">
-                                <input type="radio" value="room2Middle" id="room22" name="room" hidden>
+                                <input type="radio" value="room2Middle" id="room22" name="room" hidden onclick="check2()">
                                 <label for="room22">
                                     <img src="images/kafa.jpg" class="img-fluid" alt="room1" width="300" height="300">
                                     <small style="margin-right:80px;">juhu</small>
                                 </label>
                             </div>
                             <div class="col-3">
-                                <input type="radio" value="room3Middle" id="room23" name="room" hidden>
+                                <input type="radio" value="room3Middle" id="room23" name="room" hidden onclick="check2()">
                                 <label for="room23">
                                     <img src="images/kafa.jpg" class="img-fluid" alt="room1" width="300" height="300">
                                     <small style="margin-right:80px;">juhu</small>
                                 </label>
                             </div>
                             <div class="col-3">
-                                <input type="radio" value="room4Middle" id="room24" name="room" hidden>
+                                <input type="radio" value="room4Middle" id="room24" name="room" hidden onclick="check2()">
                                 <label for="room24">
                                     <img src="images/kafa.jpg" class="img-fluid" alt="room1" width="300" height="300">
                                     <small style="margin-right:80px;">juhu</small>
                                 </label>
                             </div>
                             <div class="col-3">
-                                <input type="radio" value="room5Middle" id="room25" name="room" hidden>
+                                <input type="radio" value="room5Middle" id="room25" name="room" hidden onclick="check2()">
                                 <label for="room25">
                                     <img src="images/kafa.jpg" class="img-fluid" alt="room1" width="300" height="300">
                                     <small style="margin-right:80px;">juhu</small>
                                 </label>
                             </div>
                             <div class="col-3">
-                                <input type="radio" value="room6Middle" id="room26" name="room" hidden>
+                                <input type="radio" value="room6Middle" id="room26" name="room" hidden onclick="check2()">
                                 <label for="room26">
                                     <img src="images/kafa.jpg" class="img-fluid" alt="room1" width="300" height="300">
                                     <small style="margin-right:80px;">juhu</small>
                                 </label>
                             </div>
                             <div class="col-3">
-                                <input type="radio" value="room7Middle" id="room27" name="room" hidden>
+                                <input type="radio" value="room7Middle" id="room27" name="room" hidden onclick="check2()">
                                 <label for="room27">
                                     <img src="images/kafa.jpg" class="img-fluid" alt="room1" width="300" height="300">
                                     <small style="margin-right:80px;">juhu</small>
                                 </label>
                             </div>
                             <div class="col-3">
-                                <input type="radio" value="room8Middle" id="room28" name="room" hidden>
+                                <input type="radio" value="room8Middle" id="room28" name="room" hidden onclick="check2()">
                                 <label for="room28">
                                     <img src="images/kafa.jpg" class="img-fluid" alt="room1" width="300" height="300">
                                     <small style="margin-right:80px;">juhu</small>
@@ -295,13 +297,16 @@ if (isset($_SESSION['email'])) {
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-lg btn-success">Select
+                    <button type="submit" class="btn btn-lg btn-success" id="middleButton">Select
                         <i class="fas fa-plus-circle ml-2"></i>
                     </button>
                 </div>
             </div>
         </div>
     </div>
+    </form>
+
+    <form action="book2.php" method="post">
     <div class="modal fade " id="map3" tabindex="-1 " role="dialog " aria-labelledby="modalTitle " aria-hidden="true ">
         <div class="modal-dialog modal-lg " role="document ">
             <div class="modal-content">
@@ -317,56 +322,56 @@ if (isset($_SESSION['email'])) {
                     <div class="col-12">
                         <div class="row">
                             <div class="col-3">
-                                <input type="radio" value="room1Down" id="room31" name="room" hidden>
+                                <input type="radio" value="room1Down" id="room31" name="room" hidden onclick="check3()">
                                 <label for="room31">
                                     <img src="images/pool.jpg" class="img-fluid" alt="room1" width="300" height="300">
                                     <small style="margin-right:80px;">juhu</small>
                                 </label>
                             </div>
                             <div class="col-3">
-                                <input type="radio" value="room2Down" id="room32" name="room" hidden>
+                                <input type="radio" value="room2Down" id="room32" name="room" hidden onclick="check3()">
                                 <label for="room32">
                                     <img src="images/pool.jpg" class="img-fluid" alt="room1" width="300" height="300">
                                     <small style="margin-right:80px;">juhu</small>
                                 </label>
                             </div>
                             <div class="col-3">
-                                <input type="radio" value="room3Down" id="room33" name="room" hidden>
+                                <input type="radio" value="room3Down" id="room33" name="room" hidden onclick="check3()">
                                 <label for="room33">
                                     <img src="images/pool.jpg" class="img-fluid" alt="room1" width="300" height="300">
                                     <small style="margin-right:80px;">juhu</small>
                                 </label>
                             </div>
                             <div class="col-3">
-                                <input type="radio" value="room4Down" id="room34" name="room" hidden>
+                                <input type="radio" value="room4Down" id="room34" name="room" hidden onclick="check3()">
                                 <label for="room34">
                                     <img src="images/pool.jpg" class="img-fluid" alt="room1" width="300" height="300">
                                     <small style="margin-right:80px;">juhu</small>
                                 </label>
                             </div>
                             <div class="col-3">
-                                <input type="radio" value="room5Down" id="room35" name="room" hidden>
+                                <input type="radio" value="room5Down" id="room35" name="room" hidden onclick="check3()">
                                 <label for="room35">
                                     <img src="images/pool.jpg" class="img-fluid" alt="room1" width="300" height="300">
                                     <small style="margin-right:80px;">juhu</small>
                                 </label>
                             </div>
                             <div class="col-3">
-                                <input type="radio" value="room6Down" id="room36" name="room" hidden>
+                                <input type="radio" value="room6Down" id="room36" name="room" hidden onclick="check3()">
                                 <label for="room36">
                                     <img src="images/pool.jpg" class="img-fluid" alt="room1" width="300" height="300">
                                     <small style="margin-right:80px;">juhu</small>
                                 </label>
                             </div>
                             <div class="col-3">
-                                <input type="radio" value="room7Down" id="room37" name="room" hidden>
+                                <input type="radio" value="room7Down" id="room37" name="room" hidden onclick="check3()">
                                 <label for="room37">
                                     <img src="images/pool.jpg" class="img-fluid" alt="room1" width="300" height="300">
                                     <small style="margin-right:80px;">juhu</small>
                                 </label>
                             </div>
                             <div class="col-3">
-                                <input type="radio" value="room8Down" id="room38" name="room" hidden>
+                                <input type="radio" value="room8Down" id="room38" name="room" hidden onclick="check3()">
                                 <label for="room38">
                                     <img src="images/pool.jpg" class="img-fluid" alt="room1" width="300" height="300">
                                     <small style="margin-right:80px;">juhu</small>
@@ -376,13 +381,14 @@ if (isset($_SESSION['email'])) {
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-lg btn-success">Select
+                    <button type="submit" class="btn btn-lg btn-success" id="downButton">Select
                         <i class="fas fa-plus-circle ml-2"></i>
                     </button>
                 </div>
             </div>
         </div>
     </div>
+    </form>
 
 
     <script>
@@ -395,10 +401,70 @@ if (isset($_SESSION['email'])) {
                 $('article').show();
                 document.getElementById('body').style.backgroundColor = "silver ";
                 $('section').show();
+                $('#topButton').prop('disabled', true);
+                $('#topButton').css('cursor', 'not-allowed');
+                $('#middleButton').prop('disabled', true);
+                $('#middleButton').css('cursor', 'not-allowed');
+                $('#downButton').prop('disabled', true);
+                $('#downButton').css('cursor', 'not-allowed');
 
             }
         });
     </script>
+
+
+    <script>
+        function check(){
+            var room1Top = $('#room11').is(':checked');
+            var room2Top = $('#room12').is(':checked');
+            var room3Top = $('#room13').is(':checked');
+            var room4Top = $('#room14').is(':checked');
+            var room5Top = $('#room15').is(':checked');
+            var room6Top = $('#room16').is(':checked');
+            var room7Top = $('#room17').is(':checked');
+            var room8Top = $('#room18').is(':checked');
+
+            if(room1Top || room2Top || room3Top || room4Top || room5Top || room6Top || room7Top || room8Top){
+                $('#topButton').prop('disabled', false);
+                $('#topButton').css('cursor','');
+            }
+        }
+    </script>
+    <script>
+        function check2(){
+            var room1Middle = $('#room21').is(':checked');
+            var room2Middle = $('#room22').is(':checked');
+            var room3Middle = $('#room23').is(':checked');
+            var room4Middle = $('#room24').is(':checked');
+            var room5Middle = $('#room25').is(':checked');
+            var room6Middle = $('#room26').is(':checked');
+            var room7Middle = $('#room27').is(':checked');
+            var room8Middle = $('#room28').is(':checked');
+
+            if(room1Middle || room2Middle || room3Middle || room4Middle || room5Middle || room6Middle || room7Middle || room8Middle){
+                $('#middleButton').prop('disabled', false);
+                $('#middleButton').css('cursor','');
+            }
+        }
+    </script>
+    <script>
+        function check3(){
+            var room1Down = $('#room31').is(':checked');
+            var room2Down = $('#room32').is(':checked');
+            var room3Down = $('#room33').is(':checked');
+            var room4Down = $('#room34').is(':checked');
+            var room5Down = $('#room35').is(':checked');
+            var room6Down = $('#room36').is(':checked');
+            var room7Down = $('#room37').is(':checked');
+            var room8Down = $('#room38').is(':checked');
+
+            if(room1Down || room2Down || room3Down || room4Down || room5Down || room6Down || room7Down || room8Down){
+                $('#downButton').prop('disabled', false);
+                $('#downButton').css('cursor','');
+            }
+        }
+    </script>
+
     <script>
         $('label').children('img').click(function () {
             $('.selected').removeClass('selected');
