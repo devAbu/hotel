@@ -107,7 +107,7 @@ session_start();
                         </li>
                         <li class="list-group-item bg-info" style="border:none; margin-top:-20px; background:none !important;">
                             <input type="email" placeholder="you@example.com" class="form-control " style="width:400px; height: 50px; background: none !important; border: none; border-bottom: 1px solid black;" name="email" id="email"
-                                required="">
+                                required="" onkeyup="check()">
                         </li>
                         <!--<li class="list-group-item bg-info" style="border:none; margin-top:-20px; background:none !important;">
                                 <input type="password" placeholder="*****" class="form-control" style="max-width:400px;" required="">
@@ -118,7 +118,7 @@ session_start();
                             <td>
                                 <div style="margin-left:18px;">
                                     <input type="password" placeholder="*****" class="form-control" style="width:400px !important; height: 50px; background: none !important; border: none; border-bottom: 1px solid black;"
-                                        required id="pass" name="pass">
+                                        required id="pass" name="pass" onkeyup="check()">
                                 </div>
                             </td>
                             <td>
@@ -151,9 +151,25 @@ session_start();
                 $('article').show();
                 document.getElementById('body').style.backgroundColor = "silver ";
                 $('section').show();
+                $('#changeButton').prop('disabled', true);
+                $('#changeButton').css('cursor', 'not-allowed');
 
             }
         });
+    </script>
+
+    <script>
+        function check(){
+            var email = $('#email').val()
+            var pass = $('#pass').val()
+            if(email == "" || pass == ""){
+                $('#changeButton').prop('disabled', true);
+                $('#changeButton').css('cursor', 'not-allowed');
+            } else if(email != "" && pass != "" ){
+                $('#changeButton').prop('disabled', false);
+                $('#changeButton').css('cursor', '');
+            }
+        }
     </script>
 
      <script>
@@ -203,6 +219,8 @@ session_start();
 							$("#mess").fadeIn(500).delay(2000).fadeOut(500);
                             $('#email').val("");
                             $('#pass').val("");
+                            $('#changeButton').prop('disabled', true);
+                $('#changeButton').css('cursor', 'not-allowed');
                         } else{
                             $("#mess").addClass('alert-danger');
 							$("#mess").html('The email is incorrect.');
