@@ -119,6 +119,7 @@ $roomValue = $_REQUEST['room'];
     <section class="bg">
         <div>
             <!-- class="bg-primary" style="opacity:0.7;" -->
+            <form action="book.php" method="post">
             <div class="offset-lg-4 ">
                 <div class="card" style="width: 22rem; margin-top:-30px;background:none !important; border:none;">
                     <div class="card-body text-center">
@@ -130,6 +131,7 @@ $roomValue = $_REQUEST['room'];
                         <li class="list-group-item bg-info" style="border:none; margin-top:-20px; background:none !important;">
                             <div class="row">
                                 <div class="col-4">
+
                                     <img src="images/room.jpg" alt="room" width="100" height="100">
                                     <small class="text-warning"><?php echo $roomValue; ?></small>
                                     <?php echo "<input type='text' name='room' id='room' value='$roomValue' hidden> "; ?>
@@ -188,11 +190,12 @@ $roomValue = $_REQUEST['room'];
                     </table>
 
                     <div class="card-body text-center col-2 offset-5">
-                        <button class="btn btn-primary text-white" id="bookButton">Book
+                        <button type="submit" class="btn btn-primary text-white" id="bookButton">Book
                             <i class="fas fa-sign-in-alt ml-2"></i>
                         </button>
                     </div>
                 </div>
+                </form>
             </div>
             <div class="text-center text-primary col-2 offset-5">
                 <p style="font-size:25px;">&copy; 2018 COMBE</p>
@@ -216,6 +219,31 @@ $roomValue = $_REQUEST['room'];
             }
         });
     </script>
+
+
+        <script>
+            function check(){
+                var checkIn = $('#checkIn').val()
+                var checkOut = $('#checkOut').val()
+                var adult = $('#adultsNum').val()
+                var child = $('#childNum').val()
+
+                console.log('check In ' + checkIn)
+                console.log('check out' + checkOut)
+                console.log('adults ' + adult)
+                console.log('child ' +child)
+
+                if(checkIn >= checkOut || adult == 0 || adult == "" || child == ""){
+                    $('#bookButton').prop('disabled', true);
+                $('#bookButton').css('cursor', 'not-allowed');
+                console.log('abu')
+                } else {
+                $('#bookButton').prop('disabled', false);
+                $('#bookButton').css('cursor', '');
+                console.log('juhu')
+            }
+            }
+        </script>
 
         <!-- <script>
             function check(){
