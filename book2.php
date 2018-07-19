@@ -1,5 +1,8 @@
 <?php
 session_start();
+if (isset($_SESSION['email'])) {
+    $session = $_SESSION['email'];
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -135,6 +138,8 @@ $roomValue = $_REQUEST['room'];
                                     <img src="images/room.jpg" alt="room" width="100" height="100">
                                     <small class="text-warning"><?php echo $roomValue; ?></small>
                                     <?php echo "<input type='text' name='room' id='room' value='$roomValue' hidden> "; ?>
+                                    <?php echo "<input type='text' value='$session' hidden id='session' name='session'>";
+?>
                                 </div>
                                 <!-- <div class="col-8">
                                     <label class="text-danger">Lorem ipsum dolor sit amet, consetetur sadipscing elitr,</label>
