@@ -231,7 +231,7 @@ session_start();
                 $('#logButton').css('cursor', 'not-allowed');
                             var delay = 2000;
                             setTimeout(function(){
-                                window.location = "index"; }, delay);
+                               window.history.back();  }, delay);
                         } else if(data.indexOf('pass') > -1){
                             $("#mess").addClass('alert-danger');
 							$("#mess").html('Password is incorrect');

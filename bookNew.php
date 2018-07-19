@@ -138,7 +138,14 @@ if (isset($_SESSION['email'])) {
             </div>
         </div>
     </section>
-    <form action="book2.php" method="post">
+    <?php
+        if(isset($_SESSION['email'])){
+            echo '<form action="book2.php" method="post">';
+        }else{
+            echo '';
+        }
+    ?>
+    
     <div class="modal fade " id="map1" tabindex="-1 " role="dialog " aria-labelledby="modalTitle " aria-hidden="true ">
         <div class="modal-dialog modal-lg " role="document ">
             <div class="modal-content">
@@ -213,16 +220,38 @@ if (isset($_SESSION['email'])) {
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <button type="submit" class="btn btn-lg btn-success" id="topButton">Select
+                <?php 
+                    if(isset($_SESSION['email'])){
+                        echo '<button type="submit" class="btn btn-lg btn-success" id="topButton">Select
                         <i class="fas fa-plus-circle ml-2"></i>
-                    </button>
+                    </button>';
+                    } else {
+                        echo '<button class="btn btn-lg btn-primary" onclick="redirect()" id="noAcc" name="noAcc">Login
+                        <i class="fas fa-sign-in-alt ml-2"></i>
+                    </button>';
+                    }
+                ?>
+                    
                 </div>
             </div>
         </div>
     </div>
     </form>
 
-<form action="book2.php" method="post">
+    <script>
+        function redirect(){
+            var url = "login.php";    
+            $(location).attr('href',url);
+        }
+    </script>
+
+<?php
+        if(isset($_SESSION['email'])){
+            echo '<form action="book2.php" method="post">';
+        }else{
+            echo '';
+        }
+    ?>
     <div class="modal fade " id="map2" tabindex="-1 " role="dialog " aria-labelledby="modalTitle " aria-hidden="true ">
         <div class="modal-dialog modal-lg " role="document ">
             <div class="modal-content">
@@ -297,16 +326,30 @@ if (isset($_SESSION['email'])) {
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <button type="submit" class="btn btn-lg btn-success" id="middleButton">Select
+                    <?php 
+                    if(isset($_SESSION['email'])){
+                        echo '<button type="submit" class="btn btn-lg btn-success" id="middleButton">Select
                         <i class="fas fa-plus-circle ml-2"></i>
-                    </button>
+                    </button>';
+                    } else {
+                        echo '<button class="btn btn-lg btn-primary" onclick="redirect()" id="noAcc" name="noAcc">Login
+                        <i class="fas fa-sign-in-alt ml-2"></i>
+                    </button>';
+                    }
+                ?>
                 </div>
             </div>
         </div>
     </div>
     </form>
 
-    <form action="book2.php" method="post">
+    <?php
+        if(isset($_SESSION['email'])){
+            echo '<form action="book2.php" method="post">';
+        }else{
+            echo '';
+        }
+    ?>
     <div class="modal fade " id="map3" tabindex="-1 " role="dialog " aria-labelledby="modalTitle " aria-hidden="true ">
         <div class="modal-dialog modal-lg " role="document ">
             <div class="modal-content">
@@ -381,9 +424,17 @@ if (isset($_SESSION['email'])) {
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <button type="submit" class="btn btn-lg btn-success" id="downButton">Select
+                    <?php 
+                    if(isset($_SESSION['email'])){
+                        echo '<button type="submit" class="btn btn-lg btn-success" id="downButton">Select
                         <i class="fas fa-plus-circle ml-2"></i>
-                    </button>
+                    </button>';
+                    } else {
+                        echo '<button class="btn btn-lg btn-primary" onclick="redirect()" id="noAcc" name="noAcc">Login
+                        <i class="fas fa-sign-in-alt ml-2"></i>
+                    </button>';
+                    }
+                ?>
                 </div>
             </div>
         </div>

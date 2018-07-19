@@ -1,8 +1,8 @@
 <?php
 session_start();
-if(isset($_SESSION['email'])){
-$session = $_SESSION['email'];
-echo "<input type='text' value='$session' hidden id='session' name='session'>";
+if (isset($_SESSION['email'])) {
+    $session = $_SESSION['email'];
+    echo "<input type='text' value='$session' hidden id='session' name='session'>";
 }
 ?>
 <!DOCTYPE html>
@@ -131,12 +131,28 @@ if (isset($_SESSION['email'])) {
                     <div class="card-body text-center col-1 ">
                         <textarea cols="50" rows="10" placeholder="Please write your opinion..." style="margin-left:-30px; resize:none" id="text" name="text" onkeyup="check()"></textarea>
                     </div>
-
-                    <div class="card-body text-center col-2 offset-5">
+<?php
+if (isset($_SESSION['email'])) {
+    echo '<div class="card-body text-center col-2 offset-5">
                         <button class="btn btn-primary text-white" name="feedButton" id="feedButton">Submit
                            <i class="fas fa-comment ml-2"></i>
                         </button>
-                    </div>
+                    </div>';
+} else {
+    echo '<div class="card-body text-center col-2 offset-5">
+    <a href="#" data-toggle="modal" data-target="#LoginModal">
+                        <button class="btn btn-dark text-white" name="login" id="login">Login
+                           <i class="fas fa-sign-in-alt"></i>
+                        </button>
+                        </a>
+                    </div>';
+}
+?>
+                    <!-- <div class="card-body text-center col-2 offset-5">
+                        <button class="btn btn-primary text-white" name="feedButton" id="feedButton">Submit
+                           <i class="fas fa-comment ml-2"></i>
+                        </button>
+                    </div> -->
                 </div>
             </div>
             <div class="text-center text-primary col-2 offset-5">
@@ -144,6 +160,64 @@ if (isset($_SESSION['email'])) {
             </div>
         </div>
     </section>
+
+     <div class="modal fade" id="LoginModal" tabindex="-1" role="dialog" aria-labelledby="modalTitle" aria-hidden="true">
+        <div class="modal-dialog modal-md" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalTitleLog">
+                        <img src="images/home.ico" class="img-fluid mr-5" width="60" height="60" alt="COMBRERO HOTEL">
+                        <label class="h2 text-primary ml-5">SIGN IN</label>
+                    </h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">
+                            <i class="fas fa-times"></i>
+                        </span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <ul class="list-group list-group-flush" style="margin-top:-20px; width:440px">
+                        <div class="alert" id="messLogin"></div>
+                        <li class="list-group-item bg-info" style="border:none; margin-top:-20px; background:none !important;">
+                            <input type="email" placeholder="you@example.com" class="form-control " style=" height: 50px; background: none !important; border: none; border-bottom: 1px solid black;" name="email" id="email" onkeyup="checkLogin()"
+                                required="">
+                        </li>
+                    </ul>
+                    <table>
+                        <tr>
+                            <td>
+                                <div style="margin-left:18px;">
+                                    <input type="password" placeholder="*****" class="form-control" style="width:400px !important; height: 50px; background: none !important; border: none; border-bottom: 1px solid black;"
+                                        required id="pass" name="pass" onkeyup="checkLogin()">
+                                </div>
+                            </td>
+                            <td>
+                                <button type="button" class="btn btn-primary" style="margin-left:-44px !important; height: 50px; width:45px; border: none; " name="showPass" id="showPass">
+                                    <i class="fas fa-eye"></i>
+                                </button>
+                            </td>
+                        </tr>
+                    </table>
+                    <div class="row no-gutters">
+                        <div class="col-8">
+                            <a href="register" class="badge ml-3 text-danger" style="text-decoration:none;">
+                                <span style="font-size:13px;">No account?</span>
+                            </a>
+                        </div>
+                        <div class="col-4">
+                            <a href="forgot" class="badge text-danger" style="text-decoration:none;">
+                                <span style="font-size:13px;">Forgot password?</span>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="card-body text-center col-2 offset-5">
+                        <button class="btn btn-primary text-white" name="logButton" id="logButton">Login
+                            <i class="fas fa-sign-in-alt ml-2"></i>
+                        </button>
+                    </div>
+            </div>
+        </div>
+    </div>
 
     <script>
         $('section').hide();
@@ -157,6 +231,12 @@ if (isset($_SESSION['email'])) {
                 $('section').show();
                 $('#feedButton').prop('disabled', true);
                 $('#feedButton').css('cursor', 'not-allowed');
+
+                $('#logButton').prop('disabled', true);
+                $('#logButton').css('cursor', 'not-allowed');
+                if($('#login').length > 0){
+                    $('#text').prop('disabled', true);
+                }
             }
         });
     </script>
@@ -172,6 +252,94 @@ if (isset($_SESSION['email'])) {
                 $('#feedButton').css('cursor', 'not-allowed');
             }
         }
+    </script>
+
+    <script>
+        function checkLogin(){
+            var email = $('#email').val();
+            var pass = $('#pass').val();
+            if(email == "" || pass == ""){
+                $('#logButton').prop('disabled', true);
+                $('#logButton').css('cursor', 'not-allowed');
+            } else if(email != "" && pass != "" ){
+                $('#logButton').prop('disabled', false);
+                $('#logButton').css('cursor', '');
+            }
+        }
+    </script>
+
+    <script>
+        $('#showPass').click(function () {
+                var pass_type = $('#pass').attr('type');
+                if (pass_type == "text") {
+                    $('#pass').attr('type', 'password');
+                } else if (pass_type == "password") {
+                    $('#pass').attr('type', 'text');
+                }
+            });
+    </script>
+
+    <script>
+        $('#messLogin').fadeOut()
+        $('#logButton').click(function (){
+
+            function validateEmail($emailSign) {
+                var emailReg = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/;
+                return emailReg.test($emailSign);
+            }
+
+            $('#messLogin').removeClass('alert-success').removeClass('alert-danger').removeClass('alert-warning')
+
+            var email = $('#email').val()
+            var pass = $('#pass').val()
+
+            if(email == ""){
+                $("#messLogin").addClass('alert-danger');
+                $("#messLogin").html("Please enter your email address!");
+                $("#messLogin").fadeIn(1000).delay(1000).fadeOut(500);
+            } else if(!validateEmail(email)){
+                $("#messLogin").addClass('alert-warning');
+                $("#messLogin").html("Please enter your email address correctly!");
+                $("#messLogin").fadeIn(1000).delay(1000).fadeOut(500);
+            } else if(pass == ""){
+                $("#messLogin").addClass('alert-danger');
+                $("#messLogin").html("Please set a password!");
+                $("#messLogin").fadeIn(1000).delay(1000).fadeOut(500);
+            } else {
+                $.ajax({
+                    url: "./loginData.php?task=login&email="+email+"&pass="+pass,
+                    success: function (data){
+                        if(data.indexOf('success') > -1){
+                            $("#messLogin").addClass('alert-success');
+							$("#messLogin").html('Correct info.');
+							$("#messLogin").fadeIn(500).delay(2000).fadeOut(500);
+
+                            $('#email').val("");
+                            $('#pass').val("");
+                            $('#logButton').prop('disabled', true);
+                $('#logButton').css('cursor', 'not-allowed');
+                            var delay = 2000;
+                            setTimeout(function(){
+                                window.location.reload(); }, delay);
+                        } else if(data.indexOf('pass') > -1){
+                            $("#messLogin").addClass('alert-danger');
+							$("#messLogin").html('Password is incorrect');
+							$("#messLogin").fadeIn(500).delay(1000).fadeOut(500);
+
+                        } else {
+                            $("#messLogin").addClass('alert-danger');
+							$("#messLogin").html('Email is incorrect');
+							$("#messLogin").fadeIn(500).delay(1000).fadeOut(500);
+                        }
+                    },
+                    error: function (data, err){
+                        $("#messLogin").addClass('alert-danger');
+                        $("#messLogin").html('Some problem occured. Please try again later.');
+                        $("#messLogin").fadeIn(500).delay(1000).fadeOut(500);
+                    }
+                })
+            }
+        })
     </script>
 
     <script>
