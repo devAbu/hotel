@@ -8,9 +8,9 @@ $checkIn = $_REQUEST['checkIn'];
 $checkOut = $_REQUEST['checkOut'];
 $adultsNum = $_REQUEST['adultsNum'];
 $childNum = $_REQUEST['childNum'];
-//$price = $_REQUEST['price'];
+$price = $_REQUEST['price'];
 
-$query = "INSERT INTO rezervacija (`name`, `room`, `checkIn`, `checkOut`, `adult`, `child`, `price`) VALUES ('$name','$room', '$checkIn', '$checkOut', '$adultsNum', '$childNum', 0)";
+$query = "INSERT INTO rezervacija (`name`, `room`, `checkIn`, `checkOut`, `adult`, `child`, `price`) VALUES ('$name','$room', '$checkIn', '$checkOut', '$adultsNum', '$childNum', '$price')";
 
 $response = @mysqli_query($connection, $query);
 if ($response) {

@@ -133,7 +133,7 @@ $roomValue = $_REQUEST['room'];
                     <ul class="list-group list-group-flush" style="margin-top:-20px;">
                         <li class="list-group-item bg-info" style="border:none; margin-top:-20px; background:none !important;">
                             <div class="row">
-                                <div class="col-4">
+                                <div class="col-5">
 
                                     <img src="images/room.jpg" alt="room" width="100" height="100">
                                     <small class="text-warning"><?php echo $roomValue; ?></small>
@@ -160,7 +160,7 @@ $roomValue = $_REQUEST['room'];
                         </li>
                         <li class="list-group-item bg-info" style="border:none; margin-top:-20px; background:none !important;">
                             <input type="date" style="width:400px; height: 50px; background: none !important; border: none; border-bottom: 1px solid black;"
-                                required="" name="checkIn" id="checkIn" onchange="check()">
+                                required="" name="checkIn" id="checkIn">
                         </li>
                         <!--<li class="list-group-item bg-info" style="border:none; margin-top:-20px; background:none !important;">
                                 <input type="password" placeholder="*****" class="form-control" style="max-width:400px;" required="">
@@ -171,7 +171,7 @@ $roomValue = $_REQUEST['room'];
                             <td>
                                 <div style="margin-left:18px;">
                                     <input type="date" style="width:400px !important; height: 50px; background: none !important; border: none; border-bottom: 1px solid black;"
-                                        required name="checkOut" id="checkOut" onchange="check()">
+                                        required name="checkOut" id="checkOut">
                                 </div>
                             </td>
 
@@ -180,7 +180,7 @@ $roomValue = $_REQUEST['room'];
                             <td>
                                 <div style="margin-left:18px;">
                                     <input type="number" placeholder="Adults number..." style="width:400px !important; height: 50px; background: none !important; border: none; border-bottom: 1px solid black;"
-                                        required name="adultsNum" id="adultsNum" onkeyup="check()">
+                                        required name="adultsNum" id="adultsNum" >
                                 </div>
                             </td>
                         </tr>
@@ -188,11 +188,12 @@ $roomValue = $_REQUEST['room'];
                             <td>
                                 <div style="margin-left:18px;">
                                     <input type="number" placeholder="Child number..." style="width:400px !important; height: 50px; background: none !important; border: none; border-bottom: 1px solid black;"
-                                        required name="childNum" id="childNum" onkeyup="check()">
+                                        required name="childNum" id="childNum">
                                 </div>
                             </td>
                         </tr>
                     </table>
+                    <input type="number" name="price" id="price" value=0>
 
                     <div class="card-body text-center col-2 offset-5">
                         <button type="submit" class="btn btn-primary text-white" id="bookButton">Book
@@ -208,6 +209,8 @@ $roomValue = $_REQUEST['room'];
         </div>
     </section>
 
+
+
     <script>
         $('section').hide();
         $('article').hide();
@@ -221,8 +224,34 @@ $roomValue = $_REQUEST['room'];
 
                 $('#bookButton').prop('disabled', true);
                 $('#bookButton').css('cursor', 'not-allowed');
+
+                price()
+                check()
             }
         });
+    </script>
+
+    <script>
+        $('#checkIn').change(function () {
+            price();
+            check();
+        })
+
+        $('#checkOut').change(function (){
+           price();
+check();
+
+        })
+
+        $('#adultsNum').keyup(function (){
+            price()
+            check()
+        })
+
+        $('#childNum').keyup(function (){
+            price()
+            check()
+        })
     </script>
 
 
@@ -233,67 +262,91 @@ $roomValue = $_REQUEST['room'];
                 var adult = $('#adultsNum').val()
                 var child = $('#childNum').val()
 
-                console.log('check In ' + checkIn)
-                console.log('check out' + checkOut)
-                console.log('adults ' + adult)
-                console.log('child ' +child)
-
                 if(checkIn >= checkOut || adult == 0 || adult == "" || child == ""){
                     $('#bookButton').prop('disabled', true);
                 $('#bookButton').css('cursor', 'not-allowed');
-                console.log('abu')
                 } else {
                 $('#bookButton').prop('disabled', false);
                 $('#bookButton').css('cursor', '');
-                console.log('juhu')
+
             }
             }
         </script>
 
-        <!-- <script>
-            function check(){
-                var checkIn = $('#checkIn').val();
-                var checkOut = $('#checkOut').val();
+         <script>
+            function price(){
+                var room = $('#room').val()
+                var checkIn = Date.parse($('#checkIn').val())
+                var checkOut = Date.parse($('#checkOut').val())
+                var adult = $('#adultsNum').val()
+                var child =$('#childNum').val()
+                var price = $('#price').val()
 
-                if(checkIn >= checkOut){
-                    $('#bookButton').prop('disabled', true);
-                $('#bookButton').css('cursor', 'not-allowed');
-                console.log('juhu')
-                } else if(checkIn < checkOut){
-                    $('#bookButton').prop('disabled', false);
-                $('#bookButton').css('cursor', '');
-                console.log('abu')
+                if(adult == ""){
+                    adult = 0
                 }
+
+                if(child == ""){
+                    child = 0
                 }
-        </script>
-        <script>
-        function check(){
 
-            var adult = $('#adultsNum').val();
+                adult = parseInt(adult)
+                child = parseInt(child)
 
-                if (adult == "" || adult == 0){
-                    $('#bookButton').prop('disabled', true);
-                    $('#bookButton').css('cursor', 'not-allowed');
-                }else if(adult != "" || adult != 0){
-                    $('#bookButton').prop('disabled', false);
-                $('#bookButton').css('cursor', '');
+                var priceAdult = 100 * adult
+                var priceChild = 75 * child
+
+                price = priceAdult + priceChild
+                price = parseInt(price)
+                console.log('price ' + price)
+
+
+                var currentDate = new Date()
+                var month = currentDate.getMonth()+1;
+                var day = currentDate.getDate();
+
+                var date = currentDate . getFullYear()+'-'+
+                        ((''+month) . length < 2 ? '0' : '') + month+'-'+
+                        ((''+day) . length < 2 ? '0' : '') + day;
+
+                date = Date.parse(date)
+
+                var result = checkIn - date;
+
+console.log('result ' + result)
+
+                var final = Math.floor(result / (1000 * 60 * 60 * 24));
+                console.log('final ' + final)
+
+                if(final <= 10){
+                    price = price + 150
+                    console.log(price)
+                } else if(final <= 18){
+                    price += 100
+                    console.log(price)
+                } else if(final<= 30){
+                    price += 75
+                    console.log(price)
+                } else {
+                    price += 50
+                    console.log(price)
                 }
-            }
-        </script>
-        <script>
-        function check(){
 
-            var child = $('#childNum').val();
-
-                if(child == "" || child == 0){
-                    $('#bookButton').prop('disabled', true);
-                    $('#bookButton').css('cursor', 'not-allowed');
-                }else{
-                    $('#bookButton').prop('disabled', false);
-                $('#bookButton').css('cursor', '');
+                if(room.indexOf('Top') > -1){
+                    price +=200
+                    console.log(price)
+                } else if(room.indexOf('Middle') > -1){
+                    price += 150
+                    console.log(price)
+                } else if(room.indexOf('Down') > -1){
+                    price += 100
+                    console.log(price)
                 }
-            }
-        </script> -->
+
+                $('#price').val(price)
+
+        }
+    </script>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js "></script>
     <script src="loaders.css.js "></script>
