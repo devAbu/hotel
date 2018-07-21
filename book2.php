@@ -118,12 +118,6 @@ if (isset($_SESSION['email'])) {
             </div>
         </nav>
     </article>
-
-    <?php
-require 'connection.php';
-
-$roomValue = $_REQUEST['room'];
-?>
     <section class="bg">
         <div>
             <!-- class="bg-primary" style="opacity:0.7;" -->
@@ -134,19 +128,47 @@ $roomValue = $_REQUEST['room'];
                         <img class="card-img-top" src="images/home.ico" style="width:90px !important; margin-top:150px !important; margin-left:100px !important;"
                             height="80" alt="Card image cap">
                         <h3 class="card-title text-uppercase text-primary" style="margin-left:0px !important; width: 400px !important;">Reservation</h3>
+                        <?php echo "<input type='text' value='$session' hidden id='session' name='session'>";
+?>
                     </div>
                     <ul class="list-group list-group-flush" style="margin-top:-20px;">
                         <li class="list-group-item bg-info" style="border:none; margin-top:-20px; background:none !important;">
                             <div class="row">
-                                <div class="col-5">
+                            <?php
+
+require 'connection.php';
+
+$roomValue = $_REQUEST['room'];
+$query = "select * from rooms where code like '%$roomValue%'";
+$result = $connection->query($query);
+
+$numRows = $result->num_rows;
+
+if ($numRows != 0) {
+    while ($row = $result->fetch_assoc()) {
+        echo '<div class="col-5">
+
+                                    <img src=" data:image/jpeg;base64,' . base64_encode($row["img"]) . '" alt="room" width="100" height="100">
+                                    <small class="text-warning">' . $row['code'] . '</small>
+                                     <input type="text " name=" room " id=" room " value=" ' . $row['code'] . ' " hidden>
+
+                                </div>
+                                <div class="col-7">
+                                    <label class="text-danger">' . $row['description'] . '</label>
+                                </div>';
+    }
+} else {
+    echo 'No rooms';
+}
+?>
+                                <!-- <div class="col-5">
 
                                     <img src="images/room.jpg" alt="room" width="100" height="100">
                                     <small class="text-warning"><?php echo $roomValue; ?></small>
                                     <?php echo "<input type='text' name='room' id='room' value='$roomValue' hidden> "; ?>
-                                    <?php echo "<input type='text' value='$session' hidden id='session' name='session'>";
-?>
+
                                 </div>
-                                <!-- <div class="col-8">
+                                <div class="col-8">
                                     <label class="text-danger">Lorem ipsum dolor sit amet, consetetur sadipscing elitr,</label>
                                 </div> -->
                             </div>
@@ -337,7 +359,7 @@ console.log('result ' + result)
                     console.log(price)
                 }
 
-                if(room.indexOf('Top') > -1){
+                /* if(room.indexOf('Top') > -1){
                     price +=200
                     console.log(price)
                 } else if(room.indexOf('Middle') > -1){
@@ -346,7 +368,7 @@ console.log('result ' + result)
                 } else if(room.indexOf('Down') > -1){
                     price += 100
                     console.log(price)
-                }
+                } */
 
                 $('#price').val(price)
 

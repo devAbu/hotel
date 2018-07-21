@@ -160,8 +160,28 @@ if (isset($_SESSION['email'])) {
                 <div class="modal-body ">
                     <div class="col-12">
                         <div class="row">
-                            <?php 
-                            ?>
+                            <?php
+require 'connection.php';
+
+$query = "select * from rooms where code like '%Top%' ";
+$result = $connection->query($query);
+
+$numRows = $result->num_rows;
+
+if ($numRows != 0) {
+    while ($row = $result->fetch_assoc()) {
+        echo '<div class="col-3">
+                                <input type="radio" value="' . $row['code'] . '" id="'.$row['roomID'] . '" name="room" onclick="check()" hidden>
+                                <label for="' . $row['roomID'] . '">
+                                    <img src=" data:image/jpeg;base64,' . base64_encode($row["img"]) . '" class="img-fluid" alt="room1" width="300" height="300">
+                                    <small style="margin-right:80px;">' . $row['code'] . '</small>
+                                </label>
+                            </div>';
+    }
+} else {
+    echo 'No rooms';
+}
+?>
                             <!-- <div class="col-3">
                                 <input type="radio" value="room1Top" id="room11" name="room" hidden onclick="check()">
                                 <label for="room11">
@@ -268,7 +288,28 @@ if (isset($_SESSION['email'])) {
                 <div class="modal-body ">
                     <div class="col-12">
                         <div class="row">
-                            <div class="col-3">
+                        <?php
+
+$query = "select * from rooms where code like '%Middle%' ";
+$result = $connection->query($query);
+
+$numRows = $result->num_rows;
+
+if ($numRows != 0) {
+    while ($row = $result->fetch_assoc()) {
+        echo '<div class="col-3">
+                                <input type="radio" value="' . $row['code'] . '" id="' . $row['roomID'] . '" name="room"  onclick="check2()" hidden>
+                                <label for="' . $row['roomID'] . '">
+                                    <img src=" data:image/jpeg;base64,' . base64_encode($row["img"]) . '" class="img-fluid" alt="room1" width="300" height="300">
+                                    <small style="margin-right:80px;">' . $row['code'] . '</small>
+                                </label>
+                            </div>';
+    }
+} else {
+    echo 'No rooms';
+}
+?>
+                            <!-- <div class="col-3">
                                 <input type="radio" value="room1Middle" id="room21" name="room" hidden onclick="check2()">
                                 <label for="room21">
                                     <img src="images/kafa.jpg" class="img-fluid" alt="room1" width="300" height="300">
@@ -323,7 +364,7 @@ if (isset($_SESSION['email'])) {
                                     <img src="images/kafa.jpg" class="img-fluid" alt="room1" width="300" height="300">
                                     <small style="margin-right:80px;">juhu</small>
                                 </label>
-                            </div>
+                            </div> -->
                         </div>
                     </div>
                 </div>
@@ -366,7 +407,28 @@ if (isset($_SESSION['email'])) {
                 <div class="modal-body ">
                     <div class="col-12">
                         <div class="row">
-                            <div class="col-3">
+                        <?php
+
+$query = "select * from rooms where code like '%Down%' ";
+$result = $connection->query($query);
+
+$numRows = $result->num_rows;
+
+if ($numRows != 0) {
+    while ($row = $result->fetch_assoc()) {
+        echo '<div class="col-3">
+                                <input type="radio" value="' . $row['code'] . '" id="' . $row['roomID'] . '" name="room"  onclick="check3()" hidden>
+                                <label for="' . $row['roomID'] . '">
+                                    <img src=" data:image/jpeg;base64,' . base64_encode($row["img"]) . '" class="img-fluid" alt="room1" width="300" height="300">
+                                    <small style="margin-right:80px;">' . $row['code'] . '</small>
+                                </label>
+                            </div>';
+    }
+} else {
+    echo 'No rooms';
+}
+?>
+                            <!-- <div class="col-3">
                                 <input type="radio" value="room1Down" id="room31" name="room" hidden onclick="check3()">
                                 <label for="room31">
                                     <img src="images/pool.jpg" class="img-fluid" alt="room1" width="300" height="300">
@@ -421,7 +483,7 @@ if (isset($_SESSION['email'])) {
                                     <img src="images/pool.jpg" class="img-fluid" alt="room1" width="300" height="300">
                                     <small style="margin-right:80px;">juhu</small>
                                 </label>
-                            </div>
+                            </div> -->
                         </div>
                     </div>
                 </div>
