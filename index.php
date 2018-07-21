@@ -542,10 +542,17 @@ if (isset($_SESSION['email'])) {
         $('footer').hide();
         $(window).on({
             load: function () {
-                $('.loader').hide();
-                $('article').hide();
+                if(localStorage.getItem('lang') === null){
+                    $('.loader').hide();
+                    $('article').hide();
+                    $('section').show();
+                } else {
+                    $('.loader').hide();
+                    $('section').hide();
+                    $('article').show();
+                    $('footer').show();
+                }
                 document.getElementById('body').style.backgroundColor = "silver ";
-                $('section').show();
                 $('#subButton').prop('disabled', true);
                 $('#subButton').css('cursor', 'not-allowed');
 
@@ -558,6 +565,10 @@ if (isset($_SESSION['email'])) {
             $('section').hide();
             $('footer').show();
 
+            if(typeof(Storage) !== "undefined"){
+                localStorage.setItem("lang", "eng");
+            }
+
 
         }
 
@@ -566,6 +577,9 @@ if (isset($_SESSION['email'])) {
             $('.loader').hide();
             $('section').hide();
             $('footer').show();
+            if(typeof(Storage) !== "undefined"){
+                localStorage.setItem("lang", "ara");
+            }
 
         }
 
@@ -574,6 +588,9 @@ if (isset($_SESSION['email'])) {
             $('.loader').hide();
             $('section').hide();
             $('footer').show();
+            if(typeof(Storage) !== "undefined"){
+                localStorage.setItem("lang", "tur");
+            }
         }
 
         function button4Click() {
@@ -581,6 +598,9 @@ if (isset($_SESSION['email'])) {
             $('.loader').hide();
             $('section').hide();
             $('footer').show();
+            if(typeof(Storage) !== "undefined"){
+                localStorage.setItem("lang", "bos");
+            }
         }
 
     </script>
@@ -588,7 +608,7 @@ if (isset($_SESSION['email'])) {
 <script>
         function check(){
             var emailSub = $('#emailSub').val();
-            
+
             if(emailSub == "" ){
                 $('#subButton').prop('disabled', true);
                 $('#subButton').css('cursor', 'not-allowed');

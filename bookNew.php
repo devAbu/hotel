@@ -139,13 +139,13 @@ if (isset($_SESSION['email'])) {
         </div>
     </section>
     <?php
-        if(isset($_SESSION['email'])){
-            echo '<form action="book2.php" method="post">';
-        }else{
-            echo '';
-        }
-    ?>
-    
+if (isset($_SESSION['email'])) {
+    echo '<form action="book2.php" method="post">';
+} else {
+    echo '';
+}
+?>
+
     <div class="modal fade " id="map1" tabindex="-1 " role="dialog " aria-labelledby="modalTitle " aria-hidden="true ">
         <div class="modal-dialog modal-lg " role="document ">
             <div class="modal-content">
@@ -160,7 +160,9 @@ if (isset($_SESSION['email'])) {
                 <div class="modal-body ">
                     <div class="col-12">
                         <div class="row">
-                            <div class="col-3">
+                            <?php 
+                            ?>
+                            <!-- <div class="col-3">
                                 <input type="radio" value="room1Top" id="room11" name="room" hidden onclick="check()">
                                 <label for="room11">
                                     <img src="images/room.jpg" class="img-fluid" alt="room1" width="300" height="300">
@@ -215,23 +217,23 @@ if (isset($_SESSION['email'])) {
                                     <img src="images/room.jpg" class="img-fluid" alt="room1" width="300" height="300" id="8">
                                     <small style="margin-right:80px;">juhu</small>
                                 </label>
-                            </div>
+                            </div> -->
                         </div>
                     </div>
                 </div>
                 <div class="modal-footer">
-                <?php 
-                    if(isset($_SESSION['email'])){
-                        echo '<button type="submit" class="btn btn-lg btn-success" id="topButton">Select
+                <?php
+if (isset($_SESSION['email'])) {
+    echo '<button type="submit" class="btn btn-lg btn-success" id="topButton">Select
                         <i class="fas fa-plus-circle ml-2"></i>
                     </button>';
-                    } else {
-                        echo '<button class="btn btn-lg btn-primary" onclick="redirect()" id="noAcc" name="noAcc">Login
+} else {
+    echo '<button class="btn btn-lg btn-primary" onclick="redirect()" id="noAcc" name="noAcc">Login
                         <i class="fas fa-sign-in-alt ml-2"></i>
                     </button>';
-                    }
-                ?>
-                    
+}
+?>
+
                 </div>
             </div>
         </div>
@@ -240,18 +242,18 @@ if (isset($_SESSION['email'])) {
 
     <script>
         function redirect(){
-            var url = "login.php";    
+            var url = "login.php";
             $(location).attr('href',url);
         }
     </script>
 
 <?php
-        if(isset($_SESSION['email'])){
-            echo '<form action="book2.php" method="post">';
-        }else{
-            echo '';
-        }
-    ?>
+if (isset($_SESSION['email'])) {
+    echo '<form action="book2.php" method="post">';
+} else {
+    echo '';
+}
+?>
     <div class="modal fade " id="map2" tabindex="-1 " role="dialog " aria-labelledby="modalTitle " aria-hidden="true ">
         <div class="modal-dialog modal-lg " role="document ">
             <div class="modal-content">
@@ -326,17 +328,17 @@ if (isset($_SESSION['email'])) {
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <?php 
-                    if(isset($_SESSION['email'])){
-                        echo '<button type="submit" class="btn btn-lg btn-success" id="middleButton">Select
+                    <?php
+if (isset($_SESSION['email'])) {
+    echo '<button type="submit" class="btn btn-lg btn-success" id="middleButton">Select
                         <i class="fas fa-plus-circle ml-2"></i>
                     </button>';
-                    } else {
-                        echo '<button class="btn btn-lg btn-primary" onclick="redirect()" id="noAcc" name="noAcc">Login
+} else {
+    echo '<button class="btn btn-lg btn-primary" onclick="redirect()" id="noAcc" name="noAcc">Login
                         <i class="fas fa-sign-in-alt ml-2"></i>
                     </button>';
-                    }
-                ?>
+}
+?>
                 </div>
             </div>
         </div>
@@ -344,12 +346,12 @@ if (isset($_SESSION['email'])) {
     </form>
 
     <?php
-        if(isset($_SESSION['email'])){
-            echo '<form action="book2.php" method="post">';
-        }else{
-            echo '';
-        }
-    ?>
+if (isset($_SESSION['email'])) {
+    echo '<form action="book2.php" method="post">';
+} else {
+    echo '';
+}
+?>
     <div class="modal fade " id="map3" tabindex="-1 " role="dialog " aria-labelledby="modalTitle " aria-hidden="true ">
         <div class="modal-dialog modal-lg " role="document ">
             <div class="modal-content">
@@ -424,17 +426,17 @@ if (isset($_SESSION['email'])) {
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <?php 
-                    if(isset($_SESSION['email'])){
-                        echo '<button type="submit" class="btn btn-lg btn-success" id="downButton">Select
+                    <?php
+if (isset($_SESSION['email'])) {
+    echo '<button type="submit" class="btn btn-lg btn-success" id="downButton">Select
                         <i class="fas fa-plus-circle ml-2"></i>
                     </button>';
-                    } else {
-                        echo '<button class="btn btn-lg btn-primary" onclick="redirect()" id="noAcc" name="noAcc">Login
+} else {
+    echo '<button class="btn btn-lg btn-primary" onclick="redirect()" id="noAcc" name="noAcc">Login
                         <i class="fas fa-sign-in-alt ml-2"></i>
                     </button>';
-                    }
-                ?>
+}
+?>
                 </div>
             </div>
         </div>

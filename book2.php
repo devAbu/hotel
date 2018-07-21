@@ -148,18 +148,6 @@ $roomValue = $_REQUEST['room'];
                                 </div>
                                 <!-- <div class="col-8">
                                     <label class="text-danger">Lorem ipsum dolor sit amet, consetetur sadipscing elitr,</label>
-                                    <select>
-                                        <option>Select room</option>
-                                        <option><?php //echo $roomValue; ?></option>
-                                        <option>Room1</option>
-                                        <option>Room2</option>
-                                        <option>Room3</option>
-                                        <option>Room4</option>
-                                        <option>Room5</option>
-                                        <option>Room6</option>
-                                        <option>Room7</option>
-                                        <option>Room8</option>
-                                    </select>
                                 </div> -->
                             </div>
                         </li>
