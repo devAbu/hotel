@@ -416,7 +416,7 @@ $numRows = $result->num_rows;
 
 if ($numRows != 0) {
     while ($row = $result->fetch_assoc()) {
-        echo '<div class="col-3">
+        echo '<div class="col-lg-3">
                                 <input type="radio" value="' . $row['code'] . '" id="' . $row['roomID'] . '" name="room"  onclick="check3()" hidden>
                                 <label for="' . $row['roomID'] . '">
                                     <img src=" data:image/jpeg;base64,' . base64_encode($row["img"]) . '" class="img-fluid" alt="room1" width="300" height="300">

@@ -150,7 +150,7 @@ if ($numRows != 0) {
 
                                     <img src=" data:image/jpeg;base64,' . base64_encode($row["img"]) . '" alt="room" width="100" height="100">
                                     <small class="text-warning">' . $row['code'] . '</small>
-                                     <input type="text " name=" room " id=" room " value=" ' . $row['code'] . ' " hidden>
+                                    <input type="text " name=" room " id="room" value=" ' . $row['code'] . ' " hidden>
 
                                 </div>
                                 <div class="col-7">
@@ -251,24 +251,13 @@ jQuery(document).ready(function ($) {
                         ((''+month) . length < 2 ? '0' : '') + month+'-'+
                         ((''+day) . length < 2 ? '0' : '') + day;
                         console.log(date)
-                //$( "#checkIn" ).datepicker();
-                $( "#checkIn" ).datepicker({dateFormat: 'yy-mm-dd', minDate: date});
-                $( "#checkOut" ).datepicker({dateFormat: 'yy-mm-dd', minDate: date });
+                $( "#checkIn" ).datepicker({dateFormat: 'yy-mm-dd', minDate: date, onSelect: function(){price(); check()}});
+                $( "#checkOut" ).datepicker({dateFormat: 'yy-mm-dd', minDate: date, onSelect: function(){price(); check()} });
 
         });
     </script>
 
     <script>
-        $('#checkIn').change(function () {
-            price();
-            check();
-        })
-
-        $('#checkOut').change(function (){
-           price();
-check();
-
-        })
 
         $('#adultsNum').keyup(function (){
             price()
@@ -288,26 +277,26 @@ check();
                 var checkOut = $('#checkOut').val()
                 var adult = $('#adultsNum').val()
                 var child = $('#childNum').val()
-
                 if(checkIn >= checkOut || adult == 0 || adult == "" || child == ""){
                     $('#bookButton').prop('disabled', true);
                 $('#bookButton').css('cursor', 'not-allowed');
                 } else {
                 $('#bookButton').prop('disabled', false);
                 $('#bookButton').css('cursor', '');
-
-            }
+                }
             }
         </script>
 
          <script>
             function price(){
-                var room = $('#room').val()
+                var room = String($('#room').val())
                 var checkIn = Date.parse($('#checkIn').val())
                 var checkOut = Date.parse($('#checkOut').val())
                 var adult = $('#adultsNum').val()
                 var child =$('#childNum').val()
                 var price = $('#price').val()
+
+                console.log(room)
 
                 if(adult == ""){
                     adult = 0
@@ -340,7 +329,7 @@ check();
 
                 var result = checkIn - date;
 
-console.log('result ' + result)
+                console.log('result ' + result)
 
                 var final = Math.floor(result / (1000 * 60 * 60 * 24));
                 console.log('final ' + final)
@@ -359,7 +348,7 @@ console.log('result ' + result)
                     console.log(price)
                 }
 
-                /* if(room.indexOf('Top') > -1){
+                 if(room.indexOf('Top') > -1){
                     price +=200
                     console.log(price)
                 } else if(room.indexOf('Middle') > -1){
@@ -368,7 +357,7 @@ console.log('result ' + result)
                 } else if(room.indexOf('Down') > -1){
                     price += 100
                     console.log(price)
-                } */
+                }
 
                 $('#price').val(price)
 
