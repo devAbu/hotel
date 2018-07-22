@@ -186,7 +186,29 @@ if (isset($_SESSION['email'])) {
     <article>
         <div class="row no-gutters">
             <div class="col-6">
-                <h1 class="display-1">Heading</h1>
+                <!--<h1 class="display-1">Heading</h1>-->
+                <?php
+require 'connection.php';
+$query = "select * from rooms where ID = 1";
+$result = $connection->query($query);
+
+$numRows = $result->num_rows;
+
+if ($numRows != 0) {
+    while ($row = $result->fetch_assoc()) {
+        echo '<h1 class="display-1">Our Best Room</h1><p>' . $row['description'] . '</p>
+            </div>
+            <div class="col-6">
+                <a href="room">
+                    <img  src=" data:image/jpeg;base64,' . base64_encode($row["img"]) . '" class="img-fluid index" />
+                </a>
+            </div>';
+    }
+} else {
+    echo 'error no top room';
+}
+?>
+<!--
                 <p>
                     Lorem ipsum dolor sit amet,sed diam voluptua. sed diam voluptua. Lorem ipsum dolor sit amet,sed diam voluptua. sed diam voluptua.
                     Lorem ipsum dolor sit amet,sed diam voluptua. sed diam voluptua.
@@ -196,67 +218,63 @@ if (isset($_SESSION['email'])) {
                 <a href="room">
                     <img src="images/room.jpg" class="img-fluid index" />
                 </a>
-            </div>
-            <div class="col-6">
+            </div>-->
+
+            <?php
+$query = "select * from rooms  limit 2 offset 1";
+$result = $connection->query($query);
+
+$numRows = $result->num_rows;
+
+if ($numRows != 0) {
+    while ($row = $result->fetch_assoc()) {
+        echo '<div class="col-6">
                 <div class="row">
                     <div class="col-6">
                         <a href="room">
-                            <img src="images/room.jpg" class="img-fluid index" style="height: 385px !important;" />
+                            <img src=" data:image/jpeg;base64,' . base64_encode($row["img"]) . '" class="img-fluid index" style="height: 385px !important;" />
                         </a>
                     </div>
                     <div class="col-6">
                         <p>
-                            Lorem ipsum dolor sit amet,sed diam voluptua. sed diam voluptua. Lorem ipsum dolor sit amet,sed diam voluptua. sed diam voluptua.
-                            Lorem ipsum dolor sit amet,sed diam voluptua. sed diam voluptua.
+                            ' . $row['description'] . '
                         </p>
                     </div>
                 </div>
-            </div>
-            <div class="col-6">
+            </div>';
+    }
+} else {
+    echo 'can not dispaly the room';
+}
+?>
+
+            <?php
+$query = "select * from rooms  limit 2 offset 3";
+$result = $connection->query($query);
+
+$numRows = $result->num_rows;
+
+if ($numRows != 0) {
+    while ($row = $result->fetch_assoc()) {
+        echo '<div class="col-6">
                 <div class="row">
                     <div class="col-6">
-                        <a href="room">
-                            <img src="images/room.jpg" class="img-fluid index" style="height: 385px !important;" />
-                        </a>
-                    </div>
-                    <div class="col-6">
                         <p>
-                            Lorem ipsum dolor sit amet,sed diam voluptua. sed diam voluptua. Lorem ipsum dolor sit amet,sed diam voluptua. sed diam voluptua.
-                            Lorem ipsum dolor sit amet,sed diam voluptua. sed diam voluptua.
-                        </p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-6">
-                <div class="row">
-                    <div class="col-6">
-                        <p>
-                            Lorem ipsum dolor sit amet,sed diam voluptua. sed diam voluptua. Lorem ipsum dolor sit amet,sed diam voluptua. sed diam voluptua.
-                            Lorem ipsum dolor sit amet,sed diam voluptua. sed diam voluptua.
+                            '.$row['description'].'
                         </p>
                     </div>
                     <div class="col-6">
                         <a href="room">
-                            <img src="images/room.jpg" class="img-fluid index" style="height: 385px !important;" />
+                            <img src=" data:image/jpeg;base64,' . base64_encode($row["img"]) . '" class="img-fluid index" style="height: 385px !important;" />
                         </a>
                     </div>
                 </div>
-            </div>
-            <div class="col-6">
-                <div class="row">
-                    <div class="col-6">
-                        <p>
-                            Lorem ipsum dolor sit amet,sed diam voluptua. sed diam voluptua. Lorem ipsum dolor sit amet,sed diam voluptua. sed diam voluptua.
-                            Lorem ipsum dolor sit amet,sed diam voluptua. sed diam voluptua.
-                        </p>
-                    </div>
-                    <div class="col-6">
-                        <a href="room">
-                            <img src="images/room.jpg" class="img-fluid index" style="height: 385px !important;" />
-                        </a>
-                    </div>
-                </div>
-            </div>
+            </div>';
+    }
+} else {
+    echo 'can not dispaly the room';
+}
+?>
             <div class="col-6 bg-white">
                 <h2>Tou might also like:</h2>
             </div>
@@ -619,7 +637,7 @@ if (isset($_SESSION['email'])) {
 				<script>
         function check(){
             var emailSub = $('#emailSub').val();
-            
+
             if(emailSub == "" ){
                 $('#subButton').prop('disabled', true);
                 $('#subButton').css('cursor', 'not-allowed');

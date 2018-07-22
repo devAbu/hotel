@@ -277,24 +277,41 @@ if (isset($_SESSION['email'])) {
             <div class="col-12 bg-secondary ">
                 <div class="offset-1 ">
                     <div class="row ">
-                        <div class="col-3 ">
+
+
+                    <?php
+require 'connection.php';
+
+$query = "select * from ads";
+$result = $connection->query($query);
+
+$numRows = $result->num_rows;
+
+if ($numRows != 0) {
+    while ($row = $result->fetch_assoc()) {
+        echo '<div class="col-3 ">
                             <a href="http://localhost/github/btt-diplomski " target="_blank " class="rec">
-                                <img src="images/btt.png " class="img-fluid my-1 mx-2 " width="75 " height="75 " />
+                                <img src=" data:image/jpeg;base64,' . base64_encode($row["logo"]) . '" class="img-fluid my-1 mx-2 " width="75 " height="75 " />
                             </a>
                         </div>
                         <div class="col-4 mt-3 ">
                             <a href="http://localhost/github/btt-diplomski " target="_blank " class="rec">
-                                <span style="font-size:30px; ">Bosnian Tourist Travel</span>
+                                <span style="font-size:30px; ">' . $row['title'] . '</span>
                             </a>
                         </div>
                         <div class="col-3 text-right mt-3 ">
                             <a href="http://localhost/github/btt-diplomski " target="_blank " class="rec">
-                                <span style="font-size:20px; ">Partner
+                                <span style="font-size:20px; ">' . $row['type'] . '
                                     <i class="fab fa-connectdevelop "></i>
                                 </span>
                             </a>
-                        </div>
+                        </div>';
+    }
+} else {
+    echo 'no paid ads';
+}
 
+?>
                     </div>
                 </div>
             </div>
@@ -456,7 +473,43 @@ if (isset($_SESSION['email'])) {
                 </div>
             </div>
             <div class="col-3 ">
+            <?php
+
+$query = "select * from contact";
+$result = $connection->query($query);
+
+$numRows = $result->num_rows;
+
+if ($numRows != 0) {
+    while ($row = $result->fetch_assoc()) {
+        echo '<div class="col-12 mt-4 ">
+                    <h1 style="color: gold; ">Contact details:</h1>
+                    <br> </div>
                 <div class="col-12 mt-4 ">
+                    <label>
+                        <i class="fas fa-phone " style="color:goldenrod; "></i>
+                        <a href="tel:' . $row['phone'] . ' ">' . $row['phone'] . '</a>
+                    </label>
+                </div>
+                <div class="col-12 ">
+                    <label>
+                        <i class="fas fa-fax " style="color: goldenrod; "></i>
+                        <a href="tel:' . $row['home'] . ' ">' . $row['home'] . '</a>
+                    </label>
+                </div>
+                <div class="col-12 ">
+                    <label>
+                        <i class="fas fa-at " style="color: goldenrod; "></i>
+                        <a href="mailto:' . $row['email'] . '">' . $row['email'] . '</a>
+                    </label>
+                </div>';
+    }
+} else {
+    echo 'no contact info';
+}
+
+?>
+                <!--<div class="col-12 mt-4 ">
                     <h1 style="color: gold; ">Contact details:</h1>
                     <br> </div>
                 <div class="col-12 mt-4 ">
@@ -476,7 +529,7 @@ if (isset($_SESSION['email'])) {
                         <i class="fas fa-at " style="color: goldenrod; "></i>
                         <a href="mailto:obada_almonajed@hotmail.com ">obada_almonajed@hotmail.com</a>
                     </label>
-                </div>
+                </div>-->
                 <div class="col-12 mt-4 ">
                     <input type="email " class="w3-input w3-gray " placeholder="you@example.com " style="color:gold !important;
                             border-bottom-color: gold !important; " name="emailSub" id="emailSub" onkeyup="check()">
