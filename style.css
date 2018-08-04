@@ -23,7 +23,7 @@
 }
 
 #jumbotronGym {
-    background-image: url('images/gym pozadina.jpg');
+    background-image: url('images/gym pozadina2.jpg');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -47,7 +47,7 @@
 }
 
 #jumbotronSpa {
-    background-image: url('images/spa\ pozadina.jpg');
+    background-image: url('images/spa pozadina.jpg');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -55,7 +55,7 @@
 }
 
 #jumbotronSwimmingPool {
-    background-image: url('images/swimming pool pozadina.jpg');
+    background-image: url('images/swiming pool pozadina2.jpg');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
