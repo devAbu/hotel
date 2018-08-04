@@ -252,23 +252,39 @@ if (isset($_SESSION['email'])) {
             <div class="col-12 bg-secondary ">
                 <div class="offset-1 ">
                     <div class="row ">
-                        <div class="col-3 ">
+                                            <?php
+require 'connection.php';
+
+$query = "select * from ads";
+$result = $connection->query($query);
+
+$numRows = $result->num_rows;
+
+if ($numRows != 0) {
+    while ($row = $result->fetch_assoc()) {
+        echo '<div class="col-3 ">
                             <a href="http://localhost/github/btt-diplomski " target="_blank " class="rec">
-                                <img src="images/btt.png " class="img-fluid my-1 mx-2 " width="75 " height="75 " />
+                                <img src=" data:image/jpeg;base64,' . base64_encode($row["logo"]) . '" class="img-fluid my-1 mx-2 " width="75 " height="75 " />
                             </a>
                         </div>
                         <div class="col-4 mt-3 ">
                             <a href="http://localhost/github/btt-diplomski " target="_blank " class="rec">
-                                <span style="font-size:30px; ">Bosnian Tourist Travel</span>
+                                <span style="font-size:30px; ">' . $row['title'] . '</span>
                             </a>
                         </div>
                         <div class="col-3 text-right mt-3 ">
                             <a href="http://localhost/github/btt-diplomski " target="_blank " class="rec">
-                                <span style="font-size:20px; ">Partner
+                                <span style="font-size:20px; ">' . $row['type'] . '
                                     <i class="fab fa-connectdevelop "></i>
                                 </span>
                             </a>
-                        </div>
+                        </div>';
+    }
+} else {
+    echo 'no paid ads';
+}
+
+?>
 
                     </div>
                 </div>
@@ -460,7 +476,6 @@ if (isset($_SESSION['email'])) {
             </div>
             <div class="col-3 ">
                 <?php
-require 'connection.php';
 $query = "select * from contact";
 $result = $connection->query($query);
 
