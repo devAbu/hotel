@@ -161,7 +161,7 @@ if (isset($_SESSION['email'])) {
                 </p>
             </div>
             <div class="col-8">
-                <img src="images/room.jpg" class="img-fluid" />
+                <img src="images/swiming pool 1.jpg" class="img-fluid" />
             </div>
 
             <div class="col-12">
