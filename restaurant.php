@@ -125,7 +125,7 @@ if (isset($_SESSION['email'])) {
             </div>
         </nav>
 
-       
+
         <div id="jumbotronRestaurant" class="jumbotron jumbotron-fluid text-white d-flex justify-content-center align-items-center">
             <div class="container text-center">
                 <h1 class="display-1 text-dark text-uppercase">COMBRERO HOTEL</h1>
@@ -165,7 +165,7 @@ if (isset($_SESSION['email'])) {
                 </p>
             </div>
             <div class="col-8">
-                <img src="images/room.jpg" class="img-fluid" />
+                <img src="images/restaurant 1.jpg" class="img-fluid" />
             </div>
 
             <div class="col-12">
@@ -174,19 +174,15 @@ if (isset($_SESSION['email'])) {
 
                         <div class="carousel-inner" role="listbox">
                             <div class="carousel-item active">
-                                <img src="images/skyBar.jpg" alt="slide1" class="d-block img-fluid">
+                                <img src="images/restaurant slideshow 1 - restaurant.jpg" alt="slide1" class="d-block img-fluid">
 
                             </div>
                             <div class="carousel-item">
-                                <img src="images/room.jpg" alt="slide2" class="d-block img-fluid">
+                                <img src="images/restaurant slideshow 2 - restaurant.jpg" alt="slide2" class="d-block img-fluid">
 
                             </div>
                             <div class="carousel-item">
-                                <img src="images/spa.jpg" alt="slide3" class="d-block img-fluid">
-
-                            </div>
-                            <div class="carousel-item">
-                                <img src="images/pool.jpg" alt="slide4" class="d-block img-fluid">
+                                <img src="images/restaurant slideshow 3 - restaurant.jpg" alt="slide3" class="d-block img-fluid">
 
                             </div>
                         </div>
