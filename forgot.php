@@ -76,15 +76,15 @@ session_start();
                 <ul class="navbar-nav" id="navScrollspy">
                     <li class="nav-item">
                         <a href="index" class="nav-link link active">
-                            <!-- <i class="fas fa-home mr-2"></i> -->Home</a>
+                            Home</a>
                     </li>
                     <li class="nav-item">
                         <a href="hotel" class="nav-link link">
-                            <!-- <i class="fas fa-users mr-2"> --></i>Hotel</a>
+                           Hotel</a>
                     </li>
                     <li class="nav-item">
                         <a href="events" class="nav-link link">
-                            <!-- <i class="fas fa-suitcase mr-2"> --></i>Events</a>
+                            Events</a>
                     </li>
                 </ul>
             </div>

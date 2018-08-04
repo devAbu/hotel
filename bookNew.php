@@ -72,19 +72,19 @@ session_start();
                 <ul class="navbar-nav" id="navScrollspy">
                     <li class="nav-item">
                         <a href="index" class="nav-link link active">
-                            <!-- <i class="fas fa-home mr-2"></i> -->Home</a>
+                            Home</a>
                     </li>
                     <li class="nav-item">
                         <a href="hotel" class="nav-link link">
-                            <!-- <i class="fas fa-users mr-2"></i> -->Hotel</a>
+                            Hotel</a>
                     </li>
                     <li class="nav-item">
                         <a href="events" class="nav-link link">
-                            <!-- <i class="fas fa-suitcase mr-2"></i> -->Events</a>
+                            Events</a>
                     </li>
                     <li class="nav-item">
                         <a href="events" class="nav-link link">
-                            <!-- <i class="fas fa-suitcase mr-2"></i> -->Room</a>
+                            Room</a>
                     </li>
                 </ul>
                                <?php
@@ -171,7 +171,7 @@ $numRows = $result->num_rows;
 if ($numRows != 0) {
     while ($row = $result->fetch_assoc()) {
         echo '<div class="col-3">
-                                <input type="radio" value="' . $row['code'] . '" id="'.$row['roomID'] . '" name="room" onclick="check()" hidden>
+                                <input type="radio" value="' . $row['code'] . '" id="' . $row['roomID'] . '" name="room" onclick="check()" hidden>
                                 <label for="' . $row['roomID'] . '">
                                     <img src=" data:image/jpeg;base64,' . base64_encode($row["img"]) . '" class="img-fluid" alt="room1" width="300" height="300">
                                     <small style="margin-right:80px;">' . $row['code'] . '</small>
@@ -182,62 +182,7 @@ if ($numRows != 0) {
     echo 'No rooms';
 }
 ?>
-                            <!-- <div class="col-3">
-                                <input type="radio" value="room1Top" id="room11" name="room" hidden onclick="check()">
-                                <label for="room11">
-                                    <img src="images/room.jpg" class="img-fluid" alt="room1" width="300" height="300">
-                                    <small style="margin-right:80px;">juhu</small>
-                                </label>
-                            </div>
-                            <div class="col-3">
-                                <input type="radio" value="room2Top" id="room12" name="room" hidden onclick="check()">
-                                <label for="room12">
-                                    <img src="images/room.jpg" class="img-fluid" alt="room1" width="300" height="300">
-                                    <small style="margin-right:80px;">juhu</small>
-                                </label>
-                            </div>
-                            <div class="col-3">
-                                <input type="radio" value="room3Top" id="room13" name="room" hidden onclick="check()">
-                                <label for="room13">
-                                    <img src="images/room.jpg" class="img-fluid" alt="room1" width="300" height="300">
-                                    <small style="margin-right:80px;">juhu</small>
-                                </label>
-                            </div>
-                            <div class="col-3">
-                                <input type="radio" value="room4Top" id="room14" name="room" hidden onclick="check()">
-                                <label for="room14">
-                                    <img src="images/room.jpg" class="img-fluid" alt="room1" width="300" height="300">
-                                    <small style="margin-right:80px;">juhu</small>
-                                </label>
-                            </div>
-                            <div class="col-3">
-                                <input type="radio" value="room5Top" id="room15" name="room" hidden onclick="check()">
-                                <label for="room15">
-                                    <img src="images/room.jpg" class="img-fluid" alt="room1" width="300" height="300">
-                                    <small style="margin-right:80px;">juhu</small>
-                                </label>
-                            </div>
-                            <div class="col-3">
-                                <input type="radio" value="room6Top" id="room16" name="room" hidden onclick="check()">
-                                <label for="room16">
-                                    <img src="images/room.jpg" class="img-fluid" alt="room1" width="300" height="300">
-                                    <small style="margin-right:80px;">juhu</small>
-                                </label>
-                            </div>
-                            <div class="col-3">
-                                <input type="radio" value="room7Top" id="room17" name="room" hidden onclick="check()">
-                                <label for="room17">
-                                    <img src="images/room.jpg" class="img-fluid" alt="room1" width="300" height="300">
-                                    <small style="margin-right:80px;">juhu</small>
-                                </label>
-                            </div>
-                            <div class="col-3">
-                                <input type="radio" value="room8Top" id="room18" name="room" hidden onclick="check()">
-                                <label for="room18">
-                                    <img src="images/room.jpg" class="img-fluid" alt="room1" width="300" height="300" id="8">
-                                    <small style="margin-right:80px;">juhu</small>
-                                </label>
-                            </div> -->
+
                         </div>
                     </div>
                 </div>
@@ -309,62 +254,7 @@ if ($numRows != 0) {
     echo 'No rooms';
 }
 ?>
-                            <!-- <div class="col-3">
-                                <input type="radio" value="room1Middle" id="room21" name="room" hidden onclick="check2()">
-                                <label for="room21">
-                                    <img src="images/kafa.jpg" class="img-fluid" alt="room1" width="300" height="300">
-                                    <small style="margin-right:80px;">juhu</small>
-                                </label>
-                            </div>
-                            <div class="col-3">
-                                <input type="radio" value="room2Middle" id="room22" name="room" hidden onclick="check2()">
-                                <label for="room22">
-                                    <img src="images/kafa.jpg" class="img-fluid" alt="room1" width="300" height="300">
-                                    <small style="margin-right:80px;">juhu</small>
-                                </label>
-                            </div>
-                            <div class="col-3">
-                                <input type="radio" value="room3Middle" id="room23" name="room" hidden onclick="check2()">
-                                <label for="room23">
-                                    <img src="images/kafa.jpg" class="img-fluid" alt="room1" width="300" height="300">
-                                    <small style="margin-right:80px;">juhu</small>
-                                </label>
-                            </div>
-                            <div class="col-3">
-                                <input type="radio" value="room4Middle" id="room24" name="room" hidden onclick="check2()">
-                                <label for="room24">
-                                    <img src="images/kafa.jpg" class="img-fluid" alt="room1" width="300" height="300">
-                                    <small style="margin-right:80px;">juhu</small>
-                                </label>
-                            </div>
-                            <div class="col-3">
-                                <input type="radio" value="room5Middle" id="room25" name="room" hidden onclick="check2()">
-                                <label for="room25">
-                                    <img src="images/kafa.jpg" class="img-fluid" alt="room1" width="300" height="300">
-                                    <small style="margin-right:80px;">juhu</small>
-                                </label>
-                            </div>
-                            <div class="col-3">
-                                <input type="radio" value="room6Middle" id="room26" name="room" hidden onclick="check2()">
-                                <label for="room26">
-                                    <img src="images/kafa.jpg" class="img-fluid" alt="room1" width="300" height="300">
-                                    <small style="margin-right:80px;">juhu</small>
-                                </label>
-                            </div>
-                            <div class="col-3">
-                                <input type="radio" value="room7Middle" id="room27" name="room" hidden onclick="check2()">
-                                <label for="room27">
-                                    <img src="images/kafa.jpg" class="img-fluid" alt="room1" width="300" height="300">
-                                    <small style="margin-right:80px;">juhu</small>
-                                </label>
-                            </div>
-                            <div class="col-3">
-                                <input type="radio" value="room8Middle" id="room28" name="room" hidden onclick="check2()">
-                                <label for="room28">
-                                    <img src="images/kafa.jpg" class="img-fluid" alt="room1" width="300" height="300">
-                                    <small style="margin-right:80px;">juhu</small>
-                                </label>
-                            </div> -->
+
                         </div>
                     </div>
                 </div>
@@ -428,62 +318,7 @@ if ($numRows != 0) {
     echo 'No rooms';
 }
 ?>
-                            <!-- <div class="col-3">
-                                <input type="radio" value="room1Down" id="room31" name="room" hidden onclick="check3()">
-                                <label for="room31">
-                                    <img src="images/pool.jpg" class="img-fluid" alt="room1" width="300" height="300">
-                                    <small style="margin-right:80px;">juhu</small>
-                                </label>
-                            </div>
-                            <div class="col-3">
-                                <input type="radio" value="room2Down" id="room32" name="room" hidden onclick="check3()">
-                                <label for="room32">
-                                    <img src="images/pool.jpg" class="img-fluid" alt="room1" width="300" height="300">
-                                    <small style="margin-right:80px;">juhu</small>
-                                </label>
-                            </div>
-                            <div class="col-3">
-                                <input type="radio" value="room3Down" id="room33" name="room" hidden onclick="check3()">
-                                <label for="room33">
-                                    <img src="images/pool.jpg" class="img-fluid" alt="room1" width="300" height="300">
-                                    <small style="margin-right:80px;">juhu</small>
-                                </label>
-                            </div>
-                            <div class="col-3">
-                                <input type="radio" value="room4Down" id="room34" name="room" hidden onclick="check3()">
-                                <label for="room34">
-                                    <img src="images/pool.jpg" class="img-fluid" alt="room1" width="300" height="300">
-                                    <small style="margin-right:80px;">juhu</small>
-                                </label>
-                            </div>
-                            <div class="col-3">
-                                <input type="radio" value="room5Down" id="room35" name="room" hidden onclick="check3()">
-                                <label for="room35">
-                                    <img src="images/pool.jpg" class="img-fluid" alt="room1" width="300" height="300">
-                                    <small style="margin-right:80px;">juhu</small>
-                                </label>
-                            </div>
-                            <div class="col-3">
-                                <input type="radio" value="room6Down" id="room36" name="room" hidden onclick="check3()">
-                                <label for="room36">
-                                    <img src="images/pool.jpg" class="img-fluid" alt="room1" width="300" height="300">
-                                    <small style="margin-right:80px;">juhu</small>
-                                </label>
-                            </div>
-                            <div class="col-3">
-                                <input type="radio" value="room7Down" id="room37" name="room" hidden onclick="check3()">
-                                <label for="room37">
-                                    <img src="images/pool.jpg" class="img-fluid" alt="room1" width="300" height="300">
-                                    <small style="margin-right:80px;">juhu</small>
-                                </label>
-                            </div>
-                            <div class="col-3">
-                                <input type="radio" value="room8Down" id="room38" name="room" hidden onclick="check3()">
-                                <label for="room38">
-                                    <img src="images/pool.jpg" class="img-fluid" alt="room1" width="300" height="300">
-                                    <small style="margin-right:80px;">juhu</small>
-                                </label>
-                            </div> -->
+
                         </div>
                     </div>
                 </div>

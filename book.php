@@ -16,10 +16,8 @@ echo $checkOut;
 echo '<br>';
 echo $room;
 echo '<br>';
-//  `room` like '$room' and
 $sql = "SELECT * FROM `rezervacija` WHERE checkIn BETWEEN  '$checkIn' and  '$checkOut' or checkOut BETWEEN '$checkIn'  and '$checkOut' having room = '$room'";
 $result = @mysqli_query($connection, $sql);
-// AND `checkIn` between '$checkIn' and '$checkOut' or `checkOut` between '$checkIn' and '$checkOut'
 if ($result->num_rows > 0) {
     while ($row = $result->fetch_assoc()) {
         echo 'reserved';

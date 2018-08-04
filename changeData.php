@@ -1,7 +1,7 @@
 <?php
-    require 'connection.php';
+require 'connection.php';
 
-    $email = $_REQUEST['email'];
+$email = $_REQUEST['email'];
 $pass = $_REQUEST['pass'];
 
 $hash_pass = password_hash($pass, PASSWORD_DEFAULT);
@@ -23,15 +23,9 @@ if ($_REQUEST['task'] == "change") {
                 } else {
                     echo mysqli_error($connection);
                 }
-
-                /* session_start();
-            $_SESSION['email'] == $emailLog; */
             } else {
                 echo ('mail');
             }
         }
     }
 }
-
-
-?>

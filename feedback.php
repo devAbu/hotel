@@ -81,15 +81,15 @@ if (isset($_SESSION['email'])) {
                 <ul class="navbar-nav" id="navScrollspy">
                     <li class="nav-item">
                         <a href="index" class="nav-link link active">
-                            <!-- <i class="fas fa-home mr-2"></i> -->Home</a>
+                            Home</a>
                     </li>
                     <li class="nav-item">
                         <a href="hotel" class="nav-link link">
-                            <!-- <i class="fas fa-users mr-2"></i> -->Hotel</a>
+                            Hotel</a>
                     </li>
                     <li class="nav-item">
                         <a href="events" class="nav-link link">
-                            <!-- <i class="fas fa-suitcase mr-2"></i> -->Events</a>
+                            Events</a>
                     </li>
                 </ul>
                                <?php
@@ -119,7 +119,6 @@ if (isset($_SESSION['email'])) {
 
     <section class="bg">
         <div>
-            <!-- class="bg-primary" style="opacity:0.7;" -->
             <div class="offset-lg-4 ">
                 <div class="card" style="width: 22rem; margin-top:-30px;background:none !important; border:none;">
                     <div class="card-body text-center">
@@ -148,11 +147,6 @@ if (isset($_SESSION['email'])) {
                     </div>';
 }
 ?>
-                    <!-- <div class="card-body text-center col-2 offset-5">
-                        <button class="btn btn-primary text-white" name="feedButton" id="feedButton">Submit
-                           <i class="fas fa-comment ml-2"></i>
-                        </button>
-                    </div> -->
                 </div>
             </div>
             <div class="text-center text-primary col-2 offset-5">

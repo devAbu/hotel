@@ -155,46 +155,6 @@ if (isset($_SESSION['email'])) {
 
     </article>
 
-    <!-- <article style="z-index: 999;">
-        <nav>
-            <div class="row">
-                <div id="navbar">
-                    <div class="col-5">
-                        <button class="w3-button w3-teal w3-xlarge w3-left" id="menu" onclick="openLeftMenu()">
-                            <i class="fas fa-bars"></i>
-                        </button>
-                    </div>
-                    <div class="col-6">
-                        <div class="img-fluid w3-left">
-                            <a href="index">
-                                <img src="images/home.ico" width="50" height="50" style="position:fixed; margin-left:50px;" />
-                            </a>
-                        </div>
-                    </div>
-                    <div class="col-1">
-                        <button class="w3-button w3-teal w3-xlarge w3-right" id="menu2" onclick="openRightMenu()" style="margin-left:30px;">
-                            <i class="far fa-bell fa-3x"></i>
-                        </button>
-                    </div>
-                </div>
-            </div>
-
-            <div class="w3-sidebar w3-bar-block w3-card w3-animate-left" style="display:none" id="leftMenu">
-                <button onclick="closeLeftMenu()" class="w3-bar-item w3-button w3-large">Close &times;</button>
-                <a href="#" class="w3-bar-item w3-button">Link 1</a>
-                <a href="#" class="w3-bar-item w3-button">Link 2</a>
-                <a href="#" class="w3-bar-item w3-button">Link 3</a>
-            </div>
-
-            <div class="w3-sidebar w3-bar-block w3-card w3-animate-right" style="display:none;" id="rightMenu">
-                <button onclick="closeRightMenu()" class="w3-bar-item w3-button w3-large text-right">Close &times;</button>
-                <a href="#" class="w3-bar-item w3-button text-right">Link 1</a>
-                <a href="#" class="w3-bar-item w3-button text-right">Link 2</a>
-                <a href="#" class="w3-bar-item w3-button text-right">Link 3</a>
-            </div>
-        </nav>
-    </article> -->
-
     <article>
         <div class="row">
             <div class="col-12 mt-5" id="top">
@@ -509,27 +469,6 @@ if ($numRows != 0) {
 }
 
 ?>
-                <!--<div class="col-12 mt-4 ">
-                    <h1 style="color: gold; ">Contact details:</h1>
-                    <br> </div>
-                <div class="col-12 mt-4 ">
-                    <label>
-                        <i class="fas fa-phone " style="color:goldenrod; "></i>
-                        <a href="tel:+38761091675 ">061 091 675</a>
-                    </label>
-                </div>
-                <div class="col-12 ">
-                    <label>
-                        <i class="fas fa-fax " style="color: goldenrod; "></i>
-                        <a href="tel:+38733474074 ">033 474 074</a>
-                    </label>
-                </div>
-                <div class="col-12 ">
-                    <label>
-                        <i class="fas fa-at " style="color: goldenrod; "></i>
-                        <a href="mailto:obada_almonajed@hotmail.com ">obada_almonajed@hotmail.com</a>
-                    </label>
-                </div>-->
                 <div class="col-12 mt-4 ">
                     <input type="email " class="w3-input w3-gray " placeholder="you@example.com " style="color:gold !important;
                             border-bottom-color: gold !important; " name="emailSub" id="emailSub" onkeyup="check()">

@@ -80,19 +80,19 @@ if (isset($_SESSION['email'])) {
                 <ul class="navbar-nav" id="navScrollspy">
                     <li class="nav-item">
                         <a href="index" class="nav-link link active">
-                            <!-- <i class="fas fa-home mr-2"></i> -->Home</a>
+                            Home</a>
                     </li>
                     <li class="nav-item">
                         <a href="hotel" class="nav-link link">
-                            <!-- <i class="fas fa-users mr-2"> --></i>Hotel</a>
+                            Hotel</a>
                     </li>
                     <li class="nav-item">
                         <a href="events" class="nav-link link">
-                            <!-- <i class="fas fa-suitcase mr-2"> --></i>Events</a>
+                            Events</a>
                     </li>
                     <li class="nav-item">
                         <a href="events" class="nav-link link">
-                            <!-- <i class="fas fa-suitcase mr-2"> --></i>Room</a>
+                            Room</a>
                     </li>
                 </ul>
                 <?php
@@ -120,7 +120,6 @@ if (isset($_SESSION['email'])) {
     </article>
     <section class="bg">
         <div>
-            <!-- class="bg-primary" style="opacity:0.7;" -->
             <form action="book.php" method="post">
             <div class="offset-lg-4 ">
                 <div class="card" style="width: 22rem; margin-top:-30px;background:none !important; border:none;">
@@ -160,16 +159,6 @@ if ($numRows != 0) {
     echo 'No rooms';
 }
 ?>
-                                <!-- <div class="col-5">
-
-                                    <img src="images/room.jpg" alt="room" width="100" height="100">
-                                    <small class="text-warning"><?php echo $roomValue; ?></small>
-                                    <?php echo "<input type='text' name='room' id='room' value='$roomValue' hidden> "; ?>
-
-                                </div>
-                                <div class="col-8">
-                                    <label class="text-danger">Lorem ipsum dolor sit amet, consetetur sadipscing elitr,</label>
-                                </div> -->
                             </div>
                         </li>
                         <li class="list-group-item bg-info" style="border:none; margin-top:-20px; background:none !important;">

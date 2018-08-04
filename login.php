@@ -76,15 +76,15 @@ session_start();
                 <ul class="navbar-nav" id="navScrollspy">
                     <li class="nav-item">
                         <a href="index" class="nav-link link active">
-                            <!-- <i class="fas fa-home mr-2"></i> -->Home</a>
+                           Home</a>
                     </li>
                     <li class="nav-item">
                         <a href="hotel" class="nav-link link">
-                            <!-- <i class="fas fa-users mr-2"> --></i>Hotel</a>
+                            Hotel</a>
                     </li>
                     <li class="nav-item">
                         <a href="events" class="nav-link link">
-                            <!-- <i class="fas fa-suitcase mr-2"> --></i>Events</a>
+                            Events</a>
                     </li>
                 </ul>
             </div>
@@ -93,7 +93,6 @@ session_start();
 
     <section class="bg">
         <div>
-            <!-- class="bg-primary" style="opacity:0.7;" -->
             <div class="offset-lg-4 ">
                 <div class="card" style="width: 22rem; margin-top:-30px;background:none !important; border:none;">
                     <div class="card-body text-center">
@@ -224,7 +223,7 @@ session_start();
                             $("#mess").addClass('alert-success');
 							$("#mess").html('Correct info.');
 							$("#mess").fadeIn(500).delay(2000).fadeOut(500);
-                            
+
                             $('#email').val("");
                             $('#pass').val("");
                             $('#logButton').prop('disabled', true);
@@ -236,7 +235,7 @@ session_start();
                             $("#mess").addClass('alert-danger');
 							$("#mess").html('Password is incorrect');
 							$("#mess").fadeIn(500).delay(1000).fadeOut(500);
-                            
+
                         } else {
                             $("#mess").addClass('alert-danger');
 							$("#mess").html('Email is incorrect');

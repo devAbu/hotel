@@ -61,64 +61,6 @@ session_start();
         </div>
     </div>
 
-    <!--<section>
-        <div id="jumbotron" class="jumbotron jumbotron-fluid text-white d-flex justify-content-center align-items-center">
-            <div class="container text-center">
-                         <h1 class="display-1 text-primary text-uppercase">BTT</h1>
-                        <p class="display-4 d-none d-sm-block">Bosnian Tourist Travel</p>
-                        <p class="lead">Visit Bosnia & Herzegovina with us!</p>
-                        <p class="lead">The best offers and price!</p>
-                        <p class="text-primary h5 mb-3">Visit us on:</p>
-                        <a href="https://www.instagram.com/bosniant/" target="_blank" class="btn btn-lg btn-primary mb-1">
-                            <i class="fab fa-instagram mr-2" aria-hidden="true"></i>Instagram</a>
-                        <a href="https://www.facebook.com" target="_blank" class="btn btn-lg btn-primary mb-1">
-                            <i class="fab fa-facebook mr-2" aria-hidden="true"></i>Facebook</a>
-                    </div>
-        </div>
-    </section>-->
-
-    <!-- <article>
-        <div class="row">
-
-            <div class="row">
-                <div id="navbar">
-                    <div class="col-5">
-                        <button class="w3-button w3-teal w3-xlarge w3-left" id="menu" onclick="openLeftMenu()">
-                            <i class="fas fa-bars"></i>
-                        </button>
-                    </div>
-                    <div class="col-6">
-                        <div class="img-fluid w3-left">
-                            <a href="index">
-                                <img src="images/home.ico" width="50" height="50" style="position:fixed; margin-left:50px;" />
-                            </a>
-                        </div>
-                    </div>
-                    <div class="col-1">
-                        <button class="w3-button w3-teal w3-xlarge w3-right" id="menu2" onclick="openRightMenu()" style="margin-left:30px;">
-                            <i class="far fa-bell fa-3x"></i>
-                        </button>
-                    </div>
-                </div>
-            </div>
-
-            <div class="w3-sidebar w3-bar-block w3-card w3-animate-left" style="display:none" id="leftMenu">
-                <button onclick="closeLeftMenu()" class="w3-bar-item w3-button w3-large">Close &times;</button>
-                <a href="#" class="w3-bar-item w3-button">Link 1</a>
-                <a href="#" class="w3-bar-item w3-button">Link 2</a>
-                <a href="#" class="w3-bar-item w3-button">Link 3</a>
-            </div>
-
-            <div class="w3-sidebar w3-bar-block w3-card w3-animate-right" style="display:none;" id="rightMenu">
-                <button onclick="closeRightMenu()" class="w3-bar-item w3-button w3-large text-right">Close &times;</button>
-                <a href="#" class="w3-bar-item w3-button text-right">Link 1</a>
-                <a href="#" class="w3-bar-item w3-button text-right">Link 2</a>
-                <a href="#" class="w3-bar-item w3-button text-right">Link 3</a>
-            </div>
-        </div>
-    </article> -->
-
-
 
     <article>
 
@@ -184,21 +126,6 @@ if (isset($_SESSION['email'])) {
 ?>
             </div>
         </nav>
-
-        <!-- <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist" style="position: fixed;">
-            <li class="nav-item">
-                <a class="nav-link" id="pills-home-tab" data-toggle="pill" href="index" role="tab" aria-controls="pills-home" aria-selected="true"
-                    style="color: gold; ">Home</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" id="pills-profile-tab" data-toggle="pill" href="hotel" role="tab" aria-controls="pills-profile"
-                    aria-selected="false" style="color: gold;">Hotel</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" id="pills-contact-tab" data-toggle="pill" href="gym" role="tab" aria-controls="pills-contact" aria-selected="false">Gym</a>
-            </li>
-
-        </ul> -->
 
         <div id="jumbotronGym" class="jumbotron jumbotron-fluid text-white d-flex justify-content-center align-items-center">
             <div class="container text-center">
@@ -298,94 +225,6 @@ if (isset($_SESSION['email'])) {
                 </div>
             </div>
 
-
-
-
-            <!--  <div class="col-6 ">
-                <div class="row ">
-                    <div class="col-12 ">
-                        <a href="room ">
-                            <img src="images/room.jpg " class="img-fluid index " />
-                        </a>
-                    </div>
-                </div>
-                <div class="row no-gutters ">
-                    <div class="col-6 ">
-                        <img src="images/food.jpg " class="img-fluid " style="width: 1520px !important; " />
-                    </div>
-                    <div class=" col-6 text-center mt-5 ">
-                        <label>
-                            Lorem ipsum dolor sit amet,no sea takimata sanctus est Lorem ipsum dolor sit amet. consetetur sadipscing elitr, Stet clita
-                            kasd gubergren,
-                        </label>
-                    </div>
-                </div>
-            </div>
-            <div class="col-6 ">
-                <a href="skyBar ">
-                    <img src="images/skyBar.jpg " class="img-fluid index " style="height: 580px; " />
-                </a>
-            </div>
-            <div class="col-10 ">
-                <a href="events ">
-                    <img src="images/events.jpg " class="img-fluid index " style="width: 1520px !important;height: 250px; " />
-                </a>
-            </div>
-            <div class="col-2 text-center mt-5 ">
-                <label>
-                    Lorem ipsum dolor sit amet,no sea takimata sanctus est Lorem ipsum dolor sit amet. consetetur sadipscing elitr, Stet clita
-                    kasd gubergren,
-                </label>
-            </div>
-            <div class="col-6 ">
-                <img src="images/namjestaj.jpg " class="img-fluid " />
-            </div>
-            <div class="col-6 ">
-                <a href="pool ">
-                    <img src="images/pool.jpg " class="img-fluid index " />
-                </a>
-            </div>
-            <div class="col-6 ">
-                <a href="coffee ">
-                    <img src="images/kafa.jpg " class="img-fluid index " />
-                </a>
-            </div>
-            <div class="col-6 ">
-                <a href="spa ">
-                    <img src="images/spa.jpg " class="img-fluid index " style="height: 445px; " />
-                </a>
-            </div>
-            <div class="col-10 ">
-                <a href="events ">
-                    <img src="images/events.jpg " class="img-fluid index " style="width: 1520px !important;height: 250px; " />
-                </a>
-            </div>
-            <div class="col-2 text-center mt-5 ">
-                <label>
-                    Lorem ipsum dolor sit amet,no sea takimata sanctus est Lorem ipsum dolor sit amet. consetetur sadipscing elitr, Stet clita
-                    kasd gubergren,
-                </label>
-            </div>
-            <div class="col-12 bg-secondary ">
-                <div class="offset-1 ">
-                    <div class="row ">
-                        <div class="col-3 ">
-                            <a href="http://localhost/btt%20-%20diplomski/BTT " target="_blank ">
-                                <img src="images/btt.png " class="img-fluid my-1 mx-2 " width="75 " height="75 " />
-                            </a>
-                        </div>
-                        <div class="col-4 mt-3 ">
-                            <span style="font-size:30px; ">Bosnian Tourist Travel</span>
-                        </div>
-                        <div class="col-3 text-right mt-3 ">
-                            <span style="font-size:20px; ">Partner
-                                <i class="fab fa-connectdevelop "></i>
-                            </span>
-                        </div>
-
-                    </div>
-                </div>
-            </div> -->
             <div class="col-7 mt-3 ">
                 <div class="row ">
                     <div class="col-12 ">

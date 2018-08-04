@@ -74,15 +74,15 @@ session_start();
                 <ul class="navbar-nav" id="navScrollspy">
                     <li class="nav-item">
                         <a href="index" class="nav-link link active">
-                            <!-- <i class="fas fa-home mr-2"></i> -->Home</a>
+                            Home</a>
                     </li>
                     <li class="nav-item">
                         <a href="hotel" class="nav-link link">
-                            <!-- <i class="fas fa-users mr-2"> --></i>Hotel</a>
+                         Hotel</a>
                     </li>
                     <li class="nav-item">
                         <a href="events" class="nav-link link">
-                            <!-- <i class="fas fa-suitcase mr-2"> --></i>Events</a>
+                          Events</a>
                     </li>
                 </ul>
             </div>
@@ -90,8 +90,6 @@ session_start();
     </article>
 
     <section class="bg">
-
-            <!-- class="bg-primary" style="opacity:0.7;" -->
             <div class="offset-lg-4 offest-xl-4 offset-md-2 offset-sm-3 ">
                 <div class="card" style="width: 22rem; margin-top:-30px;background:none !important; border:none;">
                     <div class="card-body text-center">

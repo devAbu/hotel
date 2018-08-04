@@ -61,46 +61,6 @@ session_start();
     </div>
 
 
-    <!-- <article style="z-index: 999;" id="top">
-        <nav>
-            <div class="row">
-                <div id="navbar">
-                    <div class="col-5">
-                        <button class="w3-button w3-teal w3-xlarge w3-left" id="menu" onclick="openLeftMenu()">
-                            <i class="fas fa-bars"></i>
-                        </button>
-                    </div>
-                    <div class="col-6">
-                        <div class="img-fluid w3-left">
-                            <a href="index">
-                                <img src="images/home.ico" width="50" height="50" style="position:fixed; margin-left:50px;" />
-                            </a>
-                        </div>
-                    </div>
-                    <div class="col-1">
-                        <button class="w3-button w3-teal w3-xlarge w3-right" id="menu2" onclick="openRightMenu()" style="margin-left:30px;">
-                            <i class="far fa-bell fa-3x"></i>
-                        </button>
-                    </div>
-                </div>
-            </div>
-
-            <div class="w3-sidebar w3-bar-block w3-card w3-animate-left" style="display:none" id="leftMenu">
-                <button onclick="closeLeftMenu()" class="w3-bar-item w3-button w3-large">Close &times;</button>
-                <a href="#" class="w3-bar-item w3-button">Link 1</a>
-                <a href="#" class="w3-bar-item w3-button">Link 2</a>
-                <a href="#" class="w3-bar-item w3-button">Link 3</a>
-            </div>
-
-            <div class="w3-sidebar w3-bar-block w3-card w3-animate-right" style="display:none;" id="rightMenu">
-                <button onclick="closeRightMenu()" class="w3-bar-item w3-button w3-large text-right">Close &times;</button>
-                <a href="#" class="w3-bar-item w3-button text-right">Link 1</a>
-                <a href="#" class="w3-bar-item w3-button text-right">Link 2</a>
-                <a href="#" class="w3-bar-item w3-button text-right">Link 3</a>
-            </div>
-        </nav>
-    </article> -->
-
     <article>
         <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top" style="opacity:0.8">
             <a class="navbar-brand" href="index">
@@ -180,16 +140,6 @@ if (isset($_SESSION['email'])) {
         </div>
         <div class="row no-gutters">
             <div class="col-6 bg-white">
-                <!-- <ul class="nav nav-pills mb-3 mt-4 ml-4" id="pills-tab" role="tablist">
-                    <li class="nav-item">
-                        <a class="nav-link" id="pills-home-tab" data-toggle="pill" href="index" role="tab" aria-controls="pills-home" aria-selected="true"
-                            style="color: gold; ">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" id="pills-profile-tab" data-toggle="pill" href="hotel" role="tab" aria-controls="pills-profile"
-                            aria-selected="false">Hotel</a>
-                    </li>
-                </ul> -->
                 <h2 class="display-4 ml-4">
                     AREAS FOR YOUR USE
                 </h2>
