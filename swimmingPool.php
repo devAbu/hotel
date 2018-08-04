@@ -170,19 +170,15 @@ if (isset($_SESSION['email'])) {
 
                         <div class="carousel-inner" role="listbox">
                             <div class="carousel-item active">
-                                <img src="images/skyBar.jpg" alt="slide1" class="d-block img-fluid">
+                                <img src="images/swiming pool slideshow 1 - swimming pool.jpg" alt="slide1" class="d-block img-fluid">
 
                             </div>
                             <div class="carousel-item">
-                                <img src="images/room.jpg" alt="slide2" class="d-block img-fluid">
+                                <img src="images/swiming pool slideshow 2 - swimming pool" alt="slide2" class="d-block img-fluid">
 
                             </div>
                             <div class="carousel-item">
-                                <img src="images/spa.jpg" alt="slide3" class="d-block img-fluid">
-
-                            </div>
-                            <div class="carousel-item">
-                                <img src="images/pool.jpg" alt="slide4" class="d-block img-fluid">
+                                <img src="images/swiming pool slideshow 3 - swimming pool" alt="slide3" class="d-block img-fluid">
 
                             </div>
                         </div>

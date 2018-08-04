@@ -196,7 +196,7 @@ if (isset($_SESSION['email'])) {
             </div>
             <div class="col-10 ">
                 <a href="events ">
-                    <img src="images/events.jpg " class="img-fluid index" style="width: 1520px !important;height: 250px; " />
+                    <img src="images/event glavna stranica.jpg " class="img-fluid index" style="width: 1520px !important;height: 250px; " />
                 </a>
             </div>
             <div class="col-2 text-center mt-5 ">
@@ -225,7 +225,7 @@ if (isset($_SESSION['email'])) {
             </div>
             <div class="col-10 ">
                 <a href="events ">
-                    <img src="images/events.jpg " class="img-fluid index" style="width: 1520px !important;height: 250px; " />
+                    <img src="images/event2 glavna stranica.jpg " class="img-fluid index" style="width: 1520px !important;height: 250px; " />
                 </a>
             </div>
             <div class="col-2 text-center mt-5 ">
