@@ -160,38 +160,34 @@ if (isset($_SESSION['email'])) {
                 </p>
             </div>
             <div class="col-8 ">
-                <img src="images/room.jpg " class="img-fluid " />
+                <img src="images/gym 1.jpg " class="img-fluid " />
             </div>
 
-            <div class="col-12 ">
+            <div class="col-12">
                 <section>
-                    <div id="carousel " class="carousel slide " data-ride="carousel ">
+                    <div id="carousel" class="carousel slide" data-ride="carousel">
 
-                        <div class="carousel-inner " role="listbox ">
-                            <div class="carousel-item active ">
-                                <img src="images/skyBar.jpg " alt="slide1 " class="d-block img-fluid ">
-
-                            </div>
-                            <div class="carousel-item ">
-                                <img src="images/room.jpg " alt="slide2 " class="d-block img-fluid ">
+                        <div class="carousel-inner" role="listbox">
+                            <div class="carousel-item active">
+                                <img src="images/gym slideshow 1 - gym.jpg " alt="slide1" class="d-block img-fluid">
 
                             </div>
-                            <div class="carousel-item ">
-                                <img src="images/spa.jpg " alt="slide3 " class="d-block img-fluid ">
+                            <div class="carousel-item">
+                                <img src="images/gym slideshow 2 - gym.jpg " alt="slide2" class="d-block img-fluid">
 
                             </div>
-                            <div class="carousel-item ">
-                                <img src="images/pool.jpg " alt="slide4 " class="d-block img-fluid ">
+                            <div class="carousel-item">
+                                <img src="images/gym slideshow 3 - gym.jpg" alt="slide3" class="d-block img-fluid">
 
                             </div>
                         </div>
-                        <a href="#carousel " class="carousel-control-prev " role="button " data-slide="prev ">
-                            <span class="carousel-control-prev-icon " aria-hidden="true "></span>
-                            <span class="sr-only ">Preview</span>
+                        <a href="#carousel" class="carousel-control-prev" role="button" data-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Preview</span>
                         </a>
-                        <a href="#carousel " class="carousel-control-next " role="button " data-slide="next ">
-                            <span class="carousel-control-next-icon " aria-hidden="true "></span>
-                            <span class="sr-only ">Next</span>
+                        <a href="#carousel" class="carousel-control-next" role="button" data-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Next</span>
                         </a>
                     </div>
                 </section>
