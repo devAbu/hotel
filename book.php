@@ -23,30 +23,14 @@ $result = @mysqli_query($connection, $sql);
 if ($result->num_rows > 0) {
     while ($row = $result->fetch_assoc()) {
         echo 'reserved';
-        //header('location: bookNew.php');
-        /* $sql2 = "SELECT * FROM `rezervacija` WHERE checkIn BETWEEN  $checkIn and  $checkOut or checkOut BETWEEN $checkIn  and $checkOut ";
-
-    $result2 = @mysqli_query($connection, $sql2);
-    if ($result2->num_rows > 0) {
-    echo 'reserved';
-    //header('location: bookNew.php');
-    } else {
-    $query = "INSERT INTO rezervacija (`name`, `room`, `checkIn`, `checkOut`, `adult`, `child`, `price`) VALUES ('$name','$room', '$checkIn', '$checkOut', '$adultsNum', '$childNum', '$price')";
-    $response = @mysqli_query($connection, $query);
-    if ($response) {
-    echo ('free');
-    //header('location: index.php');
-    } else {
-    echo mysqli_error($connection);
-    }
-    } */
+        header('location: bookNew.php');
     }
 } else {
     $query = "INSERT INTO rezervacija (`name`, `room`, `checkIn`, `checkOut`, `adult`, `child`, `price`) VALUES ('$name','$room', '$checkIn', '$checkOut', '$adultsNum', '$childNum', '$price')";
     $response = @mysqli_query($connection, $query);
     if ($response) {
         echo ('free');
-        //header('location: index.php');
+        header('location: index.php');
     } else {
         echo mysqli_error($connection);
     }

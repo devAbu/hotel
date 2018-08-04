@@ -546,27 +546,42 @@ if (isset($_SESSION['email'])) {
                 </div>
             </div>
             <div class="col-3 ">
-                <div class="col-12 mt-4 ">
+                <?php
+require 'connection.php';
+$query = "select * from contact";
+$result = $connection->query($query);
+
+$numRows = $result->num_rows;
+
+if ($numRows != 0) {
+    while ($row = $result->fetch_assoc()) {
+        echo '<div class="col-12 mt-4 ">
                     <h1 style="color: gold; ">Contact details:</h1>
                     <br> </div>
                 <div class="col-12 mt-4 ">
                     <label>
                         <i class="fas fa-phone " style="color:goldenrod; "></i>
-                        <a href="tel:+38761091675 ">061 091 675</a>
+                        <a href="tel:' . $row['phone'] . ' ">' . $row['phone'] . '</a>
                     </label>
                 </div>
                 <div class="col-12 ">
                     <label>
                         <i class="fas fa-fax " style="color: goldenrod; "></i>
-                        <a href="tel:+38733474074 ">033 474 074</a>
+                        <a href="tel:' . $row['home'] . ' ">' . $row['home'] . '</a>
                     </label>
                 </div>
                 <div class="col-12 ">
                     <label>
                         <i class="fas fa-at " style="color: goldenrod; "></i>
-                        <a href="mailto:obada_almonajed@hotmail.com ">obada_almonajed@hotmail.com</a>
+                        <a href="mailto:' . $row['email'] . '">' . $row['email'] . '</a>
                     </label>
-                </div>
+                </div>';
+    }
+} else {
+    echo 'no contact info';
+}
+
+?>
                 <div class="col-12 mt-4 ">
                     <input type="email " class="w3-input w3-gray " placeholder="you@example.com " style="color:gold !important;
                             border-bottom-color: gold !important; " name="emailSub" id="emailSub" onkeyup="check()">
