@@ -141,16 +141,15 @@ require 'connection.php';
 $roomValue = $_REQUEST['room'];
 $query = "select * from rooms where code like '%$roomValue%'";
 $result = $connection->query($query);
-
 $numRows = $result->num_rows;
 
 if ($numRows != 0) {
     while ($row = $result->fetch_assoc()) {
         echo '<div class="col-5">
-
+<input type="text" name="room" id="room" value="' . $roomValue . '" hidden>
                                     <img src=" data:image/jpeg;base64,' . base64_encode($row["img"]) . '" alt="room" width="100" height="100">
                                     <small class="text-warning">' . $row['code'] . '</small>
-                                    <input type="text " name=" room " id="room" value=" ' . $row['code'] . ' " hidden>
+
 
                                 </div>
                                 <div class="col-7">
@@ -177,9 +176,6 @@ if ($numRows != 0) {
                             <input type="date" style="width:400px; height: 50px; background: none !important; border: none; border-bottom: 1px solid black;"
                                 required="" name="checkIn" id="checkIn">
                         </li>
-                        <!--<li class="list-group-item bg-info" style="border:none; margin-top:-20px; background:none !important;">
-                                <input type="password" placeholder="*****" class="form-control" style="max-width:400px;" required="">
-                            </li>-->
                     </ul>
                     <table>
                         <tr>
@@ -216,6 +212,7 @@ if ($numRows != 0) {
                         </button>
                     </div>
                 </div>
+
                 </form>
             </div>
             <div class="text-center text-primary col-2 offset-5">
