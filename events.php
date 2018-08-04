@@ -135,7 +135,7 @@ if (isset($_SESSION['email'])) {
                     </div>
                 </div>
                 <div class="col-6">
-                    <img src="images/event 1.jpg" class="index " alt="event 1">
+                    <img src="images/eventPrva.jpg" class="index " alt="event 1">
                 </div>
             </div>
             <div class="col-6">
