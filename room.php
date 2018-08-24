@@ -166,7 +166,7 @@ if ($numRows != 0) {
                             <img src=" data:image/jpeg;base64,' . base64_encode($row["img"]) . '" class="img-fluid index" style="height: 385px !important;" />
                         </a>
                     </div>
-                    <div class="col-6">
+                    <div class="col-6 tekst">
                         <p>
                             ' . $row['description'] . '
                         </p>
@@ -189,7 +189,7 @@ if ($numRows != 0) {
     while ($row = $result->fetch_assoc()) {
         echo '<div class="col-6">
                 <div class="row">
-                    <div class="col-6">
+                    <div class="col-6 tekst">
                         <p>
                             ' . $row['description'] . '
                         </p>

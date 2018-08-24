@@ -182,6 +182,10 @@
     }
 }
 
+.tekst{
+  margin-top: 25%
+}
+
 /*.jumbotron {
     background-image: url('images/room.jpg');
     background-size: cover;
