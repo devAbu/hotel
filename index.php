@@ -59,7 +59,7 @@ session_start();
         <div class="loader-inner ball-scale-ripple-multiple">
         </div>
     </div>
-
+<!--TODO: skontat kako promijeniti jezik na button-->
     <section style="z-index:555; position:fixed; top:15%; left:35%;">
         <div style="width:100% !important;  height:100% !important;">
             <div class="" tabindex="2" role="dialog">
