@@ -1,6 +1,11 @@
 ﻿<?php
 session_start();
 ?>
+<?php
+    if(isset($_REQUEST['Message'])){
+      echo '<input type="text" value="juhu" id="test" hidden/>';
+    }
+ ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -30,6 +35,9 @@ session_start();
      <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+    <link href="toastr.css" rel="stylesheet"/>
+    <script src="toastr.js"></script>
 
 
     <script type="text/javascript">
@@ -538,11 +546,18 @@ if ($numRows != 0) {
                     $('.loader').hide();
                     $('article').hide();
                     $('section').show();
+                    toastr.success('Are you the 6 fingered man?');
                 } else {
                     $('.loader').hide();
                     $('section').hide();
                     $('article').show();
                     $('footer').show();
+                    var test = $('#test').val()
+                    if(test != null){
+                      console.log(test)
+                      toastr.success('Room reserved!!!');
+                    }
+
                 }
                 document.getElementById('body').style.backgroundColor = "silver ";
                 $('#subButton').prop('disabled', true);

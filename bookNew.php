@@ -1,6 +1,11 @@
 <?php
 session_start();
 ?>
+<?php
+    if(isset($_REQUEST['Message'])){
+      echo '<input type="text" value="'.$_REQUEST["Message"].'" id="test" hidden/>';
+    }
+ ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -29,6 +34,13 @@ session_start();
     <script src="https://cdnjs.cloudflare.com/ajax/libs/smooth-scroll/12.1.5/js/smooth-scroll.min.js" integrity="sha256-MMt0/21G3z0Zg4ET1kI3HC9npItDowkitRDVr0FhCxA="
         crossorigin="anonymous"></script>
     <link rel="stylesheet" href="loaders.min.css" />
+
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+   <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+   <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+    <link href="toastr.css" rel="stylesheet"/>
+    <script src="toastr.js"></script>
 
     <script type="text/javascript">
         $(function () {
@@ -357,6 +369,11 @@ if (isset($_SESSION['email'])) {
                 $('#middleButton').css('cursor', 'not-allowed');
                 $('#downButton').prop('disabled', true);
                 $('#downButton').css('cursor', 'not-allowed');
+                var test = $('#test').val()
+                if(test != null){
+                  console.log(test)
+                  toastr.error('Room is not available!!! <br /> Reserver from ' + test);
+                }
 
             }
         });
