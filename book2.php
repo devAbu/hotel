@@ -1,4 +1,3 @@
-<!-- TODO: onda pokusat da mu kaze otkad je slobodna ta soba -->
 <?php
 session_start();
 if (isset($_SESSION['email'])) {

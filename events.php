@@ -1,3 +1,4 @@
+<!-- TODO: rezervacija eventa (meeting, event, conference) -->
 <?php
 session_start();
 ?>

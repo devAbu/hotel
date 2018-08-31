@@ -1,3 +1,4 @@
+<!-- TODO: napravit rezervaciju -->
 <?php
 session_start();
 ?>

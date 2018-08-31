@@ -1,3 +1,4 @@
+<!-- TODO: napravit cjenovnik (korsnik moze listat) -->
 <?php
 session_start();
 ?>

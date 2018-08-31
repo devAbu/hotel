@@ -1,3 +1,4 @@
+<!-- TODO: promijeniti boju fieldova -->
 <?php
 session_start();
 ?>
