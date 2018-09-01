@@ -174,21 +174,21 @@ if (isset($_SESSION['email'])) {
                 <br />
           <form>
             <label>Your info:</label>
-              <input type="email" placeholder = "enter your email..." id="email" class="form-control" style="width: 60%" onkeyup="check()"/>
+              <input type="email" placeholder = "enter your email..." id="email" class="form-control" style="width: 60%" onkeyup="check2()"/>
               <br />
-              <input type="text" placeholder = "enter your name..." onkeyup="check()" id="name" class="form-control" style="width: 60%"/>
+              <input type="text" placeholder = "enter your name..." onkeyup="check2()" id="name" class="form-control" style="width: 60%"/>
               <br />
               <button class="btn btn-lg btn-secondary" type="button" id="button" style="width: 60%">Join</button>
               <br>
-              <div class="alert mt-3" id="mess" style="width: 60%"></div>
+              <div class="alert mt-3" id="alert" style="width: 60%"></div>
           </form>
 
 
 
           <script>
-              $('#mess').fadeOut()
+              $('#alert').fadeOut()
               $('#button').click(function (){
-                  $('#mess').removeClass('alert-success').removeClass('alert-danger').removeClass('alert-warning')
+                  $('#alert').removeClass('alert-success').removeClass('alert-danger').removeClass('alert-warning')
 
                   var email = $('#email').val()
                   var name = $('#name').val()
@@ -199,25 +199,25 @@ if (isset($_SESSION['email'])) {
                   }
 
                   if(email == ""){
-                      $("#mess").addClass('alert-danger');
-                      $("#mess").html("Please enter your email address!");
-                      $("#mess").fadeIn(1000).delay(1000).fadeOut(500);
+                      $("#alert").addClass('alert-danger');
+                      $("#alert").html("Please enter your email address!");
+                      $("#alert").fadeIn(1000).delay(1000).fadeOut(500);
                   }else if(!validateEmail(email)){
-                      $("#mess").addClass('alert-warning');
-                      $("#mess").html("Please enter your email address correctly!");
-                      $("#mess").fadeIn(1000).delay(1000).fadeOut(500);
+                      $("#alert").addClass('alert-warning');
+                      $("#alert").html("Please enter your email address correctly!");
+                      $("#alert").fadeIn(1000).delay(1000).fadeOut(500);
                   }else if(name == ""){
-                      $("#mess").addClass('alert-danger');
-                      $("#mess").html("Please enter your name!");
-                      $("#mess").fadeIn(1000).delay(1000).fadeOut(500);
+                      $("#alert").addClass('alert-danger');
+                      $("#alert").html("Please enter your name!");
+                      $("#alert").fadeIn(1000).delay(1000).fadeOut(500);
                    }// else {
                   //     $.ajax({
                   //         url: "./loginData.php?task=login&email="+email+"&pass="+pass,
                   //         success: function (data){
                   //             if(data.indexOf('success') > -1){
-                  //                 $("#mess").addClass('alert-success');
-                  //   							$("#mess").html('Correct info.');
-                  //   							$("#mess").fadeIn(500).delay(2000).fadeOut(500);
+                  //                 $("#alert").addClass('alert-success');
+                  //   							$("#alert").html('Correct info.');
+                  //   							$("#alert").fadeIn(500).delay(2000).fadeOut(500);
                   //                 $('#email').val("");
                   //                 $('#name').val("");
                   //                 $('#button').prop('disabled', true);
@@ -226,15 +226,15 @@ if (isset($_SESSION['email'])) {
                   //                 setTimeout(function(){
                   //                    window.history.back();  }, delay);
                   //             } else {
-                  //                 $("#mess").addClass('alert-danger');
-                  //   							$("#mess").html('You already join our gym');
-                  //   							$("#mess").fadeIn(500).delay(1000).fadeOut(500);
+                  //                 $("#alert").addClass('alert-danger');
+                  //   							$("#alert").html('You already join our gym');
+                  //   							$("#alert").fadeIn(500).delay(1000).fadeOut(500);
                   //             }
                   //         },
                   //         error: function (data, err){
-                  //             $("#mess").addClass('alert-danger');
-                  //             $("#mess").html('Some problem occured. Please try again later.');
-                  //             $("#mess").fadeIn(500).delay(1000).fadeOut(500);
+                  //             $("#alert").addClass('alert-danger');
+                  //             $("#alert").html('Some problem occured. Please try again later.');
+                  //             $("#alert").fadeIn(500).delay(1000).fadeOut(500);
                   //         }
                   //     })
                   // }
@@ -649,7 +649,7 @@ if ($numRows != 0) {
 
 
     <script type="text/javascript">
-    function check(){
+    function check2(){
         var email = $('#email').val();
         var name = $('#name').val();
 
