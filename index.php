@@ -1,5 +1,4 @@
 <!--TODO: Pravi tekst a ne lorem ispum -->
-<!-- TODO: da se izracuna ukupna cijena (soba + gym + event) -->
 <?php
 session_start();
 ?>
