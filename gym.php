@@ -1,4 +1,4 @@
-<!-- TODO: uradit validaciju i back-end-->
+<!-- TODO: uradit back-end-->
 <?php
 session_start();
 ?>
@@ -6,31 +6,34 @@ session_start();
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link href="style.css" type="text/css" rel="stylesheet">
-    <title>Hotel Online System</title>
-    <link rel="icon" type="image/ico" href="images/home.ico" />
-    <meta name="author" content="combe">
-    <meta name="keywords" content="Hotel, bosnia, reserve, sarajevo, apartment">
-    <meta name="description" content="Hotel online system for check and reserve a hotel room for your holiday ">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb"
-        crossorigin="anonymous">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/smooth-scroll/12.1.5/js/smooth-scroll.min.js" integrity="sha256-MMt0/21G3z0Zg4ET1kI3HC9npItDowkitRDVr0FhCxA="
-        crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="loaders.min.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link href="style.css" type="text/css" rel="stylesheet">
+  <title>Hotel Online System</title>
+  <link rel="icon" type="image/ico" href="images/home.ico" />
+  <meta name="author" content="combe">
+  <meta name="keywords" content="Hotel, bosnia, reserve, sarajevo, apartment">
+  <meta name="description" content="Hotel online system for check and reserve a hotel room for your holiday ">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb"
+      crossorigin="anonymous">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+      crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+      crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+      crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/smooth-scroll/12.1.5/js/smooth-scroll.min.js" integrity="sha256-MMt0/21G3z0Zg4ET1kI3HC9npItDowkitRDVr0FhCxA="
+      crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="loaders.min.css" />
 
-     <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 
 
 
@@ -171,12 +174,74 @@ if (isset($_SESSION['email'])) {
                 <br />
           <form>
             <label>Your info:</label>
-              <input type="email" placeholder = "enter your email..." class="form-control" style="width: 60%"/>
+              <input type="email" placeholder = "enter your email..." id="email" class="form-control" style="width: 60%" onkeyup="check()"/>
               <br />
-              <input type="text" placeholder = "enter your name..." class="form-control" style="width: 60%"/>
+              <input type="text" placeholder = "enter your name..." onkeyup="check()" id="name" class="form-control" style="width: 60%"/>
               <br />
-              <button class="btn btn-lg btn-secondary" style="width: 60%">Join</button>
+              <button class="btn btn-lg btn-secondary" type="button" id="button" style="width: 60%">Join</button>
+              <br>
+              <div class="alert mt-3" id="mess" style="width: 60%"></div>
           </form>
+
+
+
+          <script>
+              $('#mess').fadeOut()
+              $('#button').click(function (){
+                  $('#mess').removeClass('alert-success').removeClass('alert-danger').removeClass('alert-warning')
+
+                  var email = $('#email').val()
+                  var name = $('#name').val()
+
+                  function validateEmail($email) {
+                      var emailReg = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/;
+                      return emailReg.test($email);
+                  }
+
+                  if(email == ""){
+                      $("#mess").addClass('alert-danger');
+                      $("#mess").html("Please enter your email address!");
+                      $("#mess").fadeIn(1000).delay(1000).fadeOut(500);
+                  }else if(!validateEmail(email)){
+                      $("#mess").addClass('alert-warning');
+                      $("#mess").html("Please enter your email address correctly!");
+                      $("#mess").fadeIn(1000).delay(1000).fadeOut(500);
+                  }else if(name == ""){
+                      $("#mess").addClass('alert-danger');
+                      $("#mess").html("Please enter your name!");
+                      $("#mess").fadeIn(1000).delay(1000).fadeOut(500);
+                   }// else {
+                  //     $.ajax({
+                  //         url: "./loginData.php?task=login&email="+email+"&pass="+pass,
+                  //         success: function (data){
+                  //             if(data.indexOf('success') > -1){
+                  //                 $("#mess").addClass('alert-success');
+                  //   							$("#mess").html('Correct info.');
+                  //   							$("#mess").fadeIn(500).delay(2000).fadeOut(500);
+                  //                 $('#email').val("");
+                  //                 $('#name').val("");
+                  //                 $('#button').prop('disabled', true);
+                  //                 $('#button').css('cursor', 'not-allowed');
+                  //                 var delay = 2000;
+                  //                 setTimeout(function(){
+                  //                    window.history.back();  }, delay);
+                  //             } else {
+                  //                 $("#mess").addClass('alert-danger');
+                  //   							$("#mess").html('You already join our gym');
+                  //   							$("#mess").fadeIn(500).delay(1000).fadeOut(500);
+                  //             }
+                  //         },
+                  //         error: function (data, err){
+                  //             $("#mess").addClass('alert-danger');
+                  //             $("#mess").html('Some problem occured. Please try again later.');
+                  //             $("#mess").fadeIn(500).delay(1000).fadeOut(500);
+                  //         }
+                  //     })
+                  // }
+              })
+
+
+          </script>
 
 
             </div>
@@ -516,6 +581,8 @@ if ($numRows != 0) {
                 document.getElementById('body').style.backgroundColor = "silver ";
                 $('#subButton').prop('disabled', true);
                 $('#subButton').css('cursor', 'not-allowed');
+                $('#button').prop('disabled', true);
+                $('#button').css('cursor', 'not-allowed');
             }
         })
     </script>
@@ -581,7 +648,29 @@ if ($numRows != 0) {
     </script>
 
 
+    <script type="text/javascript">
+    function check(){
+        var email = $('#email').val();
+        var name = $('#name').val();
 
+        if(email == "" ){
+            $('#button').prop('disabled', true);
+            $('#button').css('cursor', 'not-allowed');
+        } else if(email != ""){
+            $('#button').prop('disabled', false);
+            $('#button').css('cursor', '');
+        }
+
+        if(name == "" ){
+            $('#button').prop('disabled', true);
+            $('#button').css('cursor', 'not-allowed');
+        } else if(name != ""){
+            $('#button').prop('disabled', false);
+            $('#button').css('cursor', '');
+        }
+
+    }
+    </script>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js "></script>
     <script src="loaders.css.js "></script>
