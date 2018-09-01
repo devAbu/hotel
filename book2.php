@@ -162,7 +162,7 @@ if ($numRows != 0) {
                             </div>
                         </li>
                         <li class="list-group-item bg-info" style="border:none; margin-top:-20px; background:none !important;">
-                            <input type="date" style="width:400px; height: 50px; background: none !important; border: none; border-bottom: 1px solid black; color: white;"
+                            <input type="text" placeholder="Check-in date..." style="width:400px; height: 50px; background: none !important; border: none; border-bottom: 1px solid black; color: white;"
                                 required="" name="checkIn" id="checkIn">
                         </li>
                     </ul>
@@ -170,7 +170,7 @@ if ($numRows != 0) {
                         <tr>
                             <td>
                                 <div style="margin-left:18px;">
-                                    <input type="date" style="width:400px !important; height: 50px; background: none !important; border: none; border-bottom: 1px solid black; color: white;"
+                                    <input type="text" placeholder="Check-out date..." style="width:400px !important; height: 50px; background: none !important; border: none; border-bottom: 1px solid black; color: white;"
                                         required name="checkOut" id="checkOut">
                                 </div>
                             </td>
@@ -217,6 +217,7 @@ if ($numRows != 0) {
         $('footer').hide();
         $.noConflict();
 jQuery(document).ready(function ($) {
+  $(window).load(function(){
 
                 $('.loader').hide();
                 $('article').show();
@@ -239,7 +240,7 @@ jQuery(document).ready(function ($) {
                         console.log(date)
                 $( "#checkIn" ).datepicker({dateFormat: 'yy-mm-dd', minDate: date, onSelect: function(){price(); check()}});
                 $( "#checkOut" ).datepicker({dateFormat: 'yy-mm-dd', minDate: date, onSelect: function(){price(); check()} });
-
+});
         });
     </script>
 
