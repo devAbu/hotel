@@ -1,4 +1,3 @@
-<!-- TODO: promijeniti boju fieldova -->
 <?php
 session_start();
 ?>
@@ -103,21 +102,21 @@ session_start();
                             <div class=" alert " id="mess" ></div>
                         </li>
                         <li class="list-group-item bg-info" style="background:none !important;">
-                            <input type="text" placeholder="First name..." class="form-control mb-2" style=" height: 50px; background: none !important; border: none; border-bottom: 1px solid black;"
+                            <input type="text" placeholder="First name..." class="form-control mb-2" style=" height: 50px; background: none !important; border: none; border-bottom: 1px solid black; color: white"
                                 required="" name="name" id="name" onkeyup="check()">
                         </li>
                         <li class="list-group-item bg-info" style="border:none; margin-top:-20px; background:none !important;">
-                            <input type="text" placeholder="Last name..." class="form-control mb-2" style="height: 50px; background: none !important; border: none; border-bottom: 1px solid black;" required="" name="surname" id="surname" onkeyup="check()">
+                            <input type="text" placeholder="Last name..." class="form-control mb-2" style="height: 50px; background: none !important; border: none; border-bottom: 1px solid black; color: white" required="" name="surname" id="surname" onkeyup="check()">
                         </li>
                         <li class="list-group-item bg-info" style="border:none; margin-top:-20px; background:none !important;">
-                            <input type="email" placeholder="you@example.com" class="form-control " style="height: 50px; background: none !important; border: none; border-bottom: 1px solid black;" required="" name="email" id="email" onkeyup="check()">
+                            <input type="email" placeholder="you@example.com" class="form-control " style="height: 50px; background: none !important; border: none; border-bottom: 1px solid black; color: white" required="" name="email" id="email" onkeyup="check()">
                         </li>
                     </ul>
                     <table>
                         <tr>
                             <td>
                                 <div style="margin-left:18px;">
-                                    <input type="password" placeholder="*****" class="form-control" style="width:400px !important; height: 50px; background: none !important; border: none; border-bottom: 1px solid black;" required name="pass" id="pass" onkeyup="check()">
+                                    <input type="password" placeholder="*****" class="form-control" style="width:400px !important; height: 50px; background: none !important; border: none; border-bottom: 1px solid black; color: white" required name="pass" id="pass" onkeyup="check()">
                                 </div>
                             </td>
                             <td>
@@ -130,7 +129,7 @@ session_start();
                     <div style="margin-top:-10px;">
                         <ul class="list-group list-group-flush">
                             <li class="list-group-item bg-info" style="background:none !important;">
-                                <a href="login" class="badge text-danger" style="text-decoration:none;">
+                                <a href="login" class="badge text-white" style="text-decoration:none;">
                                     <span style="font-size:13px;">Already has account?</span>
                                 </a>
                             </li>

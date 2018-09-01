@@ -1,4 +1,3 @@
-<!-- TODO: promijeniti boju fieldova -->
 <?php
 session_start();
 ?>
@@ -107,7 +106,7 @@ session_start();
                             <div class="alert" id="mess"></div>
                         </li>
                         <li class="list-group-item bg-info" style="border:none; margin-top:-20px; background:none !important;">
-                            <input type="email" placeholder="you@example.com" class="form-control " style="width:400px; height: 50px; background: none !important; border: none; border-bottom: 1px solid black;" name="email" id="email"
+                            <input type="email" placeholder="you@example.com" class="form-control " style="width:400px; height: 50px; background: none !important; border: none; border-bottom: 1px solid black; color: black" name="email" id="email"
                                 required="" onkeyup="check()">
                         </li>
                         <!--<li class="list-group-item bg-info" style="border:none; margin-top:-20px; background:none !important;">
@@ -118,7 +117,7 @@ session_start();
                         <tr>
                             <td>
                                 <div style="margin-left:18px;">
-                                    <input type="password" placeholder="*****" class="form-control" style="width:400px !important; height: 50px; background: none !important; border: none; border-bottom: 1px solid black;"
+                                    <input type="password" placeholder="*****" class="form-control" style="width:400px !important; height: 50px; background: none !important; border: none; border-bottom: 1px solid black; color:white"
                                         required id="pass" name="pass" onkeyup="check()">
                                 </div>
                             </td>

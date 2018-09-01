@@ -162,7 +162,7 @@ if ($numRows != 0) {
                             </div>
                         </li>
                         <li class="list-group-item bg-info" style="border:none; margin-top:-20px; background:none !important;">
-                            <input type="date" style="width:400px; height: 50px; background: none !important; border: none; border-bottom: 1px solid black;"
+                            <input type="date" style="width:400px; height: 50px; background: none !important; border: none; border-bottom: 1px solid black; color: white;"
                                 required="" name="checkIn" id="checkIn">
                         </li>
                     </ul>
@@ -170,7 +170,7 @@ if ($numRows != 0) {
                         <tr>
                             <td>
                                 <div style="margin-left:18px;">
-                                    <input type="date" style="width:400px !important; height: 50px; background: none !important; border: none; border-bottom: 1px solid black;"
+                                    <input type="date" style="width:400px !important; height: 50px; background: none !important; border: none; border-bottom: 1px solid black; color: white;"
                                         required name="checkOut" id="checkOut">
                                 </div>
                             </td>
@@ -179,7 +179,7 @@ if ($numRows != 0) {
                         <tr>
                             <td>
                                 <div style="margin-left:18px;">
-                                    <input type="number" placeholder="Adults number..." style="width:400px !important; height: 50px; background: none !important; border: none; border-bottom: 1px solid black;"
+                                    <input type="number" placeholder="Adults number..." style="width:400px !important; height: 50px; background: none !important; border: none; border-bottom: 1px solid black; color: white;"
                                         required name="adultsNum" id="adultsNum" >
                                 </div>
                             </td>
@@ -187,7 +187,7 @@ if ($numRows != 0) {
                         <tr>
                             <td>
                                 <div style="margin-left:18px;">
-                                    <input type="number" placeholder="Child number..." style="width:400px !important; height: 50px; background: none !important; border: none; border-bottom: 1px solid black;"
+                                    <input type="number" placeholder="Child number..." style="width:400px !important; height: 50px; background: none !important; border: none; border-bottom: 1px solid black; color: white;"
                                         required name="childNum" id="childNum">
                                 </div>
                             </td>

@@ -1,4 +1,3 @@
-<!-- TODO: promijeniti boju fieldova -->
 <?php
 session_start();
 ?>
@@ -104,7 +103,7 @@ session_start();
                     <ul class="list-group list-group-flush" style="margin-top:-20px; width:440px">
                         <div class="alert" id="mess"></div>
                         <li class="list-group-item bg-info" style="border:none; margin-top:-20px; background:none !important;">
-                            <input type="email" placeholder="you@example.com" class="form-control " style=" height: 50px; background: none !important; border: none; border-bottom: 1px solid black;" name="email" id="email" onkeyup="check()"
+                            <input type="email" placeholder="you@example.com" class="form-control " style=" height: 50px; background: none !important; border: none; border-bottom: 1px solid black; color: black !important" name="email" id="email" onkeyup="check()"
                                 required="">
                         </li>
                     </ul>
@@ -112,7 +111,7 @@ session_start();
                         <tr>
                             <td>
                                 <div style="margin-left:18px;">
-                                    <input type="password" placeholder="*****" class="form-control" style="width:400px !important; height: 50px; background: none !important; border: none; border-bottom: 1px solid black;"
+                                    <input type="password" placeholder="*****" class="form-control" style="width:400px !important; height: 50px; background: none !important; border: none; border-bottom: 1px solid black; color: white"
                                         required id="pass" name="pass" onkeyup="check()">
                                 </div>
                             </td>
@@ -125,12 +124,12 @@ session_start();
                     </table>
                     <div class="row no-gutters">
                         <div class="col-8">
-                            <a href="register" class="badge ml-3 text-danger" style="text-decoration:none;">
+                            <a href="register" class="badge ml-3 text-white" style="text-decoration:none;">
                                 <span style="font-size:13px;">No account?</span>
                             </a>
                         </div>
                         <div class="col-4">
-                            <a href="forgot" class="badge ml-5 text-danger" style="text-decoration:none;">
+                            <a href="forgot" class="badge ml-5 text-white" style="text-decoration:none;">
                                 <span style="font-size:13px;">Forgot password?</span>
                             </a>
                         </div>
@@ -142,7 +141,7 @@ session_start();
                     </div>
                 </div>
             </div>
-            <div class="text-center text-primary col-2 offset-5">
+            <div class="text-center text-white col-2 offset-5">
                 <p style="font-size:25px;">&copy; 2018 COMBE</p>
             </div>
         </div>

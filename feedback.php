@@ -1,4 +1,3 @@
-<!-- TODO: provjeriti i ako treba promijeniti boju fieldova -->
 <?php
 session_start();
 if (isset($_SESSION['email'])) {
