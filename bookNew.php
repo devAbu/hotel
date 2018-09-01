@@ -172,7 +172,7 @@ if (isset($_SESSION['email'])) {
                 <div class="modal-body ">
                     <div class="col-12">
                         <div class="row">
-                          <!-- TODO: promijeniti imena soba (u bazi) -->
+                          <!-- TODO:OBA- promijeniti imena soba (u bazi) -->
                             <?php
 require 'connection.php';
 

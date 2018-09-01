@@ -1,4 +1,4 @@
-<!-- TODO: napravit cjenovnik (korsnik moze listat) -->
+<!-- TODO: OBA-napravit cjenovnik (korsnik moze listat) -->
 <?php
 session_start();
 ?>

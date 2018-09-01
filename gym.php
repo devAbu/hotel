@@ -1,4 +1,4 @@
-<!-- TODO: napravit rezervaciju -->
+<!-- TODO: uradit validaciju i back-end-->
 <?php
 session_start();
 ?>
@@ -155,10 +155,23 @@ if (isset($_SESSION['email'])) {
                 <a href="https://www.facebook.com" class="text-warning" style="text-decoration: none">Follow us on FACEBOOK</a>
             </div>
             <div class=" col-4 ">
-                <p>
+                <p class="mb-5">
                     Lorem ipsum dolor sit amet,sed diam voluptua. sed diam voluptua. Lorem ipsum dolor sit amet,sed diam voluptua. sed diam voluptua.
                     Lorem ipsum dolor sit amet,sed diam voluptua. sed diam voluptua.
                 </p>
+                <label>Price:</label>
+                <input type="number" readonly value="100" class="form-control" style="width: 60%"/>
+                <br />
+          <form>
+            <label>Your info:</label>
+              <input type="email" placeholder = "enter your email..." class="form-control" style="width: 60%"/>
+              <br />
+              <input type="text" placeholder = "enter your name..." class="form-control" style="width: 60%"/>
+              <br />
+              <button class="btn btn-lg btn-secondary" style="width: 60%">Join</button>
+          </form>
+
+
             </div>
             <div class="col-8 ">
                 <img src="images/gym 1.jpg " class="img-fluid " />

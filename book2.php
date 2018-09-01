@@ -311,8 +311,9 @@ jQuery(document).ready(function ($) {
                         ((''+month) . length < 2 ? '0' : '') + month+'-'+
                         ((''+day) . length < 2 ? '0' : '') + day;
 
+                console.log(date)
                 date = Date.parse(date)
-
+// TODO:result i final ne rade...popravit
                 var result = checkIn - date;
 
                 console.log('result ' + result)
