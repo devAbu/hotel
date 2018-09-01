@@ -1,4 +1,4 @@
-<!-- TODO: rezervacija eventa (meeting, event, conference) -->
+<!-- TODO: uradit back-end za reserve conference -->
 <?php
 session_start();
 ?>
@@ -6,31 +6,35 @@ session_start();
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link href="style.css" type="text/css" rel="stylesheet">
-    <title>Hotel Online System</title>
-    <link rel="icon" type="image/ico" href="images/home.ico" />
-    <meta name="author" content="combe">
-    <meta name="keywords" content="Hotel, bosnia, reserve, sarajevo, apartment">
-    <meta name="description" content="Hotel online system for check and reserve a hotel room for your holiday ">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb"
-        crossorigin="anonymous">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/smooth-scroll/12.1.5/js/smooth-scroll.min.js" integrity="sha256-MMt0/21G3z0Zg4ET1kI3HC9npItDowkitRDVr0FhCxA="
-        crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="loaders.min.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link href="style.css" type="text/css" rel="stylesheet">
+  <title>Hotel Online System</title>
+  <link rel="icon" type="image/ico" href="images/home.ico" />
+  <meta name="author" content="combe">
+  <meta name="keywords" content="Hotel, bosnia, reserve, sarajevo, apartment">
+  <meta name="description" content="Hotel online system for check and reserve a hotel room for your holiday ">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb"
+      crossorigin="anonymous">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+      crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+      crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+      crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/smooth-scroll/12.1.5/js/smooth-scroll.min.js" integrity="sha256-MMt0/21G3z0Zg4ET1kI3HC9npItDowkitRDVr0FhCxA="
+      crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="loaders.min.css" />
 
-     <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+<!-- <link rel="stylesheet" href="/resources/demos/style.css"> -->
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 
     <script type="text/javascript">
         $(function () {
@@ -72,17 +76,17 @@ session_start();
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav">
-                    <li class="nav-item active">
+                    <li class="nav-item">
                         <a class="nav-link" href="index">Home
                             <span class="sr-only">(current)</span>
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">CONFERENCES & MEETINGS</a>
+                        <a class="nav-link active" href="events.php">CONFERENCES</a>
                     </li>
-                    <li class="nav-item">
+                    <!-- <li class="nav-item">
                         <a class="nav-link" href="#">PRIVATE CEREMONIES & PARTIES</a>
-                    </li>
+                    </li> -->
                     <?php
     if (isset($_SESSION['email'])) {
         echo '<li class="nav-item">
@@ -130,9 +134,41 @@ if (isset($_SESSION['email'])) {
 
 
         <div class="row no-gutters">
-            <div class="col-12">
+            <div class="col-8">
                 <h1 class="display-1">EVENTS</h1>
             </div>
+            <div class="col-4 mt-5">
+              <button type="button" name="button" id="button" class="btn btn-lg btn-warning" style="width:50%" data-toggle="modal" data-target="#reserve"><span style="color:white">Reserve</span></button>
+            </div>
+            <div class="modal fade" id="reserve" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+              <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalCenterTitle">Reserve a conference</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <div class="modal-body">
+                        <input type="text" name="date" placeholder="Date..." id="date" class="form-control" onkeyup="check2()">
+                        <br />
+                        <input type="name" name="name" id="name" placeholder="Name..." class="form-control"  onkeyup="check2()"/>
+                        <br />
+                        <input type="email" name="email" id="email" placeholder="Email..." class="form-control" onkeyup="check2()">
+                        <br />
+                        <div class="alert " id="alert"></div>
+                        <button id="reserveButton" name="reserveButton" class="btn btn-primary">Reserve</button>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+
+
+
             <div class="col-6">
                 <div class="row">
                     <div class="col-6">
@@ -407,8 +443,8 @@ if ($numRows != 0) {
         $('article').hide();
         $('footer').hide();
         $('section').hide();
-        $(window).on({
-            load: function () {
+      jQuery(document).ready(function ($) {
+      $(window).load(function(){
                 $('.loader').hide();
                 $('article').show();
                 $('section').show();
@@ -416,8 +452,21 @@ if ($numRows != 0) {
                 document.getElementById('body').style.backgroundColor = "silver ";
                 $('#subButton').prop('disabled', true);
                 $('#subButton').css('cursor', 'not-allowed');
+                $('#reserveButton').prop('disabled', true);
+                $('#reserveButton').css('cursor', 'not-allowed');
 
-            }
+                var currentDate = new Date()
+                var month = currentDate.getMonth()+1;
+                var day = currentDate.getDate();
+
+                var date = currentDate . getFullYear()+'-'+
+                        ((''+month) . length < 2 ? '0' : '') + month+'-'+
+                        ((''+day) . length < 2 ? '0' : '') + day;
+                        console.log(date)
+
+                $( "#date" ).datepicker({dateFormat: 'yy-mm-dd', minDate: date});
+
+})
         })
     </script>
 
@@ -480,6 +529,78 @@ if ($numRows != 0) {
             }
         });
     </script>
+
+    <script>
+        function check2(){
+            var date = $('#date').val();
+            var name = $('#name').val();
+            var email = $('#email').val();
+
+            if(email == "" || name =="" || date == ""){
+                $('#reserveButton').prop('disabled', true);
+                $('#reserveButton').css('cursor', 'not-allowed');
+            } else if(email != "" && name != "" && date != ""){
+                $('#reserveButton').prop('disabled', false);
+                $('#reserveButton').css('cursor', '');
+            }
+        }
+    </script>
+
+              <script>
+                    $('#alert').fadeOut();
+                    $('#reserveButton').click(function () {
+                        $('#alert').removeClass('alert-danger').removeClass('alert-success')
+                        var date = $('#date').val();
+                        var name = $('#name').val();
+                        var email = $('#email').val();
+
+                        function validateEmail($email) {
+                            var emailReg = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/;
+                            return emailReg.test($email);
+                        }
+                        if(date == ""){
+                          $("#alert").addClass('alert-danger');
+                          $("#alert").html("Date is required!!!");
+                          $("#alert").fadeIn(500).delay(1000).fadeOut(500);
+                        } else if (name == "") {
+                            $("#alert").addClass('alert-danger');
+                            $("#alert").html("YOur name is required!!!");
+                            $("#alert").fadeIn(500).delay(1000).fadeOut(500);
+                        } else if (email == "") {
+                            $("#alert").addClass('alert-danger');
+                            $("#alert").html("Email field is required!!!");
+                            $("#alert").fadeIn(500).delay(1000).fadeOut(500);
+                        } else if (!validateEmail(email)) {
+                            $("#alert").addClass('alert-danger');
+                            $("#alert").html('Please enter validated email address.');
+                            $("#alert").fadeIn(500).delay(1000).fadeOut(500);
+                         }//else {
+            //     $.ajax({
+            //         url: "./subscribeData.php?task=subscribe&emailSub="+emailSub,
+            //         success: function (data){
+            //             if(data.indexOf('success') > -1){
+            //                 $("#alert").addClass('alert-success');
+						// 	$("#alert").html('Thanks for your subscribtion');
+						// 	$("#alert").fadeIn(500).delay(1000).fadeOut(500);
+            //                 $('#emailSub').val("");
+            //                 $('#subButton').prop('disabled', true);
+            //     $('#subButton').css('cursor', 'not-allowed');
+            //             } else {
+            //                 $("#alert").addClass('alert-danger');
+						// 	$("#alert").html('You are already subscribe our newsletter');
+						// 	$("#alert").fadeIn(500).delay(1000).fadeOut(500);
+            //             }
+            //         },
+            //         error: function (data, err){
+            //             $("#alert").addClass('alert-danger');
+            //             $("#alert").html('Some problem occured. Please try again later.');
+            //             $("#alert").fadeIn(500).delay(1000).fadeOut(500);
+            //         }
+            //     })
+            // }
+        });
+    </script>
+
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js "></script>
     <script src="loaders.css.js "></script>
