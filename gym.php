@@ -128,18 +128,18 @@ if (isset($_SESSION['email'])) {
             </div>
         </nav>
 
-        <div id="jumbotronGym" class="jumbotron jumbotron-fluid text-white d-flex justify-content-center align-items-center">
+        <!-- <div id="jumbotronGym" class="jumbotron jumbotron-fluid text-white d-flex justify-content-center align-items-center">
             <div class="container text-center">
                 <h1 class="display-1 text-dark text-uppercase">COMBRERO HOTEL</h1>
                 <p class="display-4 d-none d-sm-block text-primary">TAKE LOOK AT BEST GYM</p>
             </div>
-        </div>
+        </div> -->
 
 
 
         <div class="row no-gutters">
             <div class="col-12">
-                <h1 class="display-1">GYM</h1>
+                <h1 class="display-1" style="margin-top:50px;">GYM</h1>
             </div>
             <div class="col-6">
                 <p>

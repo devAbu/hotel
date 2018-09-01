@@ -126,7 +126,7 @@ if (isset($_SESSION['email'])) {
 
     </article>
 
-    <article>
+    <article style="margin-top:70px;">
         <div class="row no-gutters">
             <div class="col-6">
                 <?php
@@ -159,7 +159,7 @@ $numRows = $result->num_rows;
 
 if ($numRows != 0) {
     while ($row = $result->fetch_assoc()) {
-        echo '<div class="col-6">
+        echo '<div class="col-6" >
                 <div class="row">
                     <div class="col-6">
                         <a href="room">
