@@ -300,7 +300,7 @@ jQuery(document).ready(function ($) {
 
                 price = priceAdult + priceChild
                 price = parseInt(price)
-                console.log('price ' + price)
+                console.log('price osoba ' + price)
 
 
                 var currentDate = new Date()
@@ -313,36 +313,42 @@ jQuery(document).ready(function ($) {
 
                 console.log(date)
                 date = Date.parse(date)
-// TODO:result i final ne rade...popravit
-                var result = checkIn - date;
+
+                console.log('checkIn ' +date)
+                console.log('checkIn ' + checkIn)
+                console.log('checkOut ' +checkOut)
+                var result = checkOut - checkIn;
 
                 console.log('result ' + result)
 
                 var final = Math.floor(result / (1000 * 60 * 60 * 24));
                 console.log('final ' + final)
 
-                if(final <= 10){
-                    price = price + 150
-                    console.log(price)
-                } else if(final <= 18){
-                    price += 100
-                    console.log(price)
-                } else if(final<= 30){
-                    price += 75
-                    console.log(price)
-                } else {
-                    price += 50
-                    console.log(price)
-                }
+                var finalFinal = final + 1
+                console.log('final final ' + finalFinal)
+
+                // if(final <= 10){
+                //     price = (price + 150) * final
+                //     console.log(price)
+                // } else if(final <= 18){
+                //     price = (price + 100) * final
+                //     console.log(price)
+                // } else if(final<= 30){
+                //     price = (price + 75) * final
+                //     console.log(price)
+                // } else {
+                //     price = (price + 50) * final
+                //     console.log(price)
+                // }
 
                  if(room.indexOf('Top') > -1){
-                    price +=200
+                    price +=(200*finalFinal)
                     console.log(price)
                 } else if(room.indexOf('Middle') > -1){
-                    price += 150
+                    price += (150*finalFinal)
                     console.log(price)
                 } else if(room.indexOf('Down') > -1){
-                    price += 100
+                    price += (100*finalFinal)
                     console.log(price)
                 }
 

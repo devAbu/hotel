@@ -83,6 +83,13 @@ session_start();
                     <li class="nav-item">
                         <a class="nav-link" href="#">PRIVATE CEREMONIES & PARTIES</a>
                     </li>
+                    <?php
+    if (isset($_SESSION['email'])) {
+        echo '<li class="nav-item">
+            <a href="events" class="nav-link link">
+                Book</a>
+        </li>';
+    }?>
                 </ul>
                                 <?php
 if (isset($_SESSION['email'])) {
