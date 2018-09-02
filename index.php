@@ -141,7 +141,7 @@ session_start();
                     <?php
     if (isset($_SESSION['email'])) {
         echo '<li class="nav-item">
-            <a href="events" class="nav-link link">
+            <a href="bookNew" class="nav-link link">
                 Book</a>
         </li>';
     }?>
