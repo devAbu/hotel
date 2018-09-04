@@ -1,4 +1,3 @@
-<!-- TODO: uradit back-end-->
 <?php
 session_start();
 ?>

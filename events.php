@@ -1,4 +1,3 @@
-<!-- TODO: uradit back-end za reserve conference -->
 <?php
 session_start();
 ?>
@@ -574,30 +573,32 @@ if ($numRows != 0) {
                             $("#alert").addClass('alert-danger');
                             $("#alert").html('Please enter validated email address.');
                             $("#alert").fadeIn(500).delay(1000).fadeOut(500);
-                         }//else {
-            //     $.ajax({
-            //         url: "./subscribeData.php?task=subscribe&emailSub="+emailSub,
-            //         success: function (data){
-            //             if(data.indexOf('success') > -1){
-            //                 $("#alert").addClass('alert-success');
-						// 	$("#alert").html('Thanks for your subscribtion');
-						// 	$("#alert").fadeIn(500).delay(1000).fadeOut(500);
-            //                 $('#emailSub').val("");
-            //                 $('#subButton').prop('disabled', true);
-            //     $('#subButton').css('cursor', 'not-allowed');
-            //             } else {
-            //                 $("#alert").addClass('alert-danger');
-						// 	$("#alert").html('You are already subscribe our newsletter');
-						// 	$("#alert").fadeIn(500).delay(1000).fadeOut(500);
-            //             }
-            //         },
-            //         error: function (data, err){
-            //             $("#alert").addClass('alert-danger');
-            //             $("#alert").html('Some problem occured. Please try again later.');
-            //             $("#alert").fadeIn(500).delay(1000).fadeOut(500);
-            //         }
-            //     })
-            // }
+                         }else {
+                 $.ajax({
+                     url: "./eventData.php?task=reserve&date="+date+"&name="+name+"&email="+email,
+                     success: function (data){
+                         if(data.indexOf('reserved') > -1){
+                             $("#alert").addClass('alert-success');
+                						 	$("#alert").html('Your request sent successfully');
+                						 	$("#alert").fadeIn(500).delay(1000).fadeOut(500);
+                             $('#date').val("");
+                             $('#name').val("");
+                             $('#email').val("");
+                             $('#subButton').prop('disabled', true);
+                 $('#subButton').css('cursor', 'not-allowed');
+                         } else {
+                             $("#alert").addClass('alert-danger');
+						 	$("#alert").html('The date is already reserved');
+						 	$("#alert").fadeIn(500).delay(1000).fadeOut(500);
+                         }
+                     },
+                     error: function (data, err){
+                         $("#alert").addClass('alert-danger');
+                        $("#alert").html('Some problem occured. Please try again later.');
+                         $("#alert").fadeIn(500).delay(1000).fadeOut(500);
+                       }
+                 })
+             }
         });
     </script>
 
