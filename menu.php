@@ -1,4 +1,4 @@
-<!-- TODO:nac slike za jela...i skontat koja jel da idu (baza) -->
+<!-- TODO: ubacit slike ako hoce...description pravi -->
 <?php
 session_start();
 ?>
@@ -116,151 +116,131 @@ session_start();
                     <div class="caviar-menu-slides owl-carousel clearfix">
 
                         <div class="caviar-portfolio clearfix">
-                            <!-- Single Gallery Item -->
-                            <div class="single_menu_item breakfast wow fadeInUp">
-                                <div class="d-sm-flex align-items-center">
-                                    <div class="dish-thumb">
-                                        <img src="img/menu-img/dish-1.png" alt="">
-                                    </div>
-                                    <div class="dish-description">
-                                        <h3>Lorem Ipsum Dolor Sit Amet</h3>
-                                        <p>Sed commodo augue eu diam tincidunt, sit amet auctor lectus semper. Mauris porttitor diam at fringilla tempor.</p>
-                                    </div>
-                                    <div class="dish-value">
-                                        <h3>$45</h3>
-                                    </div>
-                                </div>
-                            </div>
+                          <?php
+                              require 'connection.php';
 
-                            <!-- Single Gallery Item -->
-                            <div class="single_menu_item lunch wow fadeInUp">
-                                <div class="d-sm-flex align-items-center">
-                                    <div class="dish-thumb">
-                                        <img src="img/menu-img/dish-1.png" alt="">
-                                    </div>
-                                    <div class="dish-description">
-                                        <h3>Lorem Ipsum Dolor Sit Amet</h3>
-                                        <p>Sed commodo augue eu diam tincidunt, sit amet auctor lectus semper. Mauris porttitor diam at fringilla tempor.</p>
-                                    </div>
-                                    <div class="dish-value">
-                                        <h3>$45</h3>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- Single Gallery Item -->
-                            <div class="single_menu_item dinner wow fadeInUp">
-                                <div class="d-sm-flex align-items-center">
-                                    <div class="dish-thumb">
-                                        <img src="img/menu-img/dish-2.png" alt="">
-                                    </div>
-                                    <div class="dish-description">
-                                        <h3>Lorem Ipsum Dolor Sit Amet</h3>
-                                        <p>Sed commodo augue eu diam tincidunt, sit amet auctor lectus semper. Mauris porttitor diam at fringilla tempor.</p>
-                                    </div>
-                                    <div class="dish-value">
-                                        <h3>$45</h3>
-                                    </div>
-                                </div>
-                            </div>
+                              $query = "select * from menuItem where type like '%breakfast%' ";
+                              $result = $connection->query($query);
+
+                              $numRows = $result->num_rows;
+
+                              if ($numRows != 0) {
+                                  while ($row = $result->fetch_assoc()) {
+                                      echo '<div class="single_menu_item breakfast wow fadeInUp">
+                                          <div class="d-sm-flex align-items-center">
+                                          .'
+                                              // <div class="dish-thumb">;
+                                              //     <img src="img/menu-img/dish-1.png" alt="">;
+                                              // </div>;
+                                              .'
+                                              <div class="dish-description">
+                                                  <h3>'.$row['name'].'</h3>
+                                                  <p>'.$row['description'].'</p>
+                                              </div>
+                                              <div class="dish-value">
+                                                  <h3>$'.$row['price'].'</h3>
+                                              </div>
+                                          </div>
+                                      </div>';
+                                  }
+                              }
+                           ?>
                         </div>
 
                         <div class="caviar-portfolio clearfix">
+                          <?php
 
-                            <!-- Single Gallery Item -->
-                            <div class="single_menu_item lunch wow fadeInUp">
-                                <div class="d-sm-flex align-items-center">
-                                    <div class="dish-thumb">
-                                        <img src="img/menu-img/dish-3.png" alt="">
-                                    </div>
-                                    <div class="dish-description">
-                                        <h3>Lorem Ipsum Dolor Sit Amet</h3>
-                                        <p>Sed commodo augue eu diam tincidunt, sit amet auctor lectus semper. Mauris porttitor diam at fringilla tempor.</p>
-                                    </div>
-                                    <div class="dish-value">
-                                        <h3>$55</h3>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- Single Gallery Item -->
-                            <div class="single_menu_item lunch wow fadeInUp">
-                                <div class="d-sm-flex align-items-center">
-                                    <div class="dish-thumb">
-                                        <img src="img/menu-img/dish-1.png" alt="">
-                                    </div>
-                                    <div class="dish-description">
-                                        <h3>Lorem Ipsum Dolor Sit Amet</h3>
-                                        <p>Sed commodo augue eu diam tincidunt, sit amet auctor lectus semper. Mauris porttitor diam at fringilla tempor.</p>
-                                    </div>
-                                    <div class="dish-value">
-                                        <h3>$55</h3>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- Single Gallery Item -->
-                            <div class="single_menu_item dinner wow fadeInUp">
-                                <div class="d-sm-flex align-items-center">
-                                    <div class="dish-thumb">
-                                        <img src="img/menu-img/dish-2.png" alt="">
-                                    </div>
-                                    <div class="dish-description">
-                                        <h3>Lorem Ipsum Dolor Sit Amet</h3>
-                                        <p>Sed commodo augue eu diam tincidunt, sit amet auctor lectus semper. Mauris porttitor diam at fringilla tempor.</p>
-                                    </div>
-                                    <div class="dish-value">
-                                        <h3>$55</h3>
-                                    </div>
-                                </div>
-                            </div>
+                              $query = "select * from menuItem where type like '%lunch%' ";
+                              $result = $connection->query($query);
+
+                              $numRows = $result->num_rows;
+
+                              if ($numRows != 0) {
+                                  while ($row = $result->fetch_assoc()) {
+                                      echo '<div class="single_menu_item breakfast wow fadeInUp">
+                                          <div class="d-sm-flex align-items-center">
+                                          .'
+                                              // <div class="dish-thumb">;
+                                              //     <img src="img/menu-img/dish-1.png" alt="">;
+                                              // </div>;
+                                              .'
+                                              <div class="dish-description">
+                                                  <h3>'.$row['name'].'</h3>
+                                                  <p>'.$row['description'].'</p>
+                                              </div>
+                                              <div class="dish-value">
+                                                  <h3>$'.$row['price'].'</h3>
+                                              </div>
+                                          </div>
+                                      </div>';
+                                  }
+                              }
+                           ?>
                         </div>
 
                         <div class="caviar-portfolio clearfix">
+                          <?php
 
-                            <!-- Single Gallery Item -->
-                            <div class="single_menu_item lunch wow fadeInUp">
-                                <div class="d-sm-flex align-items-center">
-                                    <div class="dish-thumb">
-                                        <img src="img/menu-img/dish-3.png" alt="">
-                                    </div>
-                                    <div class="dish-description">
-                                        <h3>Lorem Ipsum Dolor Sit Amet</h3>
-                                        <p>Sed commodo augue eu diam tincidunt, sit amet auctor lectus semper. Mauris porttitor diam at fringilla tempor.</p>
-                                    </div>
-                                    <div class="dish-value">
-                                        <h3>$65</h3>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- Single Gallery Item -->
-                            <div class="single_menu_item lunch wow fadeInUp">
-                                <div class="d-sm-flex align-items-center">
-                                    <div class="dish-thumb">
-                                        <img src="img/menu-img/dish-1.png" alt="">
-                                    </div>
-                                    <div class="dish-description">
-                                        <h3>Lorem Ipsum Dolor Sit Amet</h3>
-                                        <p>Sed commodo augue eu diam tincidunt, sit amet auctor lectus semper. Mauris porttitor diam at fringilla tempor.</p>
-                                    </div>
-                                    <div class="dish-value">
-                                        <h3>$65</h3>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- Single Gallery Item -->
-                            <div class="single_menu_item dinner wow fadeInUp">
-                                <div class="d-sm-flex align-items-center">
-                                    <div class="dish-thumb">
-                                        <img src="img/menu-img/dish-2.png" alt="">
-                                    </div>
-                                    <div class="dish-description">
-                                        <h3>Lorem Ipsum Dolor Sit Amet</h3>
-                                        <p>Sed commodo augue eu diam tincidunt, sit amet auctor lectus semper. Mauris porttitor diam at fringilla tempor.</p>
-                                    </div>
-                                    <div class="dish-value">
-                                        <h3>$65</h3>
-                                    </div>
-                                </div>
-                            </div>
+                              $query = "select * from menuItem where type like '%dinner%' ";
+                              $result = $connection->query($query);
+
+                              $numRows = $result->num_rows;
+
+                              if ($numRows != 0) {
+                                  while ($row = $result->fetch_assoc()) {
+                                      echo '<div class="single_menu_item breakfast wow fadeInUp">
+                                          <div class="d-sm-flex align-items-center">
+                                          .'
+                                              // <div class="dish-thumb">;
+                                              //     <img src="img/menu-img/dish-1.png" alt="">;
+                                              // </div>;
+                                              .'
+                                              <div class="dish-description">
+                                                  <h3>'.$row['name'].'</h3>
+                                                  <p>'.$row['description'].'</p>
+                                              </div>
+                                              <div class="dish-value">
+                                                  <h3>$'.$row['price'].'</h3>
+                                              </div>
+                                          </div>
+                                      </div>';
+                                  }
+                              }
+                           ?>
                         </div>
+
+                        <div class="caviar-portfolio clearfix">
+                          <?php
+
+                              $query = "select * from menuItem where type like '%dessert%' ";
+                              $result = $connection->query($query);
+
+                              $numRows = $result->num_rows;
+
+                              if ($numRows != 0) {
+                                  while ($row = $result->fetch_assoc()) {
+                                      echo '<div class="single_menu_item breakfast wow fadeInUp">
+                                          <div class="d-sm-flex align-items-center">
+                                          .'
+                                              // <div class="dish-thumb">;
+                                              //     <img src="img/menu-img/dish-1.png" alt="">;
+                                              // </div>;
+                                              .'
+                                              <div class="dish-description">
+                                                  <h3>'.$row['name'].'</h3>
+                                                  <p>'.$row['description'].'</p>
+                                              </div>
+                                              <div class="dish-value">
+                                                  <h3>$'.$row['price'].'</h3>
+                                              </div>
+                                          </div>
+                                      </div>';
+                                  }
+                              }
+                           ?>
+                        </div>
+
+
                     </div>
                 </div>
             </div>
