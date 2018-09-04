@@ -1,3 +1,4 @@
+<!-- TODO: napravit prijavu -->
 <?php
 session_start();
 ?>
