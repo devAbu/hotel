@@ -210,34 +210,31 @@ if (isset($_SESSION['email'])) {
                       $("#alert").addClass('alert-danger');
                       $("#alert").html("Please enter your name!");
                       $("#alert").fadeIn(1000).delay(1000).fadeOut(500);
-                   }// else {
-                  //     $.ajax({
-                  //         url: "./loginData.php?task=login&email="+email+"&pass="+pass,
-                  //         success: function (data){
-                  //             if(data.indexOf('success') > -1){
-                  //                 $("#alert").addClass('alert-success');
-                  //   							$("#alert").html('Correct info.');
-                  //   							$("#alert").fadeIn(500).delay(2000).fadeOut(500);
-                  //                 $('#email').val("");
-                  //                 $('#name').val("");
-                  //                 $('#button').prop('disabled', true);
-                  //                 $('#button').css('cursor', 'not-allowed');
-                  //                 var delay = 2000;
-                  //                 setTimeout(function(){
-                  //                    window.history.back();  }, delay);
-                  //             } else {
-                  //                 $("#alert").addClass('alert-danger');
-                  //   							$("#alert").html('You already join our gym');
-                  //   							$("#alert").fadeIn(500).delay(1000).fadeOut(500);
-                  //             }
-                  //         },
-                  //         error: function (data, err){
-                  //             $("#alert").addClass('alert-danger');
-                  //             $("#alert").html('Some problem occured. Please try again later.');
-                  //             $("#alert").fadeIn(500).delay(1000).fadeOut(500);
-                  //         }
-                  //     })
-                  // }
+                   }else {
+                       $.ajax({
+                           url: "./gymReserve.php?task=reserve&name="+name+"&email="+email,
+                           success: function (data){
+                               if(data.indexOf('reserved') > -1){
+                                   $("#alert").addClass('alert-success');
+                     							$("#alert").html('Now you are member of our team.');
+                    							$("#alert").fadeIn(500).delay(2000).fadeOut(500);
+                                   $('#email').val("");
+                                   $('#name').val("");
+                                  $('#button').prop('disabled', true);
+                                  $('#button').css('cursor', 'not-allowed');
+                               } else {
+                                   $("#alert").addClass('alert-danger');
+                     							$("#alert").html('You already join our gym');
+                     							$("#alert").fadeIn(500).delay(1000).fadeOut(500);
+                               }
+                           },
+                           error: function (data, err){
+                               $("#alert").addClass('alert-danger');
+                               $("#alert").html('Some problem occured. Please try again later.');
+                               $("#alert").fadeIn(500).delay(1000).fadeOut(500);
+                           }
+                       })
+                   }
               })
 
 
