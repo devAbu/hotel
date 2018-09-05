@@ -214,8 +214,12 @@ if (isset($_SESSION['email'])) {
                            url: "./gymReserve.php?task=reserve&name="+name+"&email="+email,
                            success: function (data){
                                if(data.indexOf('reserved') > -1){
+                                  var d = new Date();
+                                  var n = d.getMonth();
+
+
                                    $("#alert").addClass('alert-success');
-                     							$("#alert").html('Now you are member of our team.');
+                     							$("#alert").html('Now you are member of our team. You can start come to our gym from next month ( ' + (n+2) + ' )' );
                     							$("#alert").fadeIn(500).delay(2000).fadeOut(500);
                                    $('#email').val("");
                                    $('#name').val("");
