@@ -1,4 +1,3 @@
-<!-- TODO: napravit prijavu -->
 <?php
 session_start();
 ?>
@@ -163,12 +162,41 @@ if (isset($_SESSION['email'])) {
                 </p>
                 <a href="https://www.facebook.com" class="text-warning" style="text-decoration:none">Follow us on FACEBOOK</a>
             </div>
+
             <div class="col-4">
                 <p>
                     Lorem ipsum dolor sit amet,sed diam voluptua. sed diam voluptua. Lorem ipsum dolor sit amet,sed diam voluptua. sed diam voluptua.
                     Lorem ipsum dolor sit amet,sed diam voluptua. sed diam voluptua.
                 </p>
-            </div>
+                <button type="button" name="button" id="button" class="btn btn-lg btn-warning" style="width:50%" data-toggle="modal" data-target="#reserve"><span style="color:white">Reserve</span></button>
+                <div class="modal fade" id="reserve" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                  <div class="modal-dialog modal-dialog-centered" role="document">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalCenterTitle">Reserve the swimming pool</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                          <span aria-hidden="true">&times;</span>
+                        </button>
+                      </div>
+                      <div class="modal-body">
+                        <input type="text" value="99" class="form-control" readonly>
+                        <br />
+                            <input type="text" name="date" placeholder="Date..." id="date" class="form-control" onkeyup="check2()">
+                            <br />
+                            <input type="name" name="name" id="name" placeholder="Name..." class="form-control"  onkeyup="check2()"/>
+                            <br />
+                            <input type="email" name="email" id="email" placeholder="Email..." class="form-control" onkeyup="check2()">
+                            <br />
+                            <div class="alert " id="alert"></div>
+                            <button id="reserveButton" name="reserveButton" class="btn btn-primary">Reserve</button>
+                      </div>
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                </div>
             <div class="col-8">
                 <img src="images/spa 1.jpg" class="img-fluid" />
             </div>
@@ -488,8 +516,8 @@ if ($numRows != 0) {
         $('article').hide();
         $('footer').hide();
         $('section').hide();
-        $(window).on({
-            load: function () {
+        jQuery(document).ready(function ($) {
+        $(window).load(function(){
                 $('.loader').hide();
                 $('article').show();
                 $('section').show();
@@ -497,7 +525,20 @@ if ($numRows != 0) {
                 document.getElementById('body').style.backgroundColor = "silver ";
                 $('#subButton').prop('disabled', true);
                 $('#subButton').css('cursor', 'not-allowed');
-            }
+                $('#reserveButton').prop('disabled', true);
+                $('#reserveButton').css('cursor', 'not-allowed');
+
+                var currentDate = new Date()
+                var month = currentDate.getMonth()+1;
+                var day = currentDate.getDate();
+
+                var date = currentDate . getFullYear()+'-'+
+                        ((''+month) . length < 2 ? '0' : '') + month+'-'+
+                        ((''+day) . length < 2 ? '0' : '') + day;
+                        console.log(date)
+
+                $( "#date" ).datepicker({dateFormat: 'yy-mm-dd', minDate: date});
+            })
         })
     </script>
 
@@ -558,6 +599,79 @@ if ($numRows != 0) {
                     }
                 })
             }
+        });
+    </script>
+
+    <script>
+        function check2(){
+            var date = $('#date').val();
+            var name = $('#name').val();
+            var email = $('#email').val();
+
+            if(email == "" || name =="" || date == ""){
+                $('#reserveButton').prop('disabled', true);
+                $('#reserveButton').css('cursor', 'not-allowed');
+            } else if(email != "" && name != "" && date != ""){
+                $('#reserveButton').prop('disabled', false);
+                $('#reserveButton').css('cursor', '');
+            }
+        }
+    </script>
+
+              <script>
+                    $('#alert').fadeOut();
+                    $('#reserveButton').click(function () {
+                        $('#alert').removeClass('alert-danger').removeClass('alert-success')
+                        var date = $('#date').val();
+                        var name = $('#name').val();
+                        var email = $('#email').val();
+
+                        function validateEmail($email) {
+                            var emailReg = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/;
+                            return emailReg.test($email);
+                        }
+                        if(date == ""){
+                          $("#alert").addClass('alert-danger');
+                          $("#alert").html("Date is required!!!");
+                          $("#alert").fadeIn(500).delay(1000).fadeOut(500);
+                        } else if (name == "") {
+                            $("#alert").addClass('alert-danger');
+                            $("#alert").html("YOur name is required!!!");
+                            $("#alert").fadeIn(500).delay(1000).fadeOut(500);
+                        } else if (email == "") {
+                            $("#alert").addClass('alert-danger');
+                            $("#alert").html("Email field is required!!!");
+                            $("#alert").fadeIn(500).delay(1000).fadeOut(500);
+                        } else if (!validateEmail(email)) {
+                            $("#alert").addClass('alert-danger');
+                            $("#alert").html('Please enter validated email address.');
+                            $("#alert").fadeIn(500).delay(1000).fadeOut(500);
+                         }else {
+                 $.ajax({
+                     url: "./spaData.php?task=reserve&date="+date+"&name="+name+"&email="+email,
+                     success: function (data){
+                         if(data.indexOf('reserved') > -1){
+                             $("#alert").addClass('alert-success');
+                						 	$("#alert").html('Your request sent successfully');
+                						 	$("#alert").fadeIn(500).delay(1000).fadeOut(500);
+                             $('#date').val("");
+                             $('#name').val("");
+                             $('#email').val("");
+                             $('#subButton').prop('disabled', true);
+                 $('#subButton').css('cursor', 'not-allowed');
+                         } else {
+                             $("#alert").addClass('alert-danger');
+						 	$("#alert").html('The date is already reserved');
+						 	$("#alert").fadeIn(500).delay(1000).fadeOut(500);
+                         }
+                     },
+                     error: function (data, err){
+                         $("#alert").addClass('alert-danger');
+                        $("#alert").html('Some problem occured. Please try again later.');
+                         $("#alert").fadeIn(500).delay(1000).fadeOut(500);
+                       }
+                 })
+             }
         });
     </script>
 
