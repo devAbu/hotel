@@ -1,4 +1,5 @@
 <!--TODO: Pravi tekst a ne lorem ispum -->
+<!-- TODO: admin page gdje ce vidjet zahtjeve za rezervaciju i bit u mogucnosti da prihvati il odbije  -->
 <?php
 session_start();
 ?>
@@ -563,7 +564,7 @@ if ($numRows != 0) {
                     var test = $('#test').val()
                     if(test != null){
                       console.log(test)
-                      toastr.success('Room reserved!!!');
+                      toastr.success('Room requested!!!');
                     }
 
                 }
