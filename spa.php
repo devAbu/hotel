@@ -179,7 +179,8 @@ if (isset($_SESSION['email'])) {
                         </button>
                       </div>
                       <div class="modal-body">
-                        <input type="text" value="99" class="form-control" readonly>
+                        <span>Price: </span>
+                        <input type="text" value="120" class="form-control" readonly>
                         <br />
                             <input type="text" name="date" placeholder="Date..." id="date" class="form-control" onkeyup="check2()">
                             <br />
