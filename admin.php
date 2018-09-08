@@ -233,6 +233,11 @@
 															<input type="text" name="price" id="price" value="'.$row['price'].'" hidden>
 															<button type="submit" name="reserve" id="reserve" class="btn btn-warning" style="margin-left:-15%">Reserve</button>
 													</form>
+													<form action = "deleteReserve.php" action="POST">
+													<input type="text" name="id2" id="id2" value="'.$row['ID'].'" hidden>
+															<input type="text" name="name2" id="name2" value="'.$row['name'].'" hidden>
+															<button type="submit" name="delete" id="delete" class="btn btn-danger" style="margin-left:20%; margin-top:-27%">Delete</button>
+													</form>
 												</div>
 												<div class="clearfix"> </div>
 											</div>';
