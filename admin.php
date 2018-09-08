@@ -1,4 +1,3 @@
-<!-- TODO:prikazat zahtjeve za rezervaciju i bit u mogucnosti da prihvati il odbije - napravit novu bazu za zahtjeve..i kad admin prihvati rezervacija ide u tabelu rezervacija  -->
 <!DOCTYPE HTML>
 <html>
 <head>
@@ -36,7 +35,7 @@
 
 </head>
 
- <body class="sticky-header left-side-collapsed"  onload="initMap()">
+ <body class="sticky-header left-side-collapsed">
 
 
   <?php
@@ -163,7 +162,7 @@
 					</div>
 
 		<div class="col_1" >
-			<div class="col-md-4 span_8" style="margin-left:33%">
+			<div class="col-md-4 span_8" style="margin-left:8%;">
 				<div class="activity_box">
 					<h3>Feedbacks 	<?php
 										$sql = "SELECT * FROM feedback ";
@@ -198,10 +197,59 @@
 				</div>
 			</div>
 
+			<div class="col-md-6 span_10" style="margin-left:5%">
+				<div class="activity_box">
+					<h3>Requested room reservation 	<?php
+										$sql = "SELECT * FROM request ";
+										$result = $connection->query($sql);
+
+										$count = $result->num_rows;
+										echo '<span style="margin-left:5%; color:black">'.$count.'</span> ';
+									?></h3>
+					<div class="scrollbar scrollbar1" id="style-2">
+						<?php
+            $sql = "SELECT * FROM request ";
+            $result = $connection->query($sql);
+
+            $count = $result->num_rows;
+
+            if ($count > 0) {
+                    $i = 0;
+                    while ($row = $result->fetch_assoc()) {
+                      echo '<div class="activity-row">
+												<div class="col-xs-7 activity-desc">
+													<h5>'.$row['name'].'</h5>
+													<p>'.$row['room'].'</p>
+													<p>'.$row['checkIn'].'</p>
+													<p>'.$row['checkOut'].'</p>
+													<form action="reserveRoom.php" method="POST">
+													<input type="text" name="id" id="id" value="'.$row['ID'].'" hidden>
+															<input type="text" name="name" id="name" value="'.$row['name'].'" hidden>
+															<input type="text" name="room" id="room" value="'.$row['room'].'" hidden>
+															<input type="text" name="checkIn" id="checkIn" value="'.$row['checkIn'].'" hidden>
+															<input type="text" name="checkOut" id="checkOut" value="'.$row['checkOut'].'" hidden>
+															<input type="text" name="adult" id="adult" value="'.$row['adult'].'" hidden>
+															<input type="text" name="child" id="child" value="'.$row['child'].'" hidden>
+															<input type="text" name="price" id="price" value="'.$row['price'].'" hidden>
+															<button type="submit" name="reserve" id="reserve" class="btn btn-warning" style="margin-left:-15%">Reserve</button>
+													</form>
+												</div>
+												<div class="clearfix"> </div>
+											</div>';
+                        $i++;
+                    }
+
+                }
+                ?>
+					</div>
+				</div>
+			</div>
+
 
 			<div class="clearfix"> </div>
 
 		</div>
+
 				</div>
 			<!--body wrapper start-->
 			</div>

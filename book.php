@@ -15,7 +15,7 @@ echo $checkOut;
 echo '<br>';
 echo $room;
 echo '<br>';
-$sql = "SELECT * FROM `rezervacija` WHERE checkIn BETWEEN  '$checkIn' and  '$checkOut' or checkOut BETWEEN '$checkIn'  and '$checkOut' having room = '$room' order by checkOut asc ";
+$sql = "SELECT * FROM `request` WHERE checkIn BETWEEN  '$checkIn' and  '$checkOut' or checkOut BETWEEN '$checkIn'  and '$checkOut' having room = '$room' order by checkOut asc ";
 $result = @mysqli_query($connection, $sql);
 if ($result->num_rows > 0) {
     while ($row = $result->fetch_assoc()) {
@@ -29,7 +29,7 @@ if ($result->num_rows > 0) {
 
     }
 } else {
-    $query = "INSERT INTO rezervacija (`name`, `room`, `checkIn`, `checkOut`, `adult`, `child`, `price`) VALUES ('$name','$room', '$checkIn', '$checkOut', '$adultsNum', '$childNum', '$price')";
+    $query = "INSERT INTO request (`name`, `room`, `checkIn`, `checkOut`, `adult`, `child`, `price`) VALUES ('$name','$room', '$checkIn', '$checkOut', '$adultsNum', '$childNum', '$price')";
     $response = @mysqli_query($connection, $query);
     if ($response) {
         echo ('free');
