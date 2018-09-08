@@ -170,6 +170,9 @@ if (isset($_SESSION['email'])) {
                     Lorem ipsum dolor sit amet,sed diam voluptua. sed diam voluptua. Lorem ipsum dolor sit amet,sed diam voluptua. sed diam voluptua.
                     Lorem ipsum dolor sit amet,sed diam voluptua. sed diam voluptua.
                 </p>
+                <a href="menuSkyBar.php">
+                    <button type="button" class="btn btn-warning btn-lg ml-5 mt-5" style="width: 75%"><span style="color:white;">View menu</span></button>
+                </a>
             </div>
             <div class="col-8">
                 <img src="images/sky bar 1.jpg" class="img-fluid" />
