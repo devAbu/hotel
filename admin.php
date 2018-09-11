@@ -199,12 +199,16 @@
 
 			<div class="col-md-6 span_10" style="margin-left:5%">
 				<div class="activity_box">
-					<h3>Requested room reservation 	<?php
+					<h3>Requested<?php
 										$sql = "SELECT * FROM request ";
+										$sql2 = "SELECT * FROM swimmingPoolRequest ";
 										$result = $connection->query($sql);
+										$result2 = $connection->query($sql2);
 
 										$count = $result->num_rows;
-										echo '<span style="margin-left:5%; color:black">'.$count.'</span> ';
+										$count2 = $result2->num_rows;
+										$result = $count + $count2;
+										echo '<span style="margin-left:5%; color:black">'.$result.'</span> ';
 									?></h3>
 					<div class="scrollbar scrollbar1" id="style-2">
 						<?php
@@ -218,6 +222,7 @@
                     while ($row = $result->fetch_assoc()) {
                       echo '<div class="activity-row">
 												<div class="col-xs-7 activity-desc">
+												<h4>Room</h4>
 													<h5>'.$row['name'].'</h5>
 													<p>'.$row['room'].'</p>
 													<p>'.$row['checkIn'].'</p>
@@ -246,6 +251,41 @@
 
                 }
                 ?>
+								<?php
+		            $sql = "SELECT * FROM swimmingPoolRequest ";
+		            $result = $connection->query($sql);
+
+		            $count = $result->num_rows;
+
+		            if ($count > 0) {
+		                    $i = 0;
+		                    while ($row = $result->fetch_assoc()) {
+		                      echo '<div class="activity-row">
+														<div class="col-xs-7 activity-desc">
+														<h4>Swimming Pool</h4>
+															<h5>'.$row['name'].'</h5>
+															<p>'.$row['email'].'</p>
+															<p>'.$row['date'].'</p>
+															<form action="reserveSwimmingPool.php" method="POST">
+															<input type="text" name="id" id="id" value="'.$row['ID'].'" hidden>
+																	<input type="text" name="date" id="date" value="'.$row['date'].'" hidden>
+																	<input type="text" name="name" id="name" value="'.$row['name'].'" hidden>
+																	<input type="text" name="email" id="email" value="'.$row['email'].'" hidden>
+																	<button type="submit" name="reserve" id="reserve" class="btn btn-warning" style="margin-left:-15%">Reserve</button>
+															</form>
+															<form action = "deleteSwimmingPoolReserve.php" action="POST">
+															<input type="text" name="id2" id="id2" value="'.$row['ID'].'" hidden>
+																	<input type="text" name="email2" id="email2" value="'.$row['email'].'" hidden>
+																	<button type="submit" name="delete" id="delete" class="btn btn-danger" style="margin-left:20%; margin-top:-27%">Delete</button>
+															</form>
+														</div>
+														<div class="clearfix"> </div>
+													</div>';
+		                        $i++;
+		                    }
+
+		                }
+		                ?>
 					</div>
 				</div>
 			</div>
