@@ -204,16 +204,19 @@
 										$sql2 = "SELECT * FROM swimmingPoolRequest ";
 										$sql3 = "SELECT * FROM spaRequest ";
 										$sql4 = "SELECT * FROM gymRequest ";
+										$sql5 = "SELECT * FROM eventRequest ";
 										$result = $connection->query($sql);
 										$result2 = $connection->query($sql2);
 										$result3 = $connection->query($sql3);
 										$result4 = $connection->query($sql4);
+										$result5 = $connection->query($sql5);
 
 										$count = $result->num_rows;
 										$count2 = $result2->num_rows;
 										$count3 = $result3->num_rows;
 										$count4 = $result4->num_rows;
-										$result = $count + $count2 + $count3 + $count4;
+										$count5 = $result5->num_rows;
+										$result = $count + $count2 + $count3 + $count4 + $count5;
 										echo '<span style="margin-left:5%; color:black">'.$result.'</span> ';
 									?></h3>
 					<div class="scrollbar scrollbar1" id="style-2">
@@ -360,6 +363,41 @@
 
 						                }
 						                ?>
+														<?php
+														$sql = "SELECT * FROM eventRequest ";
+														$result = $connection->query($sql);
+
+														$count = $result->num_rows;
+
+														if ($count > 0) {
+																		$i = 0;
+																		while ($row = $result->fetch_assoc()) {
+																			echo '<div class="activity-row">
+																				<div class="col-xs-7 activity-desc">
+																				<h4>Event</h4>
+																					<h5>'.$row['name'].'</h5>
+																					<p>'.$row['email'].'</p>
+																					<p>'.$row['date'].'</p>
+																					<form action="reserveEvent.php" method="POST">
+																					<input type="text" name="id" id="id" value="'.$row['ID'].'" hidden>
+																							<input type="text" name="name" id="name" value="'.$row['name'].'" hidden>
+																							<input type="text" name="email" id="email" value="'.$row['email'].'" hidden>
+																							<input type="text" name="date" id="date" value="'.$row['date'].'" hidden>
+																							<button type="submit" name="reserve" id="reserve" class="btn btn-warning" style="margin-left:-15%">Reserve</button>
+																					</form>
+																					<form action = "deleteEventReserve.php" action="POST">
+																					<input type="text" name="id2" id="id2" value="'.$row['ID'].'" hidden>
+																							<input type="text" name="email2" id="email2" value="'.$row['email'].'" hidden>
+																							<button type="submit" name="delete" id="delete" class="btn btn-danger" style="margin-left:20%; margin-top:-27%">Delete</button>
+																					</form>
+																				</div>
+																				<div class="clearfix"> </div>
+																			</div>';
+																				$i++;
+																		}
+
+																}
+																?>
 					</div>
 				</div>
 			</div>
