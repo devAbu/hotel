@@ -152,24 +152,19 @@ if (isset($_SESSION['email'])) {
             <div class="col-12">
                 <h1 class="display-1">Sky Bar</h1>
             </div>
-            <div class="col-6">
+            <div class="col-5">
                 <p>
-                    Lorem ipsum dolor sit amet,sed diam voluptua. sed diam voluptua. Lorem ipsum dolor sit amet,sed diam voluptua. sed diam voluptua.
-                    Lorem ipsum dolor sit amet,sed diam voluptua. sed diam voluptua.
-                </p>
+You have spent the day out in the open air and now you have returned to the hotel. There is still some beautiful sunlight and an evening air that tempts you into staying outdoors. We know this feeling all too well and we also know that our Sky Bar is the ideal place to fully enjoy this time of the day. So, go up to the top floor and taste an aperitivo on the terrace, accompanied by the sights and sounds of Lake Maggiore. Good music, great conversation, an excellent cocktail and an unforgettable view: these are some of the luxuries that such an exclusive location will offer you.                </p>
             </div>
-            <div class="col-6">
+            <div class="col-6 offset-1">
                 <p>
-                    Lorem ipsum dolor sit amet,sed diam voluptua. sed diam voluptua. Lorem ipsum dolor sit amet,sed diam voluptua. sed diam voluptua.
-                    Lorem ipsum dolor sit amet,sed diam voluptua. sed diam voluptua.
-                </p>
+                  The Sky Bar is open every day from 12:30pm to around 1 am and it is even available for private events. In case of overcrowding or bad weather, management reserves the right to temporarily close the bar to the public.
+ For aperitivo, with at least 8 people you can book early to ensure adequate space is available.                </p>
                 <a href="https://www.facebook.com" class="text-warning" style="text-decoration: none">Follow us on FACEBOOK</a>
             </div>
             <div class="col-4">
                 <p>
-                    Lorem ipsum dolor sit amet,sed diam voluptua. sed diam voluptua. Lorem ipsum dolor sit amet,sed diam voluptua. sed diam voluptua.
-                    Lorem ipsum dolor sit amet,sed diam voluptua. sed diam voluptua.
-                </p>
+                    Under the shifting light of the sun, the enchanting colours of the lake reveal their magic.</p>
                 <a href="menuSkyBar.php">
                     <button type="button" class="btn btn-warning btn-lg ml-5 mt-5" style="width: 75%"><span style="color:white;">View menu</span></button>
                 </a>

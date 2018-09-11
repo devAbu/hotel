@@ -199,8 +199,8 @@ if (isset($_SESSION['email'])) {
                     </div>
                     <div class=" col-6 text-center mt-5 ">
                         <label>
-                            Lorem ipsum dolor sit amet,no sea takimata sanctus est Lorem ipsum dolor sit amet. consetetur sadipscing elitr, Stet clita
-                            kasd gubergren,
+                          A breathtaking view, some well-deserved relaxation and a breakfast fit for a king.
+This is our idea of comfort, and this is just the beginning.
                         </label>
                     </div>
                 </div>
@@ -217,8 +217,7 @@ if (isset($_SESSION['email'])) {
             </div>
             <div class="col-2 text-center mt-5 ">
                 <label>
-                    Lorem ipsum dolor sit amet,no sea takimata sanctus est Lorem ipsum dolor sit amet. consetetur sadipscing elitr, Stet clita
-                    kasd gubergren,
+                  We are offering you a magnificent view in any season along with rooms capable of becoming magical settings, but we know that this is not enough to make an event memorable.
                 </label>
             </div>
             <div class="col-6 ">
@@ -246,8 +245,8 @@ if (isset($_SESSION['email'])) {
             </div>
             <div class="col-2 text-center mt-5 ">
                 <label>
-                    Lorem ipsum dolor sit amet,no sea takimata sanctus est Lorem ipsum dolor sit amet. consetetur sadipscing elitr, Stet clita
-                    kasd gubergren,
+                  Wake up to a magnificent day spent between the lake and the pool.
+Go to sleep with fond memories, feeling relaxed and refreshed before your trip home.
                 </label>
             </div>
             <div class="col-12 bg-secondary ">
@@ -300,24 +299,21 @@ if ($numRows != 0) {
                                 <div class="carousel-item active ml-5">
                                     <div class="col-8 ">
                                         <label>
-                                            Lorem ipsum dolor sit amet,sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, no sea takimata
-                                            sanctus est Lorem ipsum dolor sit amet. sed diam voluptua. sed diam voluptua.
+                                          From the Sky Bar of the Hotel La Palma in Stresa, you can admire the entire Lake Maggiore from its western shore. A feast for the eyes, which are lost in the beauty of the Borromean Islands, the blue water of the lake and the lush green of the Varese side of Lake Maggiore.
                                         </label>
                                     </div>
                                 </div>
                                 <div class="carousel-item ml-5 ">
                                     <div class="col-8 ">
                                         <label>
-                                            Lorem ipsum dolor sit amet,sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, no sea takimata
-                                            sanctus est Lorem ipsum dolor sit amet. sed diam voluptua. sed diam voluptua.
+                                          Imagine a summer evening surrounded by the clean lake air, under clear sky, then add breathtaking views and a gourmet dinner… A place to enjoy a drink, listen to music and have a chat with friends.
                                         </label>
                                     </div>
                                 </div>
                                 <div class="carousel-item ml-5 ">
                                     <div class="col-8 ">
                                         <label>
-                                            Lorem ipsum dolor sit amet,sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, no sea takimata
-                                            sanctus est Lorem ipsum dolor sit amet. sed diam voluptua. sed diam voluptua.
+                                          With its dizzying heights and stunning expanse of sky, the views of the lake from our Sky Bar at Hotel La Palma fully capitalise on Italy’s outstanding natural beauty thanks to our Sky pool, designed to overlook the Borromean islands.
                                         </label>
                                     </div>
                                 </div>
