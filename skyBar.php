@@ -1,4 +1,3 @@
-<!-- TODO: uradit menu pica..ko u restoranu -->
 <?php
 session_start();
 ?>
