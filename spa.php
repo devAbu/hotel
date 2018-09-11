@@ -658,7 +658,7 @@ if ($numRows != 0) {
                  $('#subButton').css('cursor', 'not-allowed');
                          } else {
                              $("#alert").addClass('alert-danger');
-						 	$("#alert").html('The date is already reserved');
+						 	$("#alert").html('The email is already exists');
 						 	$("#alert").fadeIn(500).delay(1000).fadeOut(500);
                          }
                      },

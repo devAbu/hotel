@@ -7,7 +7,7 @@ $name = $_REQUEST['name'];
 $email = $_REQUEST['email'];
 
 if ($_REQUEST['task'] == "reserve") {
-    $query = "INSERT INTO spaReservation (`date`, `name`, `email`) VALUES ('$date', '$name', '$email')";
+    $query = "INSERT INTO spaRequest (`date`, `name`, `email`) VALUES ('$date', '$name', '$email')";
 
     $response = @mysqli_query($connection, $query);
     if ($response) {
