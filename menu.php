@@ -56,17 +56,13 @@ session_start();
                                 <li class="nav-item">
                                     <a class="nav-link" href="feedback">Feedback</a>
                                 </li>
-                                <?php
-                if (isset($_SESSION['email'])) {
-                    echo '<li class="nav-item">
-                        <a href="bookNew" class="nav-link link">
-                            Book</a>
-                    </li>';
-                }?>
                             </ul>
                             <?php
             if (isset($_SESSION['email'])) {
-                echo "<ul class='navbar-nav ml-auto'><li class='nav-item'><a href='signOut.php'  class='nav-link link'><span class='navLinks'><i class='fas fa-sign-in-alt mr-2'></i>Sign Out</span></a></li></ul>";
+                echo "<ul class='navbar-nav ml-auto'><li class='nav-item'>
+                    <a href='bookNew' class='nav-link link'><i class='fa fa-2x fa-bell text-warning mr-3'></i>
+                        </a>
+                </li><li class='nav-item'><a href='signOut.php'  class='nav-link link'><span class='navLinks'><i class='fas fa-sign-in-alt mr-2'></i>Sign Out</span></a></li></ul>";
             } else {
                 echo "<ul class='navbar-nav ml-auto'>
                                 <li class='nav-item'>
@@ -208,7 +204,7 @@ session_start();
                                   while ($row = $result->fetch_assoc()) {
                                       echo '<div class="single_menu_item breakfast wow fadeInUp">
                                           <div class="d-sm-flex align-items-center">
-                                          
+
                                               <div class="dish-description">
                                                   <h3>'.$row['name'].'</h3>
                                                   <p>'.$row['description'].'</p>

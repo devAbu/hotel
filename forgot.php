@@ -86,14 +86,14 @@ session_start();
                         <a href="events" class="nav-link link">
                             Events</a>
                     </li>
-                    <?php
-    if (isset($_SESSION['email'])) {
-        echo '<li class="nav-item">
-            <a href="bookNew" class="nav-link link">
-                Book</a>
-        </li>';
-    }?>
                 </ul>
+                <?php
+if (isset($_SESSION['email'])) {
+    echo "<ul class='navbar-nav ml-auto'><li class='nav-item'>
+        <a href='bookNew' class='nav-link link'><i class='fa fa-2x fa-bell text-warning mr-3'></i>
+            </a>
+    </li></ul>";
+}?>
             </div>
         </nav>
     </article>
