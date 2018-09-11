@@ -1,4 +1,3 @@
-<!-- TODO: napravit tabelu za pica i povuc te podatke -->
 <?php
 session_start();
 ?>
@@ -119,7 +118,7 @@ session_start();
                           <?php
                               require 'connection.php';
 
-                              $query = "select * from menuItem where type like '%breakfast%' ";
+                              $query = "select * from menuItem2 where type like '%prva%' ";
                               $result = $connection->query($query);
 
                               $numRows = $result->num_rows;
@@ -128,11 +127,7 @@ session_start();
                                   while ($row = $result->fetch_assoc()) {
                                       echo '<div class="single_menu_item breakfast wow fadeInUp">
                                           <div class="d-sm-flex align-items-center">
-                                          .'
-                                              // <div class="dish-thumb">;
-                                              //     <img src="img/menu-img/dish-1.png" alt="">;
-                                              // </div>;
-                                              .'
+
                                               <div class="dish-description">
                                                   <h3>'.$row['name'].'</h3>
                                                   <p>'.$row['description'].'</p>
@@ -150,7 +145,7 @@ session_start();
                         <div class="caviar-portfolio clearfix">
                           <?php
 
-                              $query = "select * from menuItem where type like '%lunch%' ";
+                              $query = "select * from menuItem2 where type like '%druga%' ";
                               $result = $connection->query($query);
 
                               $numRows = $result->num_rows;
@@ -159,11 +154,7 @@ session_start();
                                   while ($row = $result->fetch_assoc()) {
                                       echo '<div class="single_menu_item breakfast wow fadeInUp">
                                           <div class="d-sm-flex align-items-center">
-                                          .'
-                                              // <div class="dish-thumb">;
-                                              //     <img src="img/menu-img/dish-1.png" alt="">;
-                                              // </div>;
-                                              .'
+
                                               <div class="dish-description">
                                                   <h3>'.$row['name'].'</h3>
                                                   <p>'.$row['description'].'</p>
@@ -181,7 +172,7 @@ session_start();
                         <div class="caviar-portfolio clearfix">
                           <?php
 
-                              $query = "select * from menuItem where type like '%dinner%' ";
+                              $query = "select * from menuItem2 where type like '%treca%' ";
                               $result = $connection->query($query);
 
                               $numRows = $result->num_rows;
@@ -190,11 +181,7 @@ session_start();
                                   while ($row = $result->fetch_assoc()) {
                                       echo '<div class="single_menu_item breakfast wow fadeInUp">
                                           <div class="d-sm-flex align-items-center">
-                                          .'
-                                              // <div class="dish-thumb">;
-                                              //     <img src="img/menu-img/dish-1.png" alt="">;
-                                              // </div>;
-                                              .'
+
                                               <div class="dish-description">
                                                   <h3>'.$row['name'].'</h3>
                                                   <p>'.$row['description'].'</p>

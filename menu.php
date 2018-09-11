@@ -127,11 +127,7 @@ session_start();
                                   while ($row = $result->fetch_assoc()) {
                                       echo '<div class="single_menu_item breakfast wow fadeInUp">
                                           <div class="d-sm-flex align-items-center">
-                                          .'
-                                              // <div class="dish-thumb">;
-                                              //     <img src="img/menu-img/dish-1.png" alt="">;
-                                              // </div>;
-                                              .'
+
                                               <div class="dish-description">
                                                   <h3>'.$row['name'].'</h3>
                                                   <p>'.$row['description'].'</p>
@@ -158,11 +154,7 @@ session_start();
                                   while ($row = $result->fetch_assoc()) {
                                       echo '<div class="single_menu_item breakfast wow fadeInUp">
                                           <div class="d-sm-flex align-items-center">
-                                          .'
-                                              // <div class="dish-thumb">;
-                                              //     <img src="img/menu-img/dish-1.png" alt="">;
-                                              // </div>;
-                                              .'
+
                                               <div class="dish-description">
                                                   <h3>'.$row['name'].'</h3>
                                                   <p>'.$row['description'].'</p>
@@ -189,11 +181,7 @@ session_start();
                                   while ($row = $result->fetch_assoc()) {
                                       echo '<div class="single_menu_item breakfast wow fadeInUp">
                                           <div class="d-sm-flex align-items-center">
-                                          .'
-                                              // <div class="dish-thumb">;
-                                              //     <img src="img/menu-img/dish-1.png" alt="">;
-                                              // </div>;
-                                              .'
+
                                               <div class="dish-description">
                                                   <h3>'.$row['name'].'</h3>
                                                   <p>'.$row['description'].'</p>
@@ -220,11 +208,7 @@ session_start();
                                   while ($row = $result->fetch_assoc()) {
                                       echo '<div class="single_menu_item breakfast wow fadeInUp">
                                           <div class="d-sm-flex align-items-center">
-                                          .'
-                                              // <div class="dish-thumb">;
-                                              //     <img src="img/menu-img/dish-1.png" alt="">;
-                                              // </div>;
-                                              .'
+                                          
                                               <div class="dish-description">
                                                   <h3>'.$row['name'].'</h3>
                                                   <p>'.$row['description'].'</p>
