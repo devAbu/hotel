@@ -1,4 +1,3 @@
-<!-- TODO: ubacit slike ako hoce...description pravi -->
 <?php
 session_start();
 ?>

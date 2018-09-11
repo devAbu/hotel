@@ -1,4 +1,4 @@
-<!--TODO: Pravi tekst a ne lorem ispum -->
+<!-- TODO: Book stavit na desnoj strani pored signOut...ne tekst nego zvono sa zlatnom / zutom bojom -->
 <?php
 session_start();
 ?>

@@ -1,4 +1,3 @@
-<!-- TODO: ubacit slike ako hoce...description pravi -->
 <!-- TODO: napravit tabelu za pica i povuc te podatke -->
 <?php
 session_start();
