@@ -545,7 +545,7 @@ if ($numRows != 0) {
                     $('.loader').hide();
                     $('article').hide();
                     $('section').show();
-                    toastr.success('Are you the 6 fingered man?');
+                    //toastr.success('Are you the 6 fingered man?');
                 } else {
                     $('.loader').hide();
                     $('section').hide();
