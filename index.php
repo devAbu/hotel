@@ -45,68 +45,11 @@ session_start();
             var scroll = new SmoothScroll('a[href*="#top"');
         });
     </script>
-<!--
-    <style>
-        body {
-            background-color: gold;
-        }
-
-        .loader {
-            position: fixed;
-            top: 50%;
-            left: 50%;
-            z-index: 999;
-            transform: scale(4);
-        }
-    </style>
--->
 </head>
 
 <body id="body" data-spy="scroll">
 
-    <!--<div class="loader">
-        <div class="loader-inner ball-scale-ripple-multiple">
-        </div>
-    </div>-->
-<!--TODO: skontat kako promijeniti jezik na button-->
-    <!--<section style="z-index:555; position:fixed; top:15%; left:35%;">
-        <div style="width:100% !important;  height:100% !important;">
-            <div class="" tabindex="2" role="dialog">
-                <div class="modal-dialog" role="document">
-                    <div class="modal-content">
-                        <div class="modal-header bg-secondary">
-                            <h5 class="modal-title">
-                                <a href="index">
-                                    <img src="images/home.ico" width="100" height="100" style="margin-bottom:20px;" />
-                                </a>
-                            </h5>
-                            <h3 class="mt-5 ml-4">CHOOSE YOUR LANGUAGE</h3>
-
-                        </div>
-                        <div class="modal-body bg-dark" style="margin-top:-16px">
-                            <button id="button1" type="button" class="btn btn-dark btn-block text-left prvi" onclick="button1Click();">
-                                <img src="images/english.png" class="mr-2" width="50" height="50" />
-                                <span style="font-size:25px;">English</span>
-                            </button>
-                            <button id="button2" type="button" class="btn btn-dark  btn-block text-left prvi" style="margin:0px !important;" onclick="button2Click();">
-                                <img src="images/arabia.png" class="mr-2" width="50" height="50" />
-                                <span style="font-size:25px;">Arabic</span>
-                            </button>
-                            <button id="button3" type="button" class="btn btn-dark btn-block text-left prvi" style="margin:0px !important; " onclick="button3Click();">
-                                <img src="images/turkish.png" class="mr-2" width="50" height="50" />
-                                <span style="font-size:25px;">Turkish</span>
-                            </button>
-                            <button id="button4" type="button" class="btn btn-dark btn-block text-left prvi" style="margin:0px !important;" onclick="button4Click();">
-                                <img src="images/bosna.png" class="mr-2" width="50" height="50" />
-                                <span style="font-size:25px;">Bosnian</span>
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>-->
-
+    
     <article>
         <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top" style="opacity:0.8">
             <a class="navbar-brand" href="index">
@@ -536,82 +479,7 @@ if ($numRows != 0) {
             </div>
         </div>
     </footer>
-    <!--<script>
-        $('section').hide();
-        $('article').hide();
-        $('footer').hide();
-        $(window).on({
-            load: function () {
-                if(localStorage.getItem('lang') === null){
-                    $('.loader').hide();
-                    $('article').hide();
-                    $('section').show();
-                    //toastr.success('Are you the 6 fingered man?');
-                } else {
-                    $('.loader').hide();
-                    $('section').hide();
-                    $('article').show();
-                    $('footer').show();
-                    var test = $('#test').val()
-                    if(test != null){
-                      console.log(test)
-                      toastr.success('Room requested!!!');
-                    }
-
-                }
-                document.getElementById('body').style.backgroundColor = "silver ";
-                $('#subButton').prop('disabled', true);
-                $('#subButton').css('cursor', 'not-allowed');
-
-            }
-        })
-
-        function button1Click() {
-            $('article').fadeIn();
-            $('.loader').hide();
-            $('section').hide();
-            $('footer').show();
-
-            if(typeof(Storage) !== "undefined"){
-                localStorage.setItem("lang", "eng");
-            }
-
-
-        }
-
-        function button2Click() {
-            $('article').show();
-            $('.loader').hide();
-            $('section').hide();
-            $('footer').show();
-            if(typeof(Storage) !== "undefined"){
-                localStorage.setItem("lang", "ara");
-            }
-
-        }
-
-        function button3Click() {
-            $('article').show();
-            $('.loader').hide();
-            $('section').hide();
-            $('footer').show();
-            if(typeof(Storage) !== "undefined"){
-                localStorage.setItem("lang", "tur");
-            }
-        }
-
-        function button4Click() {
-            $('article').show();
-            $('.loader').hide();
-            $('section').hide();
-            $('footer').show();
-            if(typeof(Storage) !== "undefined"){
-                localStorage.setItem("lang", "bos");
-            }
-        }
-
-    </script>-->
-
+    
 <script>
         function check(){
             var emailSub = $('#emailSub').val();
