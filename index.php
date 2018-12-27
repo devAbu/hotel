@@ -45,7 +45,7 @@ session_start();
             var scroll = new SmoothScroll('a[href*="#top"');
         });
     </script>
-
+<!--
     <style>
         body {
             background-color: gold;
@@ -59,16 +59,17 @@ session_start();
             transform: scale(4);
         }
     </style>
+-->
 </head>
 
 <body id="body" data-spy="scroll">
 
-    <div class="loader">
+    <!--<div class="loader">
         <div class="loader-inner ball-scale-ripple-multiple">
         </div>
-    </div>
+    </div>-->
 <!--TODO: skontat kako promijeniti jezik na button-->
-    <section style="z-index:555; position:fixed; top:15%; left:35%;">
+    <!--<section style="z-index:555; position:fixed; top:15%; left:35%;">
         <div style="width:100% !important;  height:100% !important;">
             <div class="" tabindex="2" role="dialog">
                 <div class="modal-dialog" role="document">
@@ -104,7 +105,7 @@ session_start();
                 </div>
             </div>
         </div>
-    </section>
+    </section>-->
 
     <article>
         <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top" style="opacity:0.8">
@@ -535,7 +536,7 @@ if ($numRows != 0) {
             </div>
         </div>
     </footer>
-    <script>
+    <!--<script>
         $('section').hide();
         $('article').hide();
         $('footer').hide();
@@ -609,7 +610,7 @@ if ($numRows != 0) {
             }
         }
 
-    </script>
+    </script>-->
 
 <script>
         function check(){
